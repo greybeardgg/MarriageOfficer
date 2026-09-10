@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
-    "deploy": "bun scripts/deploy.ts"
+    "deploy": "bun scripts/deploy.ts",
+    "publish": "NEXT_PUBLIC_SHOW_DRAFTS=true bun run build && bun scripts/deploy.ts --publish"
   },
   "dependencies": {
     "motion": "^13.2.0",

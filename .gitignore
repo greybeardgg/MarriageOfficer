@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Playwright scratch
 test-results/
+
+# Deploy credentials (token) - never commit
+.deploy.env

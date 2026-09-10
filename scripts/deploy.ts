@@ -5,6 +5,11 @@
  *   PRISMA_SERVICE_TOKEN=… bun run deploy              # dry run
  *   PRISMA_SERVICE_TOKEN=… bun run deploy -- --publish # publish
  *
+ * PRISMA_APP_ID and PRISMA_SERVICE_TOKEN can also be provided once via a
+ * `.deploy.env` file in the repo root (KEY=value per line); the environment
+ * always wins over the file. `bun run publish` builds and publishes in one
+ * command.
+ *
  * Ported from rlesport/scripts/deploy.ts. Two things this does that look odd
  * are load-bearing: `.next/static` is copied into the standalone bundle by
  * hand (Next leaves it out, expecting a CDN; without it the site has no CSS),
@@ -12,15 +17,40 @@
  * refuses symlinks that escape the archive root.
  */
 import { cp, rm } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
 import { ComputeClient, PreBuilt, stageStandaloneArtifact } from '@prisma/compute-sdk';
 import { createManagementApiClient } from '@prisma/management-api-sdk';
 
-const APP_ID = process.env['PRISMA_APP_ID'] ?? '';
 const API_BASE = 'https://api.prisma.io';
 const STANDALONE = '.next/standalone';
 const STAGED = '.next/deploy-artifact';
 
+function loadDeployEnvFile(): void {
+  const path = '.deploy.env';
+  if (!existsSync(path)) return;
+  const contents = readFileSync(path, 'utf8');
+  for (const rawLine of contents.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+    const eq = line.indexOf('=');
+    if (eq === -1) continue;
+    const key = line.slice(0, eq).trim();
+    let value = line.slice(eq + 1).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"') && value.length >= 2) ||
+      (value.startsWith("'") && value.endsWith("'") && value.length >= 2)
+    ) {
+      value = value.slice(1, -1);
+    }
+    if (!key) continue;
+    if (process.env[key] === undefined) process.env[key] = value;
+  }
+  console.log('loaded .deploy.env');
+}
+
 async function main(): Promise<void> {
+  loadDeployEnvFile();
+  const APP_ID = process.env['PRISMA_APP_ID'] ?? '';
   const token = process.env['PRISMA_SERVICE_TOKEN'];
   if (!token) { console.error('PRISMA_SERVICE_TOKEN is not set.'); process.exit(1); }
   if (!APP_ID.startsWith('cps_')) { console.error('PRISMA_APP_ID is not set (the cps_… id from the console).'); process.exit(1); }

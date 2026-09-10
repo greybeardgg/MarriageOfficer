@@ -15,6 +15,12 @@ Design: `../marriage officer/docs/superpowers/specs/2026-09-04-answer-library-an
 
 Sandbox: (address to follow once published)
 
+To publish, run `bun run publish`. Credentials live in `.deploy.env` in the
+repo root, two lines: `PRISMA_APP_ID=` and `PRISMA_SERVICE_TOKEN=`. That file
+is git-ignored: never commit it or share it. Running `bun run deploy` on its
+own, without `--publish`, is a dry run: it checks everything but uploads
+nothing.
+
 Every answer on the page is a **draft** and carries a DRAFT tag. Read them
 as if you were the couple. What is wrong, what is missing, what does not
 sound like us? Say so; nothing here is final.
