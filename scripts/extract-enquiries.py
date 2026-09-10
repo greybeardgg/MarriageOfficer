@@ -4,7 +4,7 @@ contact details, no free text. Run once from the repo root with Python 3.11:
 """
 import csv, json, re, sys
 
-SRC = r'J:\Claude\marriage officer\analysis\mail.jsonl'
+SRC = r'J:\Claude\Marriage Officer Mail & whatsapp data\analysis\mail.jsonl'
 OUT = 'fixtures/enquiries.csv'
 FORMSTART = 'there is a new website enquiry'
 F = re.compile(r'^\s*(Province|Wedding Type|Nationality of Couple)\s*:\s*(.*)$', re.I | re.M)

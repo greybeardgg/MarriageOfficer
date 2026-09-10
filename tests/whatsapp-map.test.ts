@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { WA_PROVINCE, WA_NATIONALITY, WA_SERVICE } from '@/src/situation/whatsapp-map';
 
-const FLOWS = '../marriage officer/meeting/whatsapp-flows-2026-09-10.json';
+const FLOWS = 'fixtures/whatsapp-flows-2026-09-10.json';
 
 describe('whatsapp flow mapping', () => {
   it.skipIf(!existsSync(FLOWS))('covers every button id the live flow uses', () => {
