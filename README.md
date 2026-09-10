@@ -10,3 +10,20 @@ database: swap `src/answers/library.ts`, `src/answers/prices.ts` and
 - `bun run e2e` – walk the flow in a browser (Playwright)
 
 Design: `../marriage officer/docs/superpowers/specs/2026-09-04-answer-library-and-site-design.md`
+
+## For Christa and Cameron
+
+Sandbox: (address to follow once published)
+
+Every answer on the page is a **draft** and carries a DRAFT tag. Read them
+as if you were the couple. What is wrong, what is missing, what does not
+sound like us? Say so; nothing here is final.
+
+Prices are in `src/answers/prices.ts`, in one place. Officers and their
+locations are in `src/officers/officers.ts` with no contact details on
+purpose. The answers are in `src/answers/library.ts`.
+
+Cameron: `src/` has no framework dependency and no database. `select.ts`
+is the situation → answers function from the spec (10.3); `triggers.ts`
+is the deterministic stand-in for the reader (10.5); `assign.ts` is the
+province rule that your app replaces with real assignment.
