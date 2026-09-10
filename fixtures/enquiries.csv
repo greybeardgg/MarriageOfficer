@@ -8,6 +8,7 @@ gauteng,both_sa,wedding_ceremony,,2025
 gauteng,both_sa,wedding_ceremony,,2025
 kwazulu_natal,both_sa,registration,,2025
 kwazulu_natal,both_sa,registration,office,2025
+free_state,both_sa,registration,,2025
 gauteng,one_non_sa,registration,,2025
 gauteng,both_sa,wedding_ceremony,,2025
 western_cape,both_sa,wedding_ceremony,,2025
@@ -489,6 +490,7 @@ western_cape,one_non_sa,registration,office,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
+mpumalanga,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
 western_cape,one_non_sa,registration,,2025
@@ -645,6 +647,7 @@ western_cape,both_sa,registration,,2025
 limpopo,both_sa,registration,,2025
 western_cape,both_sa,registration,home,2025
 western_cape,both_sa,registration,home,2025
+free_state,both_sa,registration,,2025
 western_cape,one_non_sa,wedding_ceremony,,2025
 gauteng,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
@@ -799,6 +802,7 @@ gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 mpumalanga,both_sa,registration,,2025
+limpopo,both_sa,registration,,2025
 north_west,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
@@ -1083,6 +1087,7 @@ gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 north_west,one_non_sa,registration,,2025
+free_state,both_sa,registration,,2025
 limpopo,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
@@ -1787,6 +1792,7 @@ gauteng,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 north_west,both_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 kwazulu_natal,both_sa,registration,,2025
 gauteng,one_non_sa,registration,,2025
@@ -1826,6 +1832,7 @@ western_cape,both_sa,wedding_ceremony,,2025
 western_cape,both_sa,registration,,2025
 gauteng,both_sa,wedding_ceremony,,2025
 kwazulu_natal,one_non_sa,wedding_ceremony,,2025
+kwazulu_natal,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,one_non_sa,registration,,2025
@@ -1983,11 +1990,13 @@ gauteng,one_non_sa,registration,,2025
 gauteng,one_non_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 western_cape,both_sa,registration,office,2025
 eastern_cape,one_non_sa,registration,,2025
 western_cape,both_sa,registration,office,2025
 western_cape,both_sa,registration,office,2025
 gauteng,both_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
@@ -2002,6 +2011,7 @@ western_cape,both_sa,registration,office,2025
 western_cape,one_non_sa,registration,home,2025
 western_cape,both_sa,registration,home,2025
 western_cape,both_sa,registration,home,2025
+kwazulu_natal,both_sa,wedding_ceremony,,2025
 gauteng,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
 limpopo,one_non_sa,registration,,2025
@@ -2064,6 +2074,7 @@ gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 limpopo,both_sa,registration,,2025
 western_cape,one_non_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 kwazulu_natal,both_sa,registration,,2025
@@ -2207,6 +2218,7 @@ gauteng,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
 mpumalanga,one_non_sa,registration,,2025
 gauteng,both_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 western_cape,both_sa,registration,,2025
 gauteng,both_sa,wedding_ceremony,,2025
 gauteng,both_sa,registration,,2025
@@ -2220,6 +2232,7 @@ gauteng,both_sa,registration,,2025
 limpopo,both_sa,registration,,2025
 gauteng,one_non_sa,registration,,2025
 gauteng,both_sa,registration,,2025
+kwazulu_natal,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
@@ -2266,6 +2279,8 @@ gauteng,both_sa,registration,,2025
 mpumalanga,one_non_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
+kwazulu_natal,both_sa,wedding_ceremony,,2025
+free_state,both_sa,registration,,2025
 gauteng,both_sa,registration,,2025
 gauteng,both_non_sa,registration,,2025
 limpopo,both_sa,registration,,2025
@@ -2324,6 +2339,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
@@ -2338,6 +2354,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -2426,12 +2443,14 @@ gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 mpumalanga,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
+free_state,both_sa,registration,,2024
 free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -2470,6 +2489,7 @@ gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -2519,6 +2539,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -2620,6 +2641,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 western_cape,both_non_sa,registration,home,2024
@@ -2679,6 +2701,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -2697,6 +2720,7 @@ northern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,home,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -2736,8 +2760,10 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
 western_cape,one_non_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 limpopo,both_sa,registration,,2024
@@ -2746,6 +2772,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
@@ -2858,6 +2885,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 kwazulu_natal,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+north_west,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
@@ -2898,11 +2926,13 @@ mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,one_non_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
@@ -2988,6 +3018,7 @@ gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3067,6 +3098,7 @@ western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -3139,6 +3171,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
@@ -3147,6 +3180,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3240,9 +3274,11 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,one_non_sa,registration,,2024
 western_cape,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3276,6 +3312,7 @@ gauteng,one_non_sa,registration,,2024
 north_west,both_sa,registration,,2024
 mpumalanga,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3336,6 +3373,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
+free_state,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_non_sa,registration,,2024
@@ -3373,6 +3411,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3471,6 +3510,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -3498,6 +3538,7 @@ western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3505,10 +3546,12 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3679,6 +3722,7 @@ free_state,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,office,2024
+kwazulu_natal,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 mpumalanga,both_sa,registration,,2024
@@ -3789,6 +3833,7 @@ gauteng,both_sa,wedding_ceremony,,2024
 mpumalanga,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -3822,10 +3867,12 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
@@ -3904,7 +3951,9 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,home,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 western_cape,both_sa,registration,,2024
@@ -3912,6 +3961,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,one_non_sa,registration,,2024
@@ -3965,6 +4015,7 @@ free_state,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 mpumalanga,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4001,6 +4052,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,one_non_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
@@ -4020,18 +4072,21 @@ gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4049,7 +4104,9 @@ gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4296,6 +4353,7 @@ north_west,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 northern_cape,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 eastern_cape,both_sa,registration,,2024
@@ -4390,6 +4448,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4438,6 +4497,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
@@ -4456,6 +4516,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 western_cape,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4465,6 +4526,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
@@ -4521,6 +4583,7 @@ gauteng,both_sa,registration,,2024
 limpopo,one_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,one_non_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -4564,6 +4627,7 @@ western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_non_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 limpopo,both_sa,registration,,2024
@@ -4640,6 +4704,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 western_cape,one_non_sa,registration,office,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4670,9 +4735,11 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4682,6 +4749,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4689,6 +4757,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 western_cape,both_non_sa,registration,home,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,,2024
@@ -4794,6 +4863,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
+free_state,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4815,9 +4885,11 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 eastern_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -4877,6 +4949,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4915,6 +4988,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+free_state,both_sa,registration,,2024
 eastern_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -4938,6 +5012,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -5059,6 +5134,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -5083,6 +5159,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
@@ -5178,6 +5255,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -5238,6 +5316,7 @@ gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -5262,6 +5341,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 kwazulu_natal,both_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,home,2024
 western_cape,both_sa,registration,office,2024
@@ -5440,6 +5520,8 @@ western_cape,both_sa,registration,home,2024
 gauteng,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -5560,6 +5642,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
@@ -5577,6 +5660,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 limpopo,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 free_state,both_sa,registration,,2024
@@ -5588,6 +5672,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -5635,6 +5720,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -5749,6 +5835,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
@@ -5815,10 +5902,12 @@ gauteng,both_sa,registration,,2024
 eastern_cape,one_non_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 kwazulu_natal,both_sa,registration,,2024
@@ -5868,6 +5957,7 @@ gauteng,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -5989,6 +6079,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6013,6 +6104,7 @@ gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -6020,6 +6112,7 @@ mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6030,6 +6123,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6043,6 +6137,7 @@ western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,one_non_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,home,2024
 western_cape,both_sa,registration,office,2024
@@ -6058,6 +6153,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
+limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
@@ -6176,12 +6272,14 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
 western_cape,both_sa,registration,,2024
+free_state,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -6203,6 +6301,7 @@ eastern_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6222,6 +6321,7 @@ western_cape,both_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -6304,6 +6404,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 gauteng,one_non_sa,registration,,2024
+north_west,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
@@ -6499,6 +6600,7 @@ eastern_cape,both_non_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6545,6 +6647,8 @@ gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -6581,6 +6685,7 @@ gauteng,one_non_sa,wedding_ceremony,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6643,6 +6748,7 @@ free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -6669,6 +6775,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6794,6 +6901,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6806,8 +6914,10 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -6821,12 +6931,15 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -6912,6 +7025,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
 eastern_cape,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 kwazulu_natal,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
@@ -6938,6 +7052,7 @@ gauteng,both_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
@@ -7029,6 +7144,7 @@ mpumalanga,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,home,2024
+limpopo,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
@@ -7057,6 +7173,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 north_west,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
@@ -7102,6 +7219,7 @@ western_cape,one_non_sa,registration,home,2024
 eastern_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
 gauteng,both_non_sa,registration,,2024
+kwazulu_natal,both_sa,wedding_ceremony,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -7111,6 +7229,7 @@ gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -7272,6 +7391,7 @@ gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -7281,6 +7401,7 @@ western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 northern_cape,both_sa,registration,,2024
 northern_cape,both_sa,registration,,2024
@@ -7420,6 +7541,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -7627,6 +7749,7 @@ western_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 mpumalanga,both_non_sa,registration,,2024
 western_cape,both_non_sa,registration,office,2024
+free_state,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -7651,6 +7774,7 @@ western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,office,2024
 eastern_cape,both_sa,registration,,2024
@@ -7661,6 +7785,7 @@ western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,office,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
@@ -7706,6 +7831,7 @@ gauteng,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
@@ -7756,6 +7882,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -7767,6 +7894,7 @@ gauteng,both_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,one_non_sa,registration,office,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -7831,6 +7959,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
@@ -8011,6 +8140,7 @@ western_cape,both_non_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,home,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
@@ -8188,6 +8318,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
@@ -8219,6 +8350,7 @@ gauteng,both_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 western_cape,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8238,6 +8370,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_non_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8281,6 +8414,7 @@ gauteng,both_non_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8356,6 +8490,8 @@ western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -8465,6 +8601,7 @@ western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8485,6 +8622,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8563,9 +8701,11 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8586,6 +8726,7 @@ eastern_cape,both_sa,registration,,2024
 western_cape,one_non_sa,registration,home,2024
 kwazulu_natal,both_sa,registration,,2024
 free_state,both_sa,registration,,2024
+kwazulu_natal,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8645,6 +8786,7 @@ western_cape,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -8697,6 +8839,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 free_state,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 limpopo,both_sa,registration,,2024
@@ -8926,6 +9069,7 @@ western_cape,both_sa,registration,,2024
 kwazulu_natal,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
@@ -9207,6 +9351,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9279,6 +9424,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9315,6 +9461,7 @@ gauteng,one_non_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,one_non_sa,registration,home,2024
 western_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 western_cape,one_non_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
@@ -9400,6 +9547,7 @@ gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
@@ -9522,6 +9670,7 @@ gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9563,6 +9712,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_non_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
@@ -9599,6 +9749,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
+mpumalanga,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 kwazulu_natal,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9684,6 +9835,7 @@ mpumalanga,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,,2024
 western_cape,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
@@ -9744,10 +9896,12 @@ western_cape,both_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 kwazulu_natal,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 western_cape,both_non_sa,registration,office,2024
 eastern_cape,both_non_sa,registration,,2024
 free_state,both_sa,registration,,2024
@@ -9773,10 +9927,12 @@ gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+north_west,both_sa,wedding_ceremony,,2024
 western_cape,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9816,6 +9972,7 @@ western_cape,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 northern_cape,both_sa,registration,,2024
@@ -9829,6 +9986,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_non_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_non_sa,registration,office,2024
@@ -9885,6 +10043,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,home,2022
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 mpumalanga,both_sa,registration,,2024
@@ -9900,6 +10059,7 @@ gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 western_cape,both_non_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -9986,6 +10146,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,home,2024
 western_cape,both_sa,registration,home,2024
 western_cape,both_sa,registration,,2024
+free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 north_west,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
@@ -10004,6 +10165,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -10147,6 +10309,7 @@ gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -10175,6 +10338,7 @@ gauteng,both_sa,registration,,2024
 eastern_cape,one_non_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
+north_west,both_sa,registration,,2024
 eastern_cape,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -10333,6 +10497,7 @@ gauteng,both_sa,registration,,2023
 free_state,both_sa,wedding_ceremony,,2023
 mpumalanga,both_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 western_cape,both_sa,registration,office,2024
 western_cape,both_sa,registration,,2024
@@ -10359,6 +10524,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
 gauteng,both_sa,registration,,2024
@@ -10428,6 +10594,7 @@ gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,wedding_ceremony,,2024
+kwazulu_natal,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 western_cape,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -10491,6 +10658,7 @@ free_state,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,one_non_sa,registration,,2024
 gauteng,both_sa,registration,,2024
+kwazulu_natal,both_sa,registration,,2024
 limpopo,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
 gauteng,both_sa,registration,,2024
@@ -10596,6 +10764,7 @@ eastern_cape,both_sa,wedding_ceremony,,2023
 western_cape,both_sa,registration,office,2023
 western_cape,one_non_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -10776,9 +10945,11 @@ western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 mpumalanga,one_non_sa,registration,,2023
 western_cape,one_non_sa,registration,office,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -10799,6 +10970,7 @@ gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
@@ -10809,6 +10981,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+free_state,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -10843,6 +11016,7 @@ eastern_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
 western_cape,both_sa,registration,,2023
@@ -10855,6 +11029,7 @@ mpumalanga,both_sa,registration,,2023
 western_cape,one_non_sa,registration,office,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -10882,6 +11057,7 @@ gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,wedding_ceremony,,2023
 mpumalanga,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
@@ -10900,6 +11076,7 @@ western_cape,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
@@ -10909,6 +11086,7 @@ gauteng,one_non_sa,registration,,2023
 gauteng,one_non_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+limpopo,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -10971,6 +11149,7 @@ eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -10989,6 +11168,7 @@ gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
@@ -11053,6 +11233,7 @@ limpopo,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
@@ -11156,6 +11337,7 @@ free_state,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11174,6 +11356,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
 north_west,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11220,6 +11403,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
@@ -11307,6 +11491,7 @@ western_cape,both_sa,registration,,2023
 kwazulu_natal,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
+kwazulu_natal,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
@@ -11357,6 +11542,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11378,6 +11564,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11658,6 +11845,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11690,6 +11878,7 @@ western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
+free_state,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11718,9 +11907,11 @@ gauteng,one_non_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11734,6 +11925,7 @@ gauteng,both_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
@@ -11745,6 +11937,7 @@ western_cape,both_sa,registration,home,2023
 mpumalanga,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
 western_cape,one_non_sa,registration,office,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
@@ -11782,6 +11975,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11842,6 +12036,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -11965,6 +12160,7 @@ western_cape,one_non_sa,registration,office,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -12185,6 +12381,7 @@ western_cape,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -12284,6 +12481,7 @@ western_cape,both_sa,registration,home,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_non_sa,registration,,2023
+north_west,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,one_non_sa,registration,office,2023
 western_cape,both_sa,registration,,2023
@@ -12294,6 +12492,7 @@ gauteng,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
@@ -12314,6 +12513,7 @@ eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
@@ -12334,6 +12534,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
@@ -12680,6 +12881,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -12763,6 +12965,7 @@ eastern_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 eastern_cape,both_non_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
@@ -12771,6 +12974,7 @@ western_cape,both_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,wedding_ceremony,,2023
 gauteng,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
@@ -12786,12 +12990,14 @@ gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_non_sa,registration,home,2023
 gauteng,both_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_non_sa,registration,office,2023
 western_cape,one_non_sa,registration,home,2023
 eastern_cape,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -12886,6 +13092,7 @@ gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
@@ -13010,6 +13217,7 @@ gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
+north_west,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13041,6 +13249,7 @@ western_cape,both_sa,registration,office,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13090,6 +13299,7 @@ gauteng,both_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+north_west,both_non_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13107,6 +13317,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+north_west,both_non_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13188,6 +13399,7 @@ western_cape,both_sa,registration,home,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,one_non_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -13231,6 +13443,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13284,6 +13497,7 @@ gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13317,6 +13531,7 @@ gauteng,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -13324,6 +13539,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -13355,6 +13571,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
 limpopo,both_sa,registration,,2023
+north_west,one_non_sa,wedding_ceremony,,2023
 western_cape,both_sa,registration,office,2023
 western_cape,both_sa,registration,,2023
 western_cape,one_non_sa,registration,office,2023
@@ -13402,6 +13619,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
@@ -13450,6 +13668,7 @@ gauteng,both_sa,registration,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+limpopo,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
@@ -13564,6 +13783,7 @@ mpumalanga,one_non_sa,registration,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,one_non_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13616,6 +13836,8 @@ western_cape,both_non_sa,registration,office,2023
 gauteng,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
+free_state,both_non_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13644,6 +13866,7 @@ gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13710,6 +13933,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,one_non_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13778,6 +14002,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
@@ -13785,6 +14010,7 @@ eastern_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+mpumalanga,one_non_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -13805,6 +14031,7 @@ western_cape,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 western_cape,both_sa,registration,office,2023
 western_cape,both_non_sa,registration,office,2023
+free_state,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -13918,6 +14145,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
@@ -13935,6 +14163,7 @@ eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 western_cape,both_sa,registration,office,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,wedding_ceremony,,2023
@@ -14020,6 +14249,7 @@ gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,one_non_sa,registration,office,2023
 western_cape,one_non_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
@@ -14071,6 +14301,7 @@ gauteng,both_non_sa,registration,,2023
 north_west,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14125,6 +14356,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14148,6 +14380,7 @@ western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14174,6 +14407,7 @@ gauteng,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 free_state,both_sa,registration,,2023
@@ -14256,6 +14490,7 @@ gauteng,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,one_non_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14306,6 +14541,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
@@ -14378,6 +14614,7 @@ gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 mpumalanga,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14392,6 +14629,7 @@ gauteng,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 eastern_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+free_state,both_sa,registration,,2023
 western_cape,both_sa,registration,home,2023
 western_cape,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14533,6 +14771,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14641,6 +14880,7 @@ gauteng,both_sa,registration,,2023
 western_cape,one_non_sa,registration,home,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
@@ -14682,6 +14922,7 @@ gauteng,both_sa,wedding_ceremony,,2023
 eastern_cape,both_sa,registration,,2023
 eastern_cape,one_non_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 mpumalanga,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 north_west,both_sa,registration,,2023
@@ -14740,6 +14981,7 @@ gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 kwazulu_natal,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
@@ -14749,6 +14991,7 @@ western_cape,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 western_cape,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14779,6 +15022,7 @@ gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
 gauteng,both_sa,wedding_ceremony,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,wedding_ceremony,,2023
@@ -14801,6 +15045,7 @@ gauteng,both_sa,registration,,2023
 western_cape,both_sa,registration,office,2023
 western_cape,both_sa,registration,office,2023
 gauteng,one_non_sa,registration,,2023
+free_state,both_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 limpopo,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -14941,6 +15186,7 @@ western_cape,both_sa,registration,office,2023
 gauteng,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
@@ -15097,6 +15343,7 @@ gauteng,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
 gauteng,both_non_sa,registration,,2023
 gauteng,both_sa,registration,,2023
+kwazulu_natal,both_sa,registration,,2023
 gauteng,one_non_sa,registration,,2023
 western_cape,both_sa,registration,,2023
 gauteng,both_sa,registration,,2023
