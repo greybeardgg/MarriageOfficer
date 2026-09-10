@@ -142,7 +142,7 @@ export const ANSWERS: Answer[] = [
     body: 'On the day you receive the handwritten certificate from the register. Once Home Affairs has recorded the marriage you can get a printed abridged certificate from any Home Affairs office. If you need an unabridged certificate, which shows both partners’ full details and is what most countries ask for when you apply for a visa, we can obtain it for you for {{price:unabridged_certificate}}.',
     section: 'home_affairs', order: 20,
     appliesTo: {},
-    triggers: ['certificate', 'unabridged', 'abridged', 'apostille', 'overseas', 'abroad', 'emigrat'],
+    triggers: ['certificate', 'unabridged', 'abridged', 'apostille', 'overseas', 'abroad', 'emigrat~'],
     status: 'draft', lastReviewed: D,
   },
 
