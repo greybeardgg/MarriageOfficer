@@ -11,13 +11,13 @@ describe('seed answer library', () => {
     for (const a of ANSWERS) expect(() => renderBody(a.body)).not.toThrow();
   });
   it('never types a rand amount into a body', () => {
-    for (const a of ANSWERS) expect(a.body, a.id).not.toMatch(/R\s?\d{3,}/);
+    for (const a of ANSWERS) expect(a.body, a.id).not.toMatch(/(\bR\s?\d[\d,\s]{2,}|\b\d[\d,\s]{2,}\s*rand\b)/i);
   });
   it('explains Home Affairs and never compares', () => {
     const banned = /cheaper|faster than|better than|unlike home affairs|worse|queue for hours/i;
     for (const a of ANSWERS) expect(a.body, a.id).not.toMatch(banned);
   });
-  it('has at least one live answer in each of process, price, bring and home_affairs', () => {
+  it('has at least one answer in each of process, price, bring and home_affairs', () => {
     for (const s of ['process','price','bring','home_affairs'] as const) {
       expect(ANSWERS.some(a => a.section === s), s).toBe(true);
     }

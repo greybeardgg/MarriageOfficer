@@ -19,6 +19,8 @@ Every answer on the page is a **draft** and carries a DRAFT tag. Read them
 as if you were the couple. What is wrong, what is missing, what does not
 sound like us? Say so; nothing here is final.
 
+Drafts are shown only when `NEXT_PUBLIC_SHOW_DRAFTS=true` is set at build time; the sandbox sets it, production will not.
+
 Prices are in `src/answers/prices.ts`, in one place. Officers and their
 locations are in `src/officers/officers.ts` with no contact details on
 purpose. The answers are in `src/answers/library.ts`.

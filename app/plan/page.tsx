@@ -17,7 +17,7 @@ export default async function Plan({ searchParams }: { searchParams: Promise<Rec
       </main>
     );
   }
-  const includeDrafts = process.env.NEXT_PUBLIC_SHOW_DRAFTS !== 'false';
+  const includeDrafts = process.env.NEXT_PUBLIC_SHOW_DRAFTS === 'true';
   return (
     <Suspense>
       <PlanPage situation={situation} freeText={p.get('q') ?? ''} includeDrafts={includeDrafts} />
