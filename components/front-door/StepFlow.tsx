@@ -30,11 +30,11 @@ export function StepFlow() {
   }
 
   function back() {
+    if (pickingDate) { setPickingDate(false); return; }
     const prev = history[history.length - 1];
     if (!prev) return;
     setHistory(h => h.slice(0, -1));
     setPartial(prev);
-    setPickingDate(false);
   }
 
   if (!current) return null;
