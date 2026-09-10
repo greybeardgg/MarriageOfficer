@@ -13,7 +13,7 @@ Design: `../marriage officer/docs/superpowers/specs/2026-09-04-answer-library-an
 
 ## For Christa and Cameron
 
-Sandbox: (address to follow once published)
+Sandbox: https://s375kl2brd0yjsk6xo5texqr.fra.prisma.build
 
 To publish, run `bun run publish`. Credentials live in `.deploy.env` in the
 repo root, two lines: `PRISMA_APP_ID=` and `PRISMA_SERVICE_TOKEN=`. That file
