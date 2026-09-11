@@ -47,3 +47,6 @@ test-results/
 
 # Deploy credentials (token) - never commit
 .deploy.env
+
+# Impeccable local-only config
+.impeccable/config.local.json
