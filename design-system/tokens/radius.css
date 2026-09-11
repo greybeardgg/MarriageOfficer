@@ -1,0 +1,10 @@
+:root{
+--radius-none:0;
+--radius-xs:2px;
+--radius-sm:3px;
+--radius-md:4px;
+--radius-lg:8px;
+--radius-xl:16px;
+--radius-pill:999px;
+--radius-circle:50%;
+}
