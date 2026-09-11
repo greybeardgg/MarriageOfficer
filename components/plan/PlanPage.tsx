@@ -7,6 +7,7 @@ import type { Situation } from '@/src/situation/types';
 import { Eyebrow } from '@/components/brand/Eyebrow';
 import { Divider } from '@/components/brand/Divider';
 import { Button } from '@/components/brand/Button';
+import { SiteHeader } from '@/components/brand/SiteHeader';
 import { AnswerCard } from './AnswerCard';
 import { OfficerCard } from './OfficerCard';
 import { FreeTextBox } from './FreeTextBox';
@@ -25,11 +26,7 @@ export function PlanPage({ situation, freeText, includeDrafts }: { situation: Si
 
   return (
     <main style={{ background: 'var(--surface-page)', minHeight: '100vh' }}>
-      <header style={{ borderBottom: '1px solid var(--border-hairline)' }}>
-        <div className="mx-auto max-w-5xl px-6" style={{ display: 'flex', alignItems: 'center', height: 88 }}>
-          <a href="/" aria-label="Ryan Hogarth Professional Marriage Officers"><img src="/logo-charcoal.svg" alt="" width={168} height={118} style={{ height: 64, width: 'auto' }} /></a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <div style={{ background: 'var(--surface-tint)', borderBottom: '1px solid var(--border-hairline)' }}>
         <div className="mx-auto max-w-5xl px-6 py-16" style={{ display: 'grid', gap: 'var(--space-5)', justifyItems: 'start' }}>

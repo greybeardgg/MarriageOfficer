@@ -2,7 +2,7 @@
 
 export function AnswerRow({ index, label, hint, selected, onClick }: { index: number; label: string; hint?: string; selected?: boolean; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className={`answer-row${selected ? ' is-selected' : ''}`} aria-pressed={selected}>
+    <button type="button" onClick={onClick} className={`answer-row${selected ? ' is-selected' : ''}`}>
       <span className="n">{String(index + 1).padStart(2, '0')}</span>
       <span style={{ flex: 1, minWidth: 0 }}>
         <span className="label">{label}</span>
