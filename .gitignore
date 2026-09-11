@@ -50,3 +50,14 @@ test-results/
 
 # Impeccable local-only config
 .impeccable/config.local.json
+
+# Claude Code tooling and machine-local settings (17MB of skill install)
+/.claude/
+
+# Impeccable: local caches and regenerable evidence.
+# DESIGN.md, .impeccable/design.json and .impeccable/surfaces/ ARE committed;
+# review captures are rebuilt with `node scripts/shots.mjs`.
+/.impeccable/review/
+/.impeccable/questions/
+/.impeccable/live/
+/.impeccable/hook.cache.json

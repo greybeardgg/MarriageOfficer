@@ -2,20 +2,40 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { Eyebrow } from '@/components/brand/Eyebrow';
 
 export function FreeTextBox() {
   const router = useRouter();
   const params = useSearchParams();
   const [text, setText] = useState(params.get('q') ?? '');
+
   return (
-    <form className="card" style={{ display: 'grid', gap: 'var(--space-3)' }}
-      onSubmit={e => { e.preventDefault(); const p = new URLSearchParams(params.toString()); if (text.trim()) p.set('q', text.trim()); else p.delete('q'); router.replace('/plan?' + p.toString()); }}>
-      <Eyebrow>One More Thing</Eyebrow>
-      <label htmlFor="q" style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-display-regular)', fontSize: 'var(--fs-lg)', letterSpacing: 'var(--ls-heading)', color: 'var(--text-heading)' }}>Do you have any questions?</label>
-      <p style={{ margin: 0, fontSize: 'var(--fs-xs)', color: 'var(--text-muted)' }}>The more you tell us, the more specific we can be.</p>
-      <textarea id="q" value={text} onChange={e => setText(e.target.value)} rows={4} className="field" placeholder="Tell us about your situation" />
-      <div><button type="submit" className="btn btn-primary btn-md">Show Me</button></div>
+    <form
+      className="ask"
+      onSubmit={e => {
+        e.preventDefault();
+        const p = new URLSearchParams(params.toString());
+        if (text.trim()) p.set('q', text.trim());
+        else p.delete('q');
+        router.replace('/plan?' + p.toString());
+      }}
+    >
+      <label className="question ask-head" htmlFor="q" style={{ fontSize: 'var(--fs-xl)' }}>
+        Do You Have Any Questions?
+      </label>
+      <p className="prose ask-note">
+        Write as much as you like. We will add the answers to this page, still without asking who you are.
+      </p>
+      <textarea
+        id="q"
+        value={text}
+        onChange={e => setText(e.target.value)}
+        rows={4}
+        className="field"
+        placeholder="One of us is Zimbabwean and we want a Saturday in March…"
+      />
+      <div>
+        <button type="submit" className="act act-ruled">Show Me</button>
+      </div>
     </form>
   );
 }

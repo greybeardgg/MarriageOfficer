@@ -4,16 +4,34 @@ import { assignOfficer } from '@/src/officers/assign';
 import { summarise } from '@/src/plan/summary';
 import { encodeSituation } from '@/src/situation/encode';
 import type { Situation } from '@/src/situation/types';
-import { Eyebrow } from '@/components/brand/Eyebrow';
-import { Divider } from '@/components/brand/Divider';
-import { Button } from '@/components/brand/Button';
-import { SiteHeader } from '@/components/brand/SiteHeader';
-import { AnswerCard } from './AnswerCard';
-import { OfficerCard } from './OfficerCard';
+import { Chrome } from '@/components/brand/Chrome';
+import { Guilloche } from '@/components/brand/Guilloche';
+import { Action, Perforation } from '@/components/brand/Action';
+import { AffixedPrint } from '@/components/brand/AffixedPrint';
+import { StampRecord } from '@/components/front-door/Spine';
+import { Clause } from './Clause';
+import { OfficerPlate } from './OfficerPlate';
 import { FreeTextBox } from './FreeTextBox';
-import { Timeline } from './Timeline';
 
 const BOOKING_FORM = 'https://www.marriageofficer.co.za/booking-form-wa';
+
+/** The state gets its own ink, and it appears nowhere else on the page. */
+const STATE_SECTION = 'home_affairs';
+
+const CLOSING: Record<string, { src: string; alt: string; position: string; caption: string }> = {
+  registration: {
+    src: '/photography/registration-01.jpg',
+    alt: 'A couple, their witnesses and the officer at a dining table, the marriage register open in front of them and the Home Affairs certificate held up behind.',
+    position: '50% 58%',
+    caption: 'The register, signed and witnessed, at home in Gauteng',
+  },
+  ceremony: {
+    src: '/photography/ceremony-03.jpg',
+    alt: 'An officer standing with a couple on coastal rocks, binding their hands with a ribbon.',
+    position: '50% 44%',
+    caption: 'A ceremony on the rocks, Western Cape',
+  },
+};
 
 export function PlanPage({ situation, freeText, includeDrafts }: { situation: Situation; freeText: string; includeDrafts: boolean }) {
   const extra = triggeredAnswers(freeText).filter(a => a.section === 'specific');
@@ -21,51 +39,96 @@ export function PlanPage({ situation, freeText, includeDrafts }: { situation: Si
   const officer = assignOfficer(situation);
   const qs = encodeSituation(situation).toString();
   const selfUrl = '/plan?' + qs + (freeText ? '&q=' + encodeURIComponent(freeText) : '');
+  const closing = CLOSING[situation.service === 'registration' ? 'registration' : 'ceremony'];
+
   const seen = new Set<string>();
-  const unique = (list: typeof sections[number]['answers']) => list.filter(a => { if (seen.has(a.id)) return false; seen.add(a.id); return true; });
+  const unique = (list: (typeof sections)[number]['answers']) =>
+    list.filter(a => {
+      if (seen.has(a.id)) return false;
+      seen.add(a.id);
+      return true;
+    });
 
   return (
-    <main style={{ background: 'var(--surface-page)', minHeight: '100vh' }}>
-      <SiteHeader />
+    <>
+      <Guilloche />
+      <Chrome note="Assembled from your six answers" />
 
-      <div style={{ background: 'var(--surface-tint)', borderBottom: '1px solid var(--border-hairline)' }}>
-        <div className="mx-auto max-w-5xl px-6 py-16" style={{ display: 'grid', gap: 'var(--space-5)', justifyItems: 'start' }}>
-          <Eyebrow>Based On Your Answers</Eyebrow>
-          <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-display-thin)', fontSize: 'clamp(var(--fs-2xl), 4.5vw, var(--fs-4xl))', letterSpacing: '0.06em', lineHeight: 1.15, color: 'var(--text-heading)', maxWidth: '22ch' }}>{summarise(situation)}</h1>
-          <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-            <Button href={`${BOOKING_FORM}?${qs}`} size="lg">Book This</Button>
-            <Button href={selfUrl} variant="ghost" size="lg">Send Me This</Button>
+      <main style={{ position: 'relative', zIndex: 1 }}>
+        {/* ---- the head of the document: what was answered, and what happens next ---- */}
+        <div style={{ background: 'var(--paper-deep)', borderBottom: '1px solid var(--rule)' }}>
+          <div className="shell doc-head">
+            <div className="doc-head-main">
+              <h1 className="headline doc-title">{summarise(situation)}</h1>
+              <div className="doc-actions">
+                <Action href={`${BOOKING_FORM}?${qs}`} external>Book This</Action>
+                <Action href={selfUrl} variant="ruled">Send Me This</Action>
+              </div>
+              <p className="prose doc-note">
+                Nothing here is a quote against your name yet. Read it all first: that is the point of it.
+              </p>
+            </div>
+            <div className="doc-head-record">
+              <p className="label" style={{ color: 'var(--carbon-soft)', marginBottom: 'var(--s-5)' }}>The Record</p>
+              <StampRecord situation={situation} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-5xl px-6" style={{ paddingTop: 'var(--section-y-tight)', paddingBottom: 'var(--section-y)', display: 'grid', gap: 'var(--space-9)' }}>
-        {sections.map(sec => {
-          const answers = unique(sec.answers);
-          if (!answers.length) return null;
-          return (
-            <section key={sec.section} style={{ display: 'grid', gap: 'var(--space-6)' }}>
-              <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                <h2 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-display-light)', fontSize: 'var(--fs-2xl)', letterSpacing: 'var(--ls-heading)', color: 'var(--text-heading)' }}>{sec.title}</h2>
+        {/* ---- the clauses ---- */}
+        <div className="shell doc-body">
+          {sections.map(sec => {
+            const answers = unique(sec.answers);
+            if (!answers.length) return null;
+            const isState = sec.section === STATE_SECTION;
+
+            return (
+              <section key={sec.section} className={`part${isState ? ' part-state' : ''}`} aria-labelledby={`part-${sec.section}`}>
+                <div className="part-head">
+                  <h2 id={`part-${sec.section}`} className="plate part-title">{sec.title}</h2>
+                  <span className="data part-count">
+                    {String(answers.length).padStart(2, '0')} {answers.length === 1 ? 'clause' : 'clauses'}
+                  </span>
+                </div>
+                <ol className="clauses">
+                  {answers.map((a, i) => (
+                    <Clause key={a.id} a={a} seq={i + 1} />
+                  ))}
+                </ol>
+              </section>
+            );
+          })}
+
+          <div className="doc-aside">
+            <OfficerPlate officer={officer} />
+            <FreeTextBox />
+          </div>
+
+          <div className="doc-close">
+            <AffixedPrint
+              src={closing.src}
+              alt={closing.alt}
+              caption={closing.caption}
+              height={300}
+              position={closing.position}
+              tilt={0.4}
+            />
+            <div className="doc-close-text">
+              <h2 className="question" style={{ fontSize: 'var(--fs-2xl)', maxWidth: '16ch' }}>
+                That is the whole of it. Shall we put it in the book?
+              </h2>
+              <div className="doc-actions">
+                <Action href={`${BOOKING_FORM}?${qs}`} external>Book This</Action>
+                <Action href="/" variant="ruled">Start Again</Action>
               </div>
-              {sec.section === 'process'
-                ? <div style={{ maxWidth: 'var(--container-narrow)' }}><Timeline answers={answers} /></div>
-                : <div style={{ display: 'grid', gap: 'var(--space-4)', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>{answers.map(a => <AnswerCard key={a.id} a={a} />)}</div>}
-            </section>
-          );
-        })}
+            </div>
+          </div>
 
-        <section style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'start' }}>
-          <FreeTextBox />
-          <OfficerCard officer={officer} />
-        </section>
-
-        <div style={{ display: 'grid', justifyItems: 'center', gap: 'var(--space-5)', paddingTop: 'var(--space-6)', borderTop: '1px solid var(--border-hairline)' }}>
-          <Divider />
-          <p style={{ margin: 0, fontSize: 'var(--fs-sm)', color: 'var(--text-muted)' }}>Not quite what you expected?</p>
-          <Button href="/" variant="ghost">Start Again</Button>
+          <div style={{ paddingTop: 'var(--s-7)' }}>
+            <Perforation label="End Of Document" />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

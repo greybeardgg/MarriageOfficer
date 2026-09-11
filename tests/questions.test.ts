@@ -2,10 +2,15 @@ import { describe, it, expect } from 'vitest';
 import { QUESTIONS, applyAnswer, isComplete } from '@/src/situation/questions';
 
 describe('questions', () => {
-  it('asks province first and registration is the first service choice', () => {
-    expect(QUESTIONS[0].id).toBe('province');
-    const service = QUESTIONS.find(q => q.id === 'service')!;
+  it('opens with the two doors, registration first', () => {
+    expect(QUESTIONS[0].id).toBe('service');
+    const service = QUESTIONS[0];
     expect(service.choices[0].value).toBe('registration');
+    expect(service.choices[0].door).toBe('legal');
+    expect(service.choices.filter(c => c.door === 'ceremony')).toHaveLength(2);
+  });
+  it('asks where it happens second', () => {
+    expect(QUESTIONS[1].id).toBe('province');
   });
   it('lists Gauteng and Western Cape first', () => {
     const p = QUESTIONS.find(q => q.id === 'province')!;
@@ -25,13 +30,13 @@ describe('questions', () => {
     expect(isComplete(s)).toBe(false);
     s = applyAnswer(s, 'date', '2026-12-05');
     expect(isComplete(s)).toBe(true);
-    expect((s as any).date).toEqual({ kind: 'date', iso: '2026-12-05' });
+    expect((s as Record<string, unknown>).date).toEqual({ kind: 'date', iso: '2026-12-05' });
   });
   it('ignores an unknown value', () => {
     expect(applyAnswer({}, 'province', 'mars')).toEqual({});
   });
-  it('every question has an eyebrow', () => {
-    for (const q of QUESTIONS) expect(q.eyebrow.length, q.id).toBeGreaterThan(2);
-    expect(QUESTIONS.find(q => q.id === 'province')!.eyebrow).toBe('The Place');
+  it('every question carries the field name printed on its stamp', () => {
+    for (const q of QUESTIONS) expect(q.stampLabel.length, q.id).toBeGreaterThan(2);
+    expect(QUESTIONS.find(q => q.id === 'province')!.stampLabel).toBe('Place');
   });
 });
