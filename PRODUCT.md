@@ -119,25 +119,40 @@ same answer whichever door they came through.
 
 ## Brand Commitments
 
-- **Name and identity:** Ryan Hogarth Marriage Officers. Logo supplied as
-  `logo-white.svg`, `logo-charcoal.svg`, `logo-slate.svg` and a full-colour
-  PNG; imported at `design-system/`.
-- **Colour:** charcoal `#57585B` headings, grey `#6C6D70` body, grey-light
-  `#929497` meta and dividers, slate `#465B69` as the primary accent, aqua
-  `#91CCD2` as a seasoning and never a surface. No warm colours, no gold,
-  blush or sage.
-- **Type:** Montserrat 200/300 uppercase and tracked for display; Nunito Sans
-  300/400/600/700 for body. Headings are thin, never bold. Never body in
-  Montserrat, never headings in Nunito. Both are currently Google Fonts
-  substitutions; real font files are still missing.
-- **Voice:** warm professional, South African and UK spelling, "we" and "you",
-  Title Case headings and calls to action, sentence case body. Answer first,
-  then qualify. Name the worry, then remove it. Dry humour once per screen.
-  Never: magical, dream day, fairytale, big day, bespoke, seamless, journey.
+Only three things below are binding. The visual system is deliberately open:
+see the note at the end of this section before treating any colour, typeface
+or styling rule as a constraint.
+
+- **Name, and the logo, are fixed.** Ryan Hogarth Marriage Officers. The mark
+  is supplied at `design-system/assets/` as `logo-white.svg`,
+  `logo-charcoal.svg`, `logo-slate.svg` and a full-colour PNG. New visual
+  directions are built around the existing mark. Redesigning it is out of
+  scope: it appears on invoices, booking confirmations, certificates, and
+  inside `app.marriageofficer.co.za`, so changing it is a business project
+  rather than a design decision.
+- **Voice is fixed.** Warm professional, South African and UK spelling, "we"
+  and "you", Title Case headings and calls to action, sentence case body.
+  Answer first, then qualify. Name the worry, then remove it. Dry humour once
+  per screen. Never: magical, dream day, fairytale, big day, bespoke,
+  seamless, journey. No emoji anywhere.
 - **"Human and heartfelt" is the first principle** (Christa, 9 September 2026).
-- **No emoji, no illustration, no patterns, no unicode used as an icon.**
-  Photography is the only decoration: documentary, cool or neutral grade,
-  never black and white.
+  This governs tone and treatment of the customer, whatever the visual
+  direction turns out to be.
+
+**The visual system is open, by Ryan's decision of 11 September 2026.** The
+quiz front door is being designed from a blank slate: colour, typography,
+spacing, radii, motion, photography treatment and iconography are all free
+choices, and no existing value constrains them.
+
+The previous system is evidence and reference material, not authority. It is
+recorded in the Claude Design project "Ryan Hogarth Marriage Officers Design
+System" and imported at `design-system/` in this repository: charcoal, grey
+and slate `#465B69` with aqua `#91CCD2` as an accent, thin tracked uppercase
+Montserrat for display with Nunito Sans for body, near-square radii, hairline
+borders, and documentary photography. Read it to understand what has been
+shipped and what it did not solve. Do not treat it as a floor, a ceiling, or a
+starting point, and do not split the difference between it and a new
+direction.
 
 ## Evidence on Hand
 
@@ -177,11 +192,15 @@ same answer whichever door they came through.
 
 ## Accessibility & Inclusion
 
-Target: **WCAG 2.2 AA.** The brand's thin, light-grey Montserrat is the
-standing risk against contrast requirements and must be checked wherever it is
-used at small sizes or over photography. Already honoured in the built front
-door: reduced-motion handling, managed focus between steps, and a live region
-announcing step changes.
+Target: **WCAG 2.2 AA.** This is the one constraint the open visual slate does
+not lift, and it is a real one: the previous system failed to make it easy,
+because thin light-grey type over photography is the natural shape of this
+brief and the natural enemy of a contrast ratio. Any new direction must clear
+the bar at small sizes and over imagery, not only in a headline.
+
+Behaviour already honoured in the built front door, and expected of whatever
+replaces it: reduced-motion handling, managed focus between steps, and a live
+region announcing step changes.
 
 Inclusion facts that are product truth, not styling: all officers are Civil
 Union officers and same-sex couples are served by the same flow; couples where
