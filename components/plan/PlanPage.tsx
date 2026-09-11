@@ -4,46 +4,71 @@ import { assignOfficer } from '@/src/officers/assign';
 import { summarise } from '@/src/plan/summary';
 import { encodeSituation } from '@/src/situation/encode';
 import type { Situation } from '@/src/situation/types';
+import { Eyebrow } from '@/components/brand/Eyebrow';
+import { Divider } from '@/components/brand/Divider';
+import { Button } from '@/components/brand/Button';
 import { AnswerCard } from './AnswerCard';
 import { OfficerCard } from './OfficerCard';
 import { FreeTextBox } from './FreeTextBox';
+import { Timeline } from './Timeline';
 
 const BOOKING_FORM = 'https://www.marriageofficer.co.za/booking-form-wa';
 
 export function PlanPage({ situation, freeText, includeDrafts }: { situation: Situation; freeText: string; includeDrafts: boolean }) {
   const extra = triggeredAnswers(freeText).filter(a => a.section === 'specific');
   const sections = selectAnswers(situation, { includeDrafts, extra });
-  const seen = new Set<string>();
   const officer = assignOfficer(situation);
   const qs = encodeSituation(situation).toString();
   const selfUrl = '/plan?' + qs + (freeText ? '&q=' + encodeURIComponent(freeText) : '');
+  const seen = new Set<string>();
+  const unique = (list: typeof sections[number]['answers']) => list.filter(a => { if (seen.has(a.id)) return false; seen.add(a.id); return true; });
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-12">
-      <p className="text-sm uppercase tracking-widest text-[var(--accent)]">What you&rsquo;re looking at</p>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight">{summarise(situation)}</h1>
+    <main style={{ background: 'var(--surface-page)', minHeight: '100vh' }}>
+      <header style={{ borderBottom: '1px solid var(--border-hairline)' }}>
+        <div className="mx-auto max-w-5xl px-6" style={{ display: 'flex', alignItems: 'center', height: 88 }}>
+          <a href="/" aria-label="Ryan Hogarth Professional Marriage Officers"><img src="/logo-charcoal.svg" alt="" width={168} height={118} style={{ height: 64, width: 'auto' }} /></a>
+        </div>
+      </header>
 
-      {sections.map(sec => (
-        <section key={sec.section} className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold">{sec.title}</h2>
-          <div className="grid gap-4">
-            {sec.answers.filter(a => !seen.has(a.id) && (seen.add(a.id), true)).map(a => <AnswerCard key={a.id} a={a} />)}
+      <div style={{ background: 'var(--surface-tint)', borderBottom: '1px solid var(--border-hairline)' }}>
+        <div className="mx-auto max-w-5xl px-6 py-16" style={{ display: 'grid', gap: 'var(--space-5)', justifyItems: 'start' }}>
+          <Eyebrow>Based On Your Answers</Eyebrow>
+          <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-display-thin)', fontSize: 'clamp(var(--fs-2xl), 4.5vw, var(--fs-4xl))', letterSpacing: '0.06em', lineHeight: 1.15, color: 'var(--text-heading)', maxWidth: '22ch' }}>{summarise(situation)}</h1>
+          <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+            <Button href={`${BOOKING_FORM}?${qs}`} size="lg">Book This</Button>
+            <Button href={selfUrl} variant="ghost" size="lg">Send Me This</Button>
           </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-5xl px-6" style={{ paddingTop: 'var(--section-y-tight)', paddingBottom: 'var(--section-y)', display: 'grid', gap: 'var(--space-9)' }}>
+        {sections.map(sec => {
+          const answers = unique(sec.answers);
+          if (!answers.length) return null;
+          return (
+            <section key={sec.section} style={{ display: 'grid', gap: 'var(--space-6)' }}>
+              <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
+                <h2 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-display-light)', fontSize: 'var(--fs-2xl)', letterSpacing: 'var(--ls-heading)', color: 'var(--text-heading)' }}>{sec.title}</h2>
+              </div>
+              {sec.section === 'process'
+                ? <div style={{ maxWidth: 'var(--container-narrow)' }}><Timeline answers={answers} /></div>
+                : <div style={{ display: 'grid', gap: 'var(--space-4)', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>{answers.map(a => <AnswerCard key={a.id} a={a} />)}</div>}
+            </section>
+          );
+        })}
+
+        <section style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'start' }}>
+          <FreeTextBox />
+          <OfficerCard officer={officer} />
         </section>
-      ))}
 
-      <section className="mt-10"><FreeTextBox /></section>
-
-      <section className="mt-10"><OfficerCard officer={officer} /></section>
-
-      <section className="mt-10 grid gap-3 sm:grid-cols-2">
-        <a href={`${BOOKING_FORM}?${qs}`} className="rounded-2xl bg-[var(--accent)] px-6 py-5 text-center text-lg font-semibold text-white">Book this</a>
-        <details className="rounded-2xl border px-6 py-5">
-          <summary className="cursor-pointer text-lg font-semibold">Send me this</summary>
-          <p className="mt-2 text-sm text-neutral-700">This page is yours to keep. Copy the link:</p>
-          <code className="mt-2 block break-all rounded bg-neutral-100 p-2 text-xs">{selfUrl}</code>
-        </details>
-      </section>
+        <div style={{ display: 'grid', justifyItems: 'center', gap: 'var(--space-5)', paddingTop: 'var(--space-6)', borderTop: '1px solid var(--border-hairline)' }}>
+          <Divider />
+          <p style={{ margin: 0, fontSize: 'var(--fs-sm)', color: 'var(--text-muted)' }}>Not quite what you expected?</p>
+          <Button href="/" variant="ghost">Start Again</Button>
+        </div>
+      </div>
     </main>
   );
 }
