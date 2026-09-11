@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
 import { QUESTIONS, applyAnswer, isComplete } from '@/src/situation/questions';
@@ -18,6 +18,7 @@ export function StepFlow({ direction = 'quiet' }: { direction?: Direction }) {
   const [history, setHistory] = useState<Partial<Situation>[]>([]);
   const [pickingDate, setPickingDate] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
+  const pending = useRef<number | null>(null);
 
   const visible = useMemo(() => QUESTIONS.filter(q => !(q.skipWhen?.(partial))), [partial]);
   const current = useMemo(
@@ -38,11 +39,13 @@ export function StepFlow({ direction = 'quiet' }: { direction?: Direction }) {
   function answer(value: string, index: number) {
     if (!current) return;
     if (current.id === 'date' && value === 'pick') { setPickingDate(true); return; }
+    if (pending.current !== null) return;
     setSelected(index);
-    window.setTimeout(() => commit(value), 160);
+    pending.current = window.setTimeout(() => { pending.current = null; commit(value); }, 160);
   }
 
   function back() {
+    if (pending.current !== null) { window.clearTimeout(pending.current); pending.current = null; setSelected(null); }
     if (pickingDate) { setPickingDate(false); return; }
     const prev = history[history.length - 1];
     if (!prev) return;
@@ -50,6 +53,8 @@ export function StepFlow({ direction = 'quiet' }: { direction?: Direction }) {
     setPartial(prev);
     setSelected(null);
   }
+
+  useEffect(() => () => { if (pending.current !== null) window.clearTimeout(pending.current); }, []);
 
   if (!current) return null;
   const stepIndex = visible.findIndex(q => q.id === current.id);
@@ -59,7 +64,7 @@ export function StepFlow({ direction = 'quiet' }: { direction?: Direction }) {
   const sub = inverse ? 'rgba(255,255,255,.65)' : 'var(--text-muted)';
 
   const body = (
-    <section className="mx-auto w-full max-w-2xl px-6 py-12" aria-live="polite" style={{ display: 'grid', gap: 'var(--space-7)', justifyItems: direction === 'split' ? 'start' : 'center', textAlign: direction === 'split' ? 'left' : 'center' }}>
+    <section className="mx-auto w-full max-w-2xl px-6 py-12" style={{ display: 'grid', gap: 'var(--space-7)', justifyItems: direction === 'split' ? 'start' : 'center', textAlign: direction === 'split' ? 'left' : 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-5)', justifyContent: direction === 'split' ? 'flex-start' : 'center', width: '100%' }}>
         <button type="button" onClick={back} disabled={!history.length && !pickingDate} style={{ background: 'none', border: 0, padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'var(--font-display)', fontSize: 'var(--fs-3xs)', textTransform: 'uppercase', letterSpacing: 'var(--ls-label)', color: sub, opacity: !history.length && !pickingDate ? 0.3 : 1 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" /></svg>
@@ -74,6 +79,7 @@ export function StepFlow({ direction = 'quiet' }: { direction?: Direction }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={current.id + (pickingDate ? '-date' : '')}
+          aria-live="polite"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
