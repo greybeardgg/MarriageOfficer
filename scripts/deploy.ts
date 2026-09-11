@@ -10,11 +10,12 @@
  * always wins over the file. `bun run publish` builds and publishes in one
  * command.
  *
- * Ported from rlesport/scripts/deploy.ts. Two things this does that look odd
- * are load-bearing: `.next/static` is copied into the standalone bundle by
- * hand (Next leaves it out, expecting a CDN; without it the site has no CSS),
- * and the bundle is staged with stageStandaloneArtifact because the archiver
- * refuses symlinks that escape the archive root.
+ * Ported from rlesport/scripts/deploy.ts. Three things this does that look odd
+ * are load-bearing: `.next/static` and `public/` are copied into the standalone
+ * bundle by hand (Next leaves both out, expecting a CDN; without them the site
+ * has no CSS and no images), and the bundle is staged with
+ * stageStandaloneArtifact because the archiver refuses symlinks that escape the
+ * archive root.
  */
 import { cp, rm } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
@@ -61,9 +62,15 @@ async function main(): Promise<void> {
   console.log(`app ${APP_ID}`);
   if (!publish) { console.log('DRY RUN — nothing uploaded. Add --publish to go live.'); return; }
 
-  console.log('copying .next/static into the bundle');
+  // Next's standalone output leaves out BOTH .next/static and public/ (it
+  // expects a CDN to serve them). Nothing here has a CDN, so both are copied
+  // in by hand. Missing public/ was found the only way it can be found: the
+  // published site 404'd its own logo (2026-09-11).
+  console.log('copying .next/static and public into the bundle');
   await rm(`${STANDALONE}/.next/static`, { recursive: true, force: true });
   await cp('.next/static', `${STANDALONE}/.next/static`, { recursive: true });
+  await rm(`${STANDALONE}/public`, { recursive: true, force: true });
+  await cp('public', `${STANDALONE}/public`, { recursive: true });
 
   console.log(`staging ${STANDALONE} -> ${STAGED}`);
   await rm(STAGED, { recursive: true, force: true });
