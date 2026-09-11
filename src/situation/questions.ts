@@ -4,6 +4,7 @@ import type { Situation } from './types';
 export interface Choice { value: string; label: string; hint?: string }
 export interface Question {
   id: 'province' | 'nationality' | 'nonSaStatus' | 'priorMarriage' | 'service' | 'date';
+  eyebrow: string;
   prompt: string;
   choices: Choice[];
   skipWhen?: (partial: Partial<Situation>) => boolean;
@@ -14,11 +15,13 @@ const provinceOrder = ['gauteng', 'western_cape', ...PROVINCES.filter(p => p !==
 export const QUESTIONS: Question[] = [
   {
     id: 'province',
+    eyebrow: 'The Place',
     prompt: 'Where will this happen?',
     choices: provinceOrder.map(p => ({ value: p, label: PROVINCE_LABEL[p] })),
   },
   {
     id: 'nationality',
+    eyebrow: 'The Two Of You',
     prompt: 'Are you both South African?',
     choices: [
       { value: 'both_sa', label: 'Yes, both of us' },
@@ -28,6 +31,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'nonSaStatus',
+    eyebrow: 'The Two Of You',
     prompt: 'Is the non-South African partner…',
     choices: [
       { value: 'permanent_resident', label: 'A permanent resident with an SA ID' },
@@ -37,6 +41,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'priorMarriage',
+    eyebrow: 'Before Now',
     prompt: 'Has either of you been married before?',
     choices: [
       { value: 'none', label: 'No' },
@@ -46,6 +51,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'service',
+    eyebrow: 'The Occasion',
     prompt: 'What do you need?',
     choices: [
       { value: 'registration', label: 'Just the legal registration', hint: 'You, your witnesses, the paperwork done properly' },
@@ -55,6 +61,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 'date',
+    eyebrow: 'Timing',
     prompt: 'Any date in mind?',
     choices: [
       { value: 'pick', label: 'Yes, a date' },

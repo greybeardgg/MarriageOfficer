@@ -30,4 +30,8 @@ describe('questions', () => {
   it('ignores an unknown value', () => {
     expect(applyAnswer({}, 'province', 'mars')).toEqual({});
   });
+  it('every question has an eyebrow', () => {
+    for (const q of QUESTIONS) expect(q.eyebrow.length, q.id).toBeGreaterThan(2);
+    expect(QUESTIONS.find(q => q.id === 'province')!.eyebrow).toBe('The Place');
+  });
 });
