@@ -2,15 +2,15 @@ import { describe, it, expect } from 'vitest';
 import { QUESTIONS, applyAnswer, isComplete } from '@/src/situation/questions';
 
 describe('questions', () => {
-  it('opens with the two doors, registration first', () => {
-    expect(QUESTIONS[0].id).toBe('service');
-    const service = QUESTIONS[0];
-    expect(service.choices[0].value).toBe('registration');
-    expect(service.choices[0].door).toBe('legal');
-    expect(service.choices.filter(c => c.door === 'ceremony')).toHaveLength(2);
+  it('asks where it happens first, and never forks the path at the door', () => {
+    expect(QUESTIONS[0].id).toBe('province');
   });
-  it('asks where it happens second', () => {
-    expect(QUESTIONS[1].id).toBe('province');
+  it('asks what they need on the way through, not up front', () => {
+    const order = QUESTIONS.map(q => q.id);
+    expect(order.indexOf('service')).toBe(order.length - 2);
+    const service = QUESTIONS.find(q => q.id === 'service')!;
+    expect(service.choices[0].value).toBe('registration');
+    expect(service.choices).toHaveLength(3);
   });
   it('lists Gauteng and Western Cape first', () => {
     const p = QUESTIONS.find(q => q.id === 'province')!;

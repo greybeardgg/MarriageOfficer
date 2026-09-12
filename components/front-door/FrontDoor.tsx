@@ -7,7 +7,8 @@ import type { Question } from '@/src/situation/questions';
 import { encodeSituation } from '@/src/situation/encode';
 import type { Situation } from '@/src/situation/types';
 import { Perforation } from '@/components/brand/Action';
-import { Counters } from './Counters';
+import { AskBox } from './AskBox';
+import { BothSides } from './BothSides';
 import { OptionList } from './OptionList';
 import { Spine } from './Spine';
 
@@ -86,8 +87,43 @@ export function FrontDoor() {
 
   const step = visible.findIndex(q => q.id === current.id) + 1;
 
-  /* ------------------------------------------------ the two counters */
-  if (current.id === 'service') {
+  const columns = current.choices.length > 5 ? 2 : 1;
+
+  // On the front door the page's h1 is the headline, so the question sits under it.
+  const QuestionHeading = step === 1 ? 'h2' : 'h1';
+
+  const questionBlock = (
+    <div key={current.id + (pickingDate ? '-date' : '')} className="leaf step-body">
+      <QuestionHeading ref={headingRef} tabIndex={-1} className="question" style={{ outline: 'none', maxWidth: '18ch' }}>
+        {current.prompt}
+      </QuestionHeading>
+      {current.note ? <p className="prose step-note">{current.note}</p> : null}
+
+      {pickingDate ? (
+        <form
+          className="step-date"
+          onSubmit={e => {
+            e.preventDefault();
+            const v = (e.currentTarget.elements.namedItem('d') as HTMLInputElement).value;
+            if (v) commit('date', v);
+          }}
+        >
+          <label className="label" htmlFor="chosen-date" style={{ color: 'var(--carbon-soft)' }}>The date you have in mind</label>
+          <div style={{ display: 'flex', gap: 'var(--s-3)', flexWrap: 'wrap' }}>
+            <input id="chosen-date" name="d" type="date" required className="field" style={{ maxWidth: 260 }} />
+            <button type="submit" className="act act-ink">Next</button>
+          </div>
+        </form>
+      ) : (
+        <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
+          <OptionList choices={current.choices} chosen={chosen} columns={columns} onChoose={answer} />
+        </div>
+      )}
+    </div>
+  );
+
+  /* ---------------------------------------- the front door: hero, then the quiz */
+  if (step === 1) {
     return (
       <div className="shell door-shell">
         <div className="door-head">
@@ -95,8 +131,7 @@ export function FrontDoor() {
             Getting Married Is Two Different Jobs
           </h1>
           <p className="prose" style={{ fontSize: 'var(--fs-lg)', lineHeight: 1.55, maxWidth: '54ch' }}>
-            We do both! One is legal and the other is ceremonial. Tell us which you need and we will
-            show you your own process, price and paperwork before we ask you for anything at all.
+            By answering a few questions we will speak directly to your needs.
           </p>
         </div>
 
@@ -104,19 +139,26 @@ export function FrontDoor() {
           <Perforation label="Start Here" />
         </div>
 
-        <div className="door-counters">
-          <h2 className="sr-only">Which of the two do you need?</h2>
-          <Counters choices={current.choices} onChoose={value => commit('service', value)} />
-        </div>
+        <div className="door-question">{questionBlock}</div>
 
         <Spine partial={partial} visible={visible} pressing={pressing} compact />
+
+        <div className="door-ask">
+          <AskBox onStart={() => headingRef.current?.scrollIntoView({ block: 'center' })} />
+        </div>
+
+        <div className="door-sides">
+          <BothSides />
+        </div>
+
+        <p aria-live="polite" className="sr-only">
+          Question {step} of {visible.length}. {current.prompt}
+        </p>
       </div>
     );
   }
 
   /* ------------------------------------------------ one question, one screen */
-  const columns = current.choices.length > 5 ? 2 : 1;
-
   return (
     <div className="shell step-shell">
       <div className="step-main">
@@ -132,35 +174,7 @@ export function FrontDoor() {
           </span>
         </div>
 
-        <div key={current.id + (pickingDate ? '-date' : '')} className="leaf step-body">
-          <h1 ref={headingRef} tabIndex={-1} className="question" style={{ outline: 'none', maxWidth: '18ch' }}>
-            {current.prompt}
-          </h1>
-          {current.note ? (
-            <p className="prose step-note">{current.note}</p>
-          ) : null}
-
-          {pickingDate ? (
-            <form
-              className="step-date"
-              onSubmit={e => {
-                e.preventDefault();
-                const v = (e.currentTarget.elements.namedItem('d') as HTMLInputElement).value;
-                if (v) commit('date', v);
-              }}
-            >
-              <label className="label" htmlFor="chosen-date" style={{ color: 'var(--carbon-soft)' }}>The date you have in mind</label>
-              <div style={{ display: 'flex', gap: 'var(--s-3)', flexWrap: 'wrap' }}>
-                <input id="chosen-date" name="d" type="date" required className="field" style={{ maxWidth: 260 }} />
-                <button type="submit" className="act act-ink">Next</button>
-              </div>
-            </form>
-          ) : (
-            <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
-              <OptionList choices={current.choices} chosen={chosen} columns={columns} onChoose={answer} />
-            </div>
-          )}
-        </div>
+        {questionBlock}
 
         <div className="step-foot">
           <Perforation label={current.stampLabel} />

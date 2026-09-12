@@ -10,7 +10,7 @@ export function FreeTextBox() {
 
   return (
     <form
-      className="ask"
+      className="enquiry"
       onSubmit={e => {
         e.preventDefault();
         const p = new URLSearchParams(params.toString());
@@ -19,10 +19,10 @@ export function FreeTextBox() {
         router.replace('/plan?' + p.toString());
       }}
     >
-      <label className="question ask-head" htmlFor="q" style={{ fontSize: 'var(--fs-xl)' }}>
+      <label className="question enquiry-head" htmlFor="q" style={{ fontSize: 'var(--fs-xl)' }}>
         Do You Have Any Questions?
       </label>
-      <p className="prose ask-note">
+      <p className="prose enquiry-note">
         Write as much as you like. We will add the answers to this page, still without asking who you are.
       </p>
       <textarea

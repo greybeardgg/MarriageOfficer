@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-11T00:00:00Z",
+  "generatedAt": "2026-09-12T00:00:00Z",
   "title": "Design System: Ryan Hogarth Marriage Officers",
   "extensions": {
     "colorMeta": {
@@ -248,19 +248,19 @@
     "typographyMeta": {
       "headline": {
         "displayName": "Headline",
-        "purpose": "The front-door headline and the result document's title. Faustina 600, balanced wrapping, tight negative tracking."
+        "purpose": "The front-door headline and the result document's title. Faustina 600, balanced wrapping, tight negative tracking. One per page."
       },
       "question": {
         "displayName": "Question",
-        "purpose": "One question per screen, and the closing ask. Never more than one per viewport."
+        "purpose": "One question per screen, the ask box's prompt, and the closing ask. Tied to the role, not the heading level: an h2 under the front-door headline, an h1 on every later screen."
       },
-      "counter": {
-        "displayName": "Counter Plate",
-        "purpose": "The two front-door doors, knocked out of a whole ink field in condensed Archivo caps."
+      "side-plate": {
+        "displayName": "Side Plate",
+        "purpose": "The two sides of the We Do Both band, knocked out of a whole ink field in condensed Archivo caps. Carried in the stylesheet by --fs-counter, a name left over from the counter buttons deleted on 12 September 2026."
       },
       "plate": {
         "displayName": "Plate",
-        "purpose": "Part headings on the result document and the officer name plate. Archivo caps only."
+        "purpose": "Part headings on the result document and in the ask box's results, the band heading, and the officer name plate. Archivo caps only."
       },
       "title": {
         "displayName": "Title",
@@ -268,11 +268,11 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "All prose, held to a 68ch measure, 34-46ch when set beside something else."
+        "purpose": "All prose, held to a 68ch measure, 34-58ch when set beside or under something else."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Captions, stamp labels, spine headings, chrome note and action lettering. Always uppercase, always condensed."
+        "purpose": "Captions, stamp labels, spine headings, the band's foot line, chrome note and action lettering. Always uppercase, always condensed."
       },
       "data": {
         "displayName": "Data",
@@ -284,19 +284,14 @@
       },
       "stamp-footline": {
         "displayName": "Stamp Footline",
-        "purpose": "The stamp footer under its rule (Answered / Awaiting, No.NN) and the Draft tag on an unconfirmed clause. 0.5625rem Azeret Mono caps at +.08em; the smallest step in the system, and the floor."
+        "purpose": "The 0.5625rem floor of the ramp: the stamp footer under its rule (Answered / Awaiting, No.NN) in Azeret Mono at +.08em, and the solid Draft tag on an unconfirmed clause in Archivo 600 at +.16em. Nothing else goes this small."
       }
     },
     "shadows": [
       {
         "name": "affixed-print",
         "value": "0 10px 26px -18px rgba(24, 22, 20, .55)",
-        "purpose": "A photograph resting slightly proud of the page inside its paper margin and corner mounts."
-      },
-      {
-        "name": "counter-lift",
-        "value": "0 20px 40px -28px rgba(24, 22, 20, .75)",
-        "purpose": "Pointer hover on a front-door counter, paired with translateY(-3px). Removed below 860px."
+        "purpose": "A photograph resting slightly proud of the page inside its paper margin and corner mounts. The only shadow in the build; the counter lift left with the counter buttons on 12 September 2026."
       }
     ],
     "motion": [
@@ -341,7 +336,7 @@
         "value": "640px"
       },
       {
-        "name": "counters-stack",
+        "name": "sides-stack",
         "value": "860px"
       },
       {
@@ -359,8 +354,8 @@
       "name": "Primary Action",
       "kind": "button",
       "refersTo": "action-ink",
-      "description": "The booking action. Oxblood field, paper lettering, perfectly square.",
-      "html": "<button class=\"ds-act ds-act-ink\">Book This</button>",
+      "description": "The booking action, and the ask box's Answer Me. Oxblood field, paper lettering, perfectly square.",
+      "html": "<button class=\"ds-act ds-act-ink\">Answer Me</button>",
       "css": ".ds-act { display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; line-height: 1; padding: 17px 30px; border: 1px solid transparent; border-radius: 0; cursor: pointer; transition: background-color 180ms cubic-bezier(.16,1,.3,1), color 180ms cubic-bezier(.16,1,.3,1), border-color 180ms cubic-bezier(.16,1,.3,1), transform 90ms cubic-bezier(.16,1,.3,1); } .ds-act-ink { background: #8A2B34; color: #E6E4D9; } .ds-act-ink:hover { background: #6E202A; } .ds-act-ink:active { transform: translateY(1px); } .ds-act-ink:focus-visible { outline: 2px solid #8A2B34; outline-offset: 3px; border-radius: 0; }"
     },
     {
@@ -368,7 +363,7 @@
       "kind": "button",
       "refersTo": "action-ruled",
       "description": "The secondary action. Transparent and ruled; fills with the raised leaf on hover.",
-      "html": "<button class=\"ds-act ds-act-ruled\">Send Me This</button>",
+      "html": "<button class=\"ds-act ds-act-ruled\">Answer The Questions</button>",
       "css": ".ds-act { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; line-height: 1; padding: 17px 30px; border: 1px solid transparent; border-radius: 0; cursor: pointer; transition: background-color 180ms cubic-bezier(.16,1,.3,1), border-color 180ms cubic-bezier(.16,1,.3,1), transform 90ms cubic-bezier(.16,1,.3,1); } .ds-act-ruled { background: transparent; color: #181614; border-color: #827B6C; } .ds-act-ruled:hover { background: #EFEDE4; border-color: #181614; } .ds-act-ruled:active { transform: translateY(1px); } .ds-act-ruled:focus-visible { outline: 2px solid #8A2B34; outline-offset: 3px; }"
     },
     {
@@ -391,17 +386,33 @@
       "name": "Field",
       "kind": "input",
       "refersTo": "field",
-      "description": "A line on the document. Raised-leaf interior, strong-rule stroke, square, set in the data face because its content is data.",
-      "html": "<input class=\"ds-field\" type=\"text\" placeholder=\"14 March 2027\" />",
-      "css": ".ds-field { width: 100%; font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-size: 1.0625rem; color: #181614; background: #EFEDE4; border: 1px solid #827B6C; border-radius: 0; padding: 15px 16px; caret-color: #8A2B34; transition: border-color 180ms cubic-bezier(.16,1,.3,1), background-color 180ms cubic-bezier(.16,1,.3,1); } .ds-field::placeholder { color: #4A463F; opacity: .8; } .ds-field:hover { border-color: #4A463F; } .ds-field:focus { outline: 2px solid #8A2B34; outline-offset: 2px; border-color: #8A2B34; }"
+      "description": "A line on the document. Raised-leaf interior, strong-rule stroke, square. Single-line fields set in the data face because their content is data; the ask box's textarea switches to the serif because what a visitor writes is a sentence.",
+      "html": "<input class=\"ds-field\" type=\"text\" placeholder=\"14 March 2027\" /><textarea class=\"ds-field ds-field-prose\" rows=\"3\" placeholder=\"My fianc&eacute; is Zimbabwean and on a work visa, and I was divorced two years ago.\"></textarea>",
+      "css": ".ds-field { width: 100%; font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-size: 1.0625rem; color: #181614; background: #EFEDE4; border: 1px solid #827B6C; border-radius: 0; padding: 15px 16px; caret-color: #8A2B34; transition: border-color 180ms cubic-bezier(.16,1,.3,1), background-color 180ms cubic-bezier(.16,1,.3,1); } .ds-field-prose { display: block; margin-top: 12px; font-family: var(--font-faustina), Georgia, serif; line-height: 1.55; resize: vertical; } .ds-field::placeholder { color: #4A463F; opacity: .8; } .ds-field:hover { border-color: #4A463F; } .ds-field:focus { outline: 2px solid #8A2B34; outline-offset: 2px; border-color: #8A2B34; }"
     },
     {
-      "name": "Counter",
+      "name": "We Do Both Side",
       "kind": "custom",
-      "refersTo": "counter-registration",
-      "description": "A front-door door: a whole flat ink field with knocked-out condensed caps. The two counters are equal width and equal weight; swap the three field variables for the ceremony teal door. Print height is a token (--art-h: 230px, 366px on the ceremony counter, 128px when open; 240px/136px on mobile) so the taller ceremony print fills the band the registration door spends on its impression.",
-      "html": "<section class=\"ds-counter\"><button class=\"ds-counter-face\"><span class=\"ds-counter-title\">Register A Marriage</span><span class=\"ds-counter-line\">The legal part. An officer, your witnesses, the register signed and lodged with Home Affairs.</span><span class=\"ds-counter-foot\"><span class=\"ds-counter-label\">At our offices, at your home, or wherever suits you.</span><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h13M12 5.5 18.5 12 12 18.5\"/></svg></span></button></section>",
-      "css": ".ds-counter { --ds-field: #8A2B34; --ds-field-deep: #6E202A; --ds-field-pale: #E8C9CC; display: flex; flex-direction: column; background: var(--ds-field); color: #E6E4D9; transition: background-color 180ms cubic-bezier(.16,1,.3,1), transform 180ms cubic-bezier(.16,1,.3,1), box-shadow 180ms cubic-bezier(.16,1,.3,1); } .ds-counter:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgba(24,22,20,.75); } .ds-counter:has(.ds-counter-face:hover) { background: var(--ds-field-deep); } .ds-counter-face { display: grid; gap: 12px; width: 100%; text-align: left; padding: 32px 32px 24px; background: none; border: 0; color: inherit; cursor: pointer; } .ds-counter-title { font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; text-transform: uppercase; letter-spacing: .012em; line-height: 1.08; font-size: clamp(1.75rem, 3.4vw, 2.875rem); color: #E6E4D9; } .ds-counter-line { font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.5; color: var(--ds-field-pale); max-width: 36ch; } .ds-counter-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 12px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ds-field-pale) 42%, transparent); color: var(--ds-field-pale); } .ds-counter-label { font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-stretch: 90%; font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; } .ds-counter-face:focus-visible { outline: 2px solid #E6E4D9; outline-offset: 3px; }"
+      "refersTo": "side-legal",
+      "description": "One side of the front door's closing band: a whole flat ink field with knocked-out condensed caps, stating a kind of work rather than offering it. It is an article with a real heading, not a button: no hover lift, no cursor change, no focus ring. Swap the two field variables for the teal ceremony side, whose print height token rises from 230px to 366px so the two fields carry equal weight.",
+      "html": "<section class=\"ds-sides\"><h2 class=\"ds-sides-head\">We Do Both</h2><article class=\"ds-side\"><h3 class=\"ds-side-title\">Register A Marriage</h3><p class=\"ds-side-line\">The legal part. An officer, your witnesses, the register signed and lodged with Home Affairs.</p><p class=\"ds-side-foot\">At our offices, at your home, or wherever suits you.</p><div class=\"ds-side-mark\"><svg viewBox=\"0 0 180 180\" width=\"156\" height=\"156\" aria-hidden=\"true\"><defs><path id=\"ds-rs-top\" d=\"M 26 90 A 64 64 0 0 1 154 90\" fill=\"none\"/></defs><circle cx=\"90\" cy=\"90\" r=\"86\" fill=\"none\" stroke=\"#E8C9CC\" stroke-width=\"2.5\"/><circle cx=\"90\" cy=\"90\" r=\"76\" fill=\"none\" stroke=\"#E8C9CC\" stroke-width=\"1\"/><text fill=\"#E8C9CC\" font-family=\"var(--font-archivo), 'Helvetica Neue', Arial, sans-serif\" font-weight=\"700\" font-size=\"12.5\" letter-spacing=\"2.2\"><textPath href=\"#ds-rs-top\" startOffset=\"50%\" text-anchor=\"middle\">RYAN HOGARTH</textPath></text><text x=\"90\" y=\"97\" fill=\"#E8C9CC\" text-anchor=\"middle\" font-family=\"var(--font-archivo), 'Helvetica Neue', Arial, sans-serif\" font-weight=\"700\" font-size=\"20\" letter-spacing=\"1.5\">REGISTERED</text></svg></div></article></section>",
+      "css": ".ds-sides { display: grid; gap: 24px; } .ds-sides-head { margin: 0; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; text-transform: uppercase; letter-spacing: .012em; font-size: 1.875rem; line-height: 1.08; color: #181614; padding-bottom: 16px; border-bottom: 2px solid #181614; } .ds-side { --ds-field: #8A2B34; --ds-field-pale: #E8C9CC; display: flex; flex-direction: column; gap: 12px; padding: 32px; background: var(--ds-field); color: #E6E4D9; } .ds-side-title { margin: 0; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; text-transform: uppercase; letter-spacing: .012em; line-height: 1.08; font-size: clamp(1.75rem, 3.4vw, 2.875rem); color: #E6E4D9; } .ds-side-line { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.5; color: var(--ds-field-pale); max-width: 36ch; } .ds-side-foot { margin: 8px 0 0; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ds-field-pale) 42%, transparent); color: var(--ds-field-pale); font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-stretch: 90%; font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; } .ds-side-mark { display: flex; justify-content: center; padding: 12px 0 8px; }"
+    },
+    {
+      "name": "Ask Box",
+      "kind": "custom",
+      "refersTo": "field",
+      "description": "The other way in on the front door: a free-text box that answers from the library before any question is asked. A question-scale label, a softened-carbon note, a serif textarea and an ink action; answers return in place into a polite live region that takes focus.",
+      "html": "<section class=\"ds-ask\"><div class=\"ds-ask-perf\"><svg class=\"ds-ask-tear\" width=\"100%\" height=\"9\" preserveAspectRatio=\"none\" viewBox=\"0 0 200 9\"><line x1=\"0\" y1=\"4.5\" x2=\"200\" y2=\"4.5\" stroke=\"#827B6C\" stroke-width=\"1\" stroke-dasharray=\"1.5 6\"/></svg><span class=\"ds-ask-perf-label\">Or Tell Us</span><svg class=\"ds-ask-tear\" width=\"100%\" height=\"9\" preserveAspectRatio=\"none\" viewBox=\"0 0 200 9\"><line x1=\"0\" y1=\"4.5\" x2=\"200\" y2=\"4.5\" stroke=\"#827B6C\" stroke-width=\"1\" stroke-dasharray=\"1.5 6\"/></svg></div><form class=\"ds-ask-form\"><label class=\"ds-ask-head\" for=\"ds-ask-input\">Or tell us your needs in the chat box below</label><p class=\"ds-ask-note\">Write it however you like. We will answer what we can straight away, before you have answered anything and without knowing who you are.</p><textarea id=\"ds-ask-input\" class=\"ds-ask-field\" rows=\"3\" placeholder=\"My fianc&eacute; is Zimbabwean and on a work visa, and I was divorced two years ago.\"></textarea><div><button type=\"submit\" class=\"ds-ask-act\">Answer Me</button></div></form></section>",
+      "css": ".ds-ask { display: grid; gap: 24px; color: #181614; } .ds-ask-perf { display: flex; align-items: center; gap: 24px; min-width: 0; } .ds-ask-tear { flex: 1 1 0; min-width: 0; height: 9px; display: block; } .ds-ask-perf-label { flex: none; white-space: nowrap; color: #4A463F; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-stretch: 90%; font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; } .ds-ask-form { display: grid; gap: 12px; max-width: 46rem; } .ds-ask-head { font-family: var(--font-faustina), Georgia, serif; font-weight: 600; font-size: 1.5rem; line-height: 1.08; letter-spacing: -.014em; } .ds-ask-note { margin: 0 0 4px; font-family: var(--font-faustina), Georgia, serif; font-size: .9375rem; line-height: 1.62; color: #4A463F; max-width: 52ch; } .ds-ask-field { width: 100%; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.55; resize: vertical; color: #181614; background: #EFEDE4; border: 1px solid #827B6C; border-radius: 0; padding: 15px 16px; caret-color: #8A2B34; transition: border-color 180ms cubic-bezier(.16,1,.3,1); } .ds-ask-field::placeholder { color: #4A463F; opacity: .8; } .ds-ask-field:hover { border-color: #4A463F; } .ds-ask-field:focus { outline: 2px solid #8A2B34; outline-offset: 2px; border-color: #8A2B34; } .ds-ask-act { font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; line-height: 1; padding: 17px 30px; border: 1px solid transparent; border-radius: 0; background: #8A2B34; color: #E6E4D9; cursor: pointer; transition: background-color 180ms cubic-bezier(.16,1,.3,1), transform 90ms cubic-bezier(.16,1,.3,1); } .ds-ask-act:hover { background: #6E202A; } .ds-ask-act:active { transform: translateY(1px); } .ds-ask-act:focus-visible { outline: 2px solid #8A2B34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Conditional Note",
+      "kind": "custom",
+      "refersTo": "clause-note",
+      "description": "The qualifier under an answer that is not settled yet, ruled on one edge in state violet. The one place violet appears outside the Home Affairs part of the result document, and consistent with it: violet means this depends on the state or on facts we do not have yet. Violet on the paper ground measures 8.75:1.",
+      "html": "<p class=\"ds-clause-note\">Whether this applies to you depends on whether you are both South African.</p>",
+      "css": ".ds-clause-note { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: .9375rem; line-height: 1.5; color: #413268; padding-left: 16px; border-left: 1px solid #413268; max-width: 58ch; }"
     },
     {
       "name": "Stamp",
@@ -423,7 +434,7 @@
       "name": "Perforation",
       "kind": "custom",
       "refersTo": "none",
-      "description": "The tear line between the counters and the questions. Drawn in SVG, never a dotted border, and carrying no intrinsic width so it can never widen a grid track.",
+      "description": "The tear line between the parts of the front door: Start Here above the first question, Or Tell Us above the ask box. Drawn in SVG, never a dotted border, and carrying no intrinsic width so it can never widen a grid track.",
       "html": "<div class=\"ds-perf\"><svg class=\"ds-tear\" width=\"100%\" height=\"9\" preserveAspectRatio=\"none\" viewBox=\"0 0 200 9\"><line x1=\"0\" y1=\"4.5\" x2=\"200\" y2=\"4.5\" stroke=\"#827B6C\" stroke-width=\"1\" stroke-dasharray=\"1.5 6\"/></svg><span class=\"ds-perf-label\">Start Here</span><svg class=\"ds-tear\" width=\"100%\" height=\"9\" preserveAspectRatio=\"none\" viewBox=\"0 0 200 9\"><line x1=\"0\" y1=\"4.5\" x2=\"200\" y2=\"4.5\" stroke=\"#827B6C\" stroke-width=\"1\" stroke-dasharray=\"1.5 6\"/></svg></div>",
       "css": ".ds-perf { display: flex; align-items: center; gap: 24px; min-width: 0; } .ds-perf-label { flex: none; white-space: nowrap; color: #4A463F; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-stretch: 90%; font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; } .ds-tear { flex: 1 1 0; min-width: 0; width: 100%; height: 9px; display: block; }"
     },
@@ -431,14 +442,14 @@
       "name": "Clause",
       "kind": "custom",
       "refersTo": "none",
-      "description": "The result document's unit: a numbered clause, ruled off, with amounts set in tabular figures beside the prose.",
-      "html": "<li class=\"ds-clause\"><span class=\"ds-clause-no\">01</span><div class=\"ds-clause-body\"><h3 class=\"ds-clause-head\">What does a registration at our offices cost?<span class=\"ds-draft\">Draft</span></h3><p class=\"ds-clause-text\">A registration at our offices is <span class=\"ds-amount\">R4 500</span>. That covers the appointment, the checking of your documents, the signing, and the handwritten certificate you take away on the day.</p></div></li>",
-      "css": ".ds-clause { list-style: none; display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 24px; align-items: start; padding-bottom: 32px; border-bottom: 1px solid #B9B4A0; } .ds-clause-no { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-size: .9375rem; letter-spacing: .04em; color: #4A463F; padding-top: 5px; } .ds-clause-body { display: grid; gap: 12px; } .ds-clause-head { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-weight: 600; font-size: 1.25rem; line-height: 1.3; letter-spacing: -.012em; color: #181614; } .ds-clause-text { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.62; color: #181614; max-width: 62ch; } .ds-amount { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-weight: 500; font-size: .94em; letter-spacing: -.02em; } .ds-draft { display: inline-block; margin-left: 8px; vertical-align: 2px; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: .5625rem; letter-spacing: .16em; text-transform: uppercase; color: #E6E4D9; background: #4A463F; padding: 3px 6px 2px; }"
+      "description": "The unit shared by the result document and the ask box: a numbered clause, ruled off, with amounts set in tabular figures beside the prose and an optional violet note where the answer is not settled yet.",
+      "html": "<li class=\"ds-clause\"><span class=\"ds-clause-no\">01</span><div class=\"ds-clause-body\"><h3 class=\"ds-clause-head\">What does a registration at our offices cost?<span class=\"ds-draft\">Draft</span></h3><p class=\"ds-clause-text\">A registration at our offices is <span class=\"ds-amount\">R4 500</span>. That covers the appointment, the checking of your documents, the signing, and the handwritten certificate you take away on the day.</p><p class=\"ds-clause-note\">Whether this applies to you depends on whether you are both South African.</p></div></li>",
+      "css": ".ds-clause { list-style: none; display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 24px; align-items: start; padding-bottom: 32px; border-bottom: 1px solid #B9B4A0; } .ds-clause-no { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-size: .9375rem; letter-spacing: .04em; color: #4A463F; padding-top: 5px; } .ds-clause-body { display: grid; gap: 12px; } .ds-clause-head { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-weight: 600; font-size: 1.25rem; line-height: 1.3; letter-spacing: -.012em; color: #181614; } .ds-clause-text { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.62; color: #181614; max-width: 62ch; } .ds-clause-note { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: .9375rem; line-height: 1.5; color: #413268; padding-left: 16px; border-left: 1px solid #413268; max-width: 58ch; } .ds-amount { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-weight: 500; font-size: .94em; letter-spacing: -.02em; } .ds-draft { display: inline-block; margin-left: 8px; vertical-align: 2px; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: .5625rem; letter-spacing: .16em; text-transform: uppercase; color: #E6E4D9; background: #4A463F; padding: 3px 6px 2px; }"
     }
   ],
   "narrative": {
     "northStar": "The Quiz",
-    "overview": "This is a document that gets stamped, not a form that gets filled. The ground is security paper (#E6E4D9) under a drawn guilloche rosette, and everything set on it behaves like something a registry would recognise: hairline rules instead of cards, perforated tear lines instead of section breaks, tick boxes lettered A, B, C, corner mounts holding photographs down, and stamps that land with pressure and bleed. Every answer a visitor gives prints a stamp onto a spine running down the edge of the page, so six questions assemble a document rather than advancing a stepper. The result screen is that document, completed, read as numbered clauses.\n\nDensity is high and deliberately unpadded: text sits close to its rules, measures are short (34-68ch), and the only generous space is between parts. Colour does not decorate; it commits. The two front-door counters each own a whole flat ink field at poster scale, knocked out in condensed caps, because the business is genuinely two jobs and neither may read as the secondary one. The confirmed rejections are the wedding-photo hero, the govtech stepper, cream and white grounds, and any borrowing of state insignia: no coat of arms, no state green, no official reference numbers. The mark is held at the top of every screen so this page is never mistaken for a Home Affairs page.\n\nThis world replaced the previous charcoal/aqua system on 11 September 2026. That system still sits in design-system/ as imported reference and is not imported by app/globals.css; none of its tokens are current here. WCAG 2.2 AA is the one constraint the open slate did not lift, and it shaped real values in this build: the ink-bleed filter's alpha floor, the pale-on-ink blend switch, and the choice of a mid-dark paper rather than a light one.",
+    "overview": "This is a document that gets stamped, not a form that gets filled. The ground is security paper (#E6E4D9) under a drawn guilloche rosette, and everything set on it behaves like something a registry would recognise: hairline rules instead of cards, perforated tear lines instead of section breaks, tick boxes lettered A, B, C, corner mounts holding photographs down, and stamps that land with pressure and bleed. Every answer a visitor gives prints a stamp onto a spine running down the edge of the page, so the questions assemble a document rather than advancing a stepper. The result screen is that document, completed, read as numbered clauses.\n\nDensity is high and deliberately unpadded: text sits close to its rules, measures are short (34-68ch), and the only generous space is between parts. Colour does not decorate; it commits. Nothing on the front door asks the visitor to choose a branch: the first question is already on the page, a free-text box answers from the library before any question at all, and the two sides of the business are shown at the foot of the page in a band headed \"We Do Both\" that carries no controls. Both sides still take a whole flat ink field at poster scale, because the business is genuinely two jobs and neither may read as the secondary one; what changed on 12 September 2026 is that the fields state the work instead of offering it. The confirmed rejections are the wedding-photo hero, the govtech stepper, cream and white grounds, and any borrowing of state insignia: no coat of arms, no state green, no official reference numbers. The mark is held at the top of every screen so this page is never mistaken for a Home Affairs page.\n\nThis world replaced the previous charcoal/aqua system on 11 September 2026. That system still sits in design-system/ as imported reference and is not imported by app/globals.css; none of its tokens are current here. WCAG 2.2 AA is the one constraint the open slate did not lift, and it shaped real values in this build: the ink-bleed filter's alpha floor, the pale-on-ink blend switch, and the choice of a mid-dark paper rather than a light one.",
     "keyCharacteristics": [
       "Security-paper ground under a faint drawn guilloche, never cream and never white",
       "Three inks, each owning a role that is enforced, not suggested",
@@ -446,12 +457,13 @@
       "Square corners everywhere; there is no radius scale",
       "Rules and perforations instead of cards and containers",
       "Measured annotation: every number sets in tabular mono beside the prose",
-      "One continuous record spine: the document's own edge"
+      "One continuous record spine: the document's own edge",
+      "A whole ink field is a statement; affordance is carried by rules and plates"
     ],
     "rules": [
       {
         "name": "The Three Inks Rule",
-        "body": "Each ink owns one role. Oxblood is registration, teal is ceremony, violet is the state. An ink never appears on a surface whose role it does not own, and violet in particular is reserved: if a surface is not Home Affairs, it cannot be violet.",
+        "body": "Each ink owns one meaning. Oxblood is registration, teal is ceremony, violet is the state and the unsettled. An ink never appears on a surface whose meaning it does not own. Violet is the narrow one and its meaning is precise: this depends on the state, or on facts we do not have yet. That covers the Home Affairs part of the result document, and it covers a conditional answer that cannot be settled until the visitor has answered more, and it covers nothing else. Violet is never a decorative third accent.",
         "section": "colors"
       },
       {
@@ -460,8 +472,13 @@
         "section": "colors"
       },
       {
+        "name": "The Statement, Not An Affordance Rule",
+        "body": "A whole flat ink field is a statement, not a control. The two sides of the We Do Both band are article elements with real headings: no hover lift, no cursor change, no focus ring, nothing to click. Affordance in this system is carried by rules, plates and tick boxes at ordinary text scale, never by scale or colour weight. If a new surface needs a poster-scale field and an action, the action is a separate ruled or ink plate inside it.",
+        "section": "colors"
+      },
+      {
         "name": "The Not Cream, Not White Rule",
-        "body": "The ground is #E6E4D9. Pure white and cream are not in this system at any size, including inside photographs' mounts and inside input fields, which use the raised leaf (#EFEDE4) instead.",
+        "body": "The ground is #E6E4D9. Pure white and cream are not in this system at any size, including inside photographs' mounts and inside input fields and textareas, which use the raised leaf (#EFEDE4) instead.",
         "section": "colors"
       },
       {
@@ -476,12 +493,12 @@
       },
       {
         "name": "The Plate-Or-Prose Rule",
-        "body": "Archivo is only ever uppercase and only ever on a plate: a counter, a part heading, a stamp, a label, an action. It never sets a sentence. Faustina never sets uppercase.",
+        "body": "Archivo is only ever uppercase and only ever on a plate: a band side, a part heading, a stamp, a label, an action. It never sets a sentence. Faustina never sets uppercase.",
         "section": "typography"
       },
       {
         "name": "The Stamp Lettering Rule",
-        "body": "The two smallest steps in the ramp (0.625rem overline, 0.5625rem footline) exist only inside a stamp and the Draft tag, because a rubber stamp's secondary lettering is smaller than its value. They are tracked wide (+.18em and +.08em) to stay legible at that size, and nothing else in the system may go below the 0.75rem label. These are not off-ramp one-offs; going smaller still is.",
+        "body": "The two smallest steps in the ramp (0.625rem overline, 0.5625rem footline) exist only inside a stamp and the Draft tag, because a rubber stamp's secondary lettering is smaller than its value. They are tracked wide (+.18em, +.16em and +.08em) to stay legible at that size, and nothing else in the system may go below the 0.75rem label. These are not off-ramp one-offs; going smaller still is.",
         "section": "typography"
       },
       {
@@ -495,13 +512,18 @@
         "section": "layout"
       },
       {
+        "name": "The No Fork At The Door Rule",
+        "body": "The front door does not ask the visitor to choose a branch before it has given them a reason to prefer one. The first question is on the page, the ask box answers before any question, and the path falls out of the answers. Anything that shows the shape of the business sits below the question and states rather than offers.",
+        "section": "layout"
+      },
+      {
         "name": "The Ink-Is-Material Rule",
         "body": "Ink is rendered as material, not as a vector sticker. Stamps pass through #ink-bleed (feTurbulence + feDisplacementMap) and multiply into the paper grain; large marks that carry no critical text use #ink-bleed-soft at a heavier displacement. The alpha floor in #ink-bleed is fixed at 0.88 specifically so a stamped word still clears AA against the paper: lowering it to make a mark look more worn is a contrast regression, not a style choice.",
         "section": "elevation"
       },
       {
         "name": "The Pale Impression Rule",
-        "body": "A light ink struck onto a dark field switches the blend mode to normal (.impression-pale); multiply would erase it. Any new stamp on an ink field must carry the pale tone and the pale class together.",
+        "body": "A light ink struck onto a dark field switches the blend mode to normal (.impression-pale); multiply would erase it. Any new stamp on an ink field must carry the pale tone and the pale class together, as the round Registered mark on the legal side of the band does.",
         "section": "elevation"
       },
       {
@@ -511,34 +533,38 @@
       },
       {
         "name": "The Square Corner Rule",
-        "body": "Nothing in this system is rounded. If a surface needs softening, it gets a wider paper margin or a lighter rule, never a radius.",
+        "body": "Nothing in this system is rounded. If a surface needs softening, it gets a wider paper margin or a lighter rule, never a radius. The officer's round mark is a drawn object printed on the page, not a rounded surface, and it is not a licence for one.",
         "section": "shapes"
       },
       {
         "name": "The Drawn-Not-Styled Rule",
-        "body": "Perforations, corner mounts, the guilloche and the tick are drawn in SVG with real geometry. They are never approximated with dotted borders, gradients or background images.",
+        "body": "Perforations, corner mounts, the guilloche, the round mark and the tick are drawn in SVG with real geometry. They are never approximated with dotted borders, gradients or background images.",
         "section": "shapes"
       }
     ],
     "dos": [
-      "Do give each ink its role and keep it: oxblood #8A2B34 registration, teal #12514E ceremony, violet #413268 the state and nothing else.",
+      "Do give each ink its meaning and keep it: oxblood #8A2B34 registration, teal #12514E ceremony, violet #413268 the state and the not-yet-settled.",
       "Do commit colour as a whole field with knocked-out type when it is used at scale, rather than as an accent on paper.",
+      "Do keep a poster-scale ink field non-interactive: if it is a whole field it is a statement, and any action inside it is a separate plate at ordinary scale.",
       "Do set every number, date, amount and count in Azeret Mono with tabular figures.",
       "Do keep every corner square (0 radius), including on inputs, actions and focus rings.",
-      "Do group content with a 1px hairline (#B9B4A0), a 2px carbon rule under a part heading, or a tinted band: the ways a document groups things.",
+      "Do group content with a 1px hairline (#B9B4A0), a 2px carbon rule under a part or band heading, or a tinted band: the ways a document groups things.",
       "Do draw any line that bounds a control in the strong rule (#827B6C), not the hairline, and run node scripts/contrast.mjs after touching the palette.",
-      "Do draw perforations, corner mounts and the guilloche as real SVG geometry.",
+      "Do draw perforations, corner mounts, the round mark and the guilloche as real SVG geometry.",
       "Do run stamps through #ink-bleed with its 0.88 alpha floor intact, and use .impression-pale whenever light ink lands on a dark field.",
       "Do animate row contents by transform on hover and leave the rule in place.",
+      "Do return an answer into a polite live region and move focus to it, the way the ask box does, when a surface answers in place.",
       "Do theme the browser's own surfaces (selection, caret, focus, scrollbars) from this palette on any new surface.",
       "Do keep the mark at the top of every screen."
     ],
     "donts": [
-      "Don't use violet anywhere that is not Home Affairs, and don't mix an ink into a surface whose role it does not own.",
+      "Don't use violet for anything other than the state or an explicitly unsettled answer, and don't mix an ink into a surface whose meaning it does not own.",
+      "Don't make a whole ink field clickable, hoverable or liftable. That was the front door's counter buttons, and they were deleted on 12 September 2026 for asking a choice before the page had earned one.",
+      "Don't fork the visitor at the door: no path-choice screen and no \"which are you\" gate before the first question.",
       "Don't introduce a border radius, anywhere, at any size.",
       "Don't use white or cream as a ground, a card, a field interior or a photo mount.",
       "Don't put a card, a panel or a raised container into this system; rule it instead.",
-      "Don't add shadows to convey state. The two shadows here are physical (a print resting on paper, a counter lifting under a pointer) and no third one is needed.",
+      "Don't add shadows. The one shadow here is physical (a print resting on paper) and no second one is needed; state is shown tonally.",
       "Don't set Archivo in sentence case or use it for prose, and don't set Faustina in uppercase.",
       "Don't add a kicker or eyebrow above a heading. This system has no kicker style and the previous Eyebrow component was deleted on purpose; a heading stands on its own or gains a label-set line that is genuinely a caption or a stamp label.",
       "Don't put photography on a question screen: contrast at small sizes over imagery is the documented failure of the previous system.",

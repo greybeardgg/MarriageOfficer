@@ -4,13 +4,13 @@ test('western cape, one non-SA on a visa, divorced, registration', async ({ page
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Getting Married Is Two Different Jobs' })).toBeVisible();
   await expect(page.locator('select')).toHaveCount(0); // never a drop-down
-  // the two counters carry equal weight; the legal one commits straight away
-  await page.getByRole('button', { name: /Register A Marriage/ }).click();
+  // the first question is on the front door; the path is never forked before it
   await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
   await page.getByRole('button', { name: 'Western Cape' }).click();
   await page.getByRole('button', { name: 'One of us is' }).click();
   await page.getByRole('button', { name: 'Here on a visa or permit' }).click();
   await page.getByRole('button', { name: 'Yes, divorced' }).click();
+  await page.getByRole('button', { name: /Just the legal registration/ }).click();
   await page.getByRole('button', { name: 'Not yet' }).click();
 
   await expect(page).toHaveURL(/\/plan\?/);
@@ -35,18 +35,26 @@ test('gauteng first-marriage registration shows the express option and no decree
   await expect(page.getByText('Ryan Hogarth')).toBeVisible();
 });
 
-test('the ceremony counter opens in place rather than committing', async ({ page }) => {
+test('the front door offers no path choice, only the first question', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: /Have A Wedding/ }).click();
-  await expect(page.getByRole('button', { name: /A small ceremony/ })).toBeVisible();
-  await expect(page.getByRole('button', { name: /A full wedding ceremony/ })).toBeVisible();
-  await page.getByRole('button', { name: /A full wedding ceremony/ }).click();
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  // both kinds of work are shown, but neither is a control
+  await expect(page.getByRole('heading', { name: 'Register A Marriage' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Have A Wedding' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Register A Marriage/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /Have A Wedding/ })).toHaveCount(0);
+});
+
+test('the chat box answers from free text before any question is answered', async ({ page }) => {
+  await page.goto('/');
+  await page.getByLabel(/tell us your needs/i).fill('my fiance is on a work visa and I am divorced');
+  await page.getByRole('button', { name: 'Answer Me' }).click();
+  await expect(page.getByRole('heading', { name: /we can tell you now|depends on you/ }).first()).toBeVisible();
+  // the record is still empty: nothing was asked of them to get this
+  await expect(page.getByText('0 of 5 answered')).toBeVisible();
 });
 
 test('answering stamps the record and a stamp reopens its question', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: /Register A Marriage/ }).click();
   await page.getByRole('button', { name: 'Gauteng' }).click();
   await expect(page.getByRole('button', { name: /Change your answer for Place/ })).toBeVisible();
   await page.getByRole('button', { name: /Change your answer for Place/ }).click();

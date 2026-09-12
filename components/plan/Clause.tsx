@@ -13,7 +13,7 @@ function measured(text: string) {
   );
 }
 
-export function Clause({ a, seq }: { a: Answer; seq: number }) {
+export function Clause({ a, seq, note }: { a: Answer; seq: number; note?: string }) {
   return (
     <li className="clause">
       <span className="data clause-no" aria-hidden="true">
@@ -25,6 +25,7 @@ export function Clause({ a, seq }: { a: Answer; seq: number }) {
           {a.status === 'draft' ? <span className="draft">Draft</span> : null}
         </h3>
         <p className="prose clause-text">{measured(renderBody(a.body))}</p>
+        {note ? <p className="clause-note">{note}</p> : null}
       </div>
     </li>
   );

@@ -45,10 +45,11 @@ const shots = [
     },
   },
   {
-    name: 'ceremony-open',
+    name: 'asked',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Have A Wedding/ }).click();
+      await page.getByLabel(/Or tell us your needs/i).fill('my fiance is Zimbabwean and on a work visa, and I was divorced');
+      await page.getByRole('button', { name: 'Answer Me' }).click();
       await settle(page);
     },
   },
@@ -56,17 +57,18 @@ const shots = [
     name: 'question',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Register A Marriage/ }).click();
       await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: 'One of us is' }).click();
       await settle(page);
     },
   },
   {
-    name: 'question-long',
+    name: 'question-service',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Register A Marriage/ }).click();
+      await page.getByRole('button', { name: 'Gauteng' }).click();
+      await page.getByRole('button', { name: 'Yes, both of us' }).click();
+      await page.getByRole('button', { name: 'No', exact: true }).click();
       await settle(page);
     },
   },

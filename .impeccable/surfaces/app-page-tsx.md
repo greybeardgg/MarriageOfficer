@@ -24,9 +24,14 @@ the contact details.
 
 ## Decisions taken with Ryan, 11 September 2026
 
-1. **Two doors of equal weight.** The front door splits deliberately into registering
-   a marriage and having a wedding, rather than leading with either or hiding the
-   split. Each door opens its own run of the same six questions.
+1. **No path choice at the door** (Ryan, 12 September 2026, reversing the decision
+   of 11 September). The front door used to split into two large counters,
+   registering a marriage and having a wedding, and the visitor picked one before
+   anything had been asked. That is a fork in front of someone who has not been
+   given a reason to prefer either branch, and it cost a decision before the page
+   had earned one. The path now falls out of the answers: the service question is
+   answered on its way through like any other. Both kinds of work are still shown
+   on the front door, in the "We Do Both" band, but nothing there is a control.
 2. **A short hero, then the quiz.** Not a bare question one, not a long brochure.
 3. **Photography at hero and result only.** Question screens stay free of imagery:
    PRODUCT.md names thin light type over photographs as the exact failure that broke
@@ -47,8 +52,9 @@ the contact details.
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets
-filled. It refuses the wedding-photo hero and the govtech stepper alike. Two counters
-of equal ink open the page because the business is genuinely two jobs, and every
+filled. It refuses the wedding-photo hero and the govtech stepper alike, and it asks
+nothing of the visitor before it starts being useful: the first question is on the
+page, and a free-text box answers from the library before any question at all. Every
 answer prints a stamp the visitor can see, re-read and change.
 
 **OWN-WORLD:** Security-paper ground `#E6E4D9` under a faint guilloche, never cream
@@ -60,10 +66,13 @@ questions and prose; Azeret Mono for dates, reference numbers and stamps.
 Square corners, hairline rules, perforated edges, corner-mounted photographs, and
 stamp impressions that misregister, vary in pressure and bleed into the paper grain.
 
-**STORY:** The visitor sees two equal doors and learns in one line that most of this
-work is legal, not ceremonial. They choose a door, answer five more questions, watch
-their own document assemble stamp by stamp, and read their entire process, price and
-document list before anyone asks their name. Then they book.
+**STORY:** The visitor is asked nothing before the page starts being useful. The
+first question is already there, and a box beside it answers whatever they type
+straight from the library, qualifying anything it cannot settle yet. They answer five
+or six questions, watch their own document assemble stamp by stamp, and read their
+entire process, price and document list before anyone asks their name. Which of the
+two kinds of work they need falls out of those answers; it is never a fork at the
+door. Then they book.
 
 **FIRST VIEWPORT:** A thin chrome strip, the mark left, one honest mono line right.
 Headline in Faustina, "Getting Married Is Two Different Jobs", with one sentence and
@@ -99,11 +108,17 @@ The stamp. Each answer prints a stamp onto the record spine, so six questions bu
 document rather than filling a form, and the result screen is that document completed.
 Tapping a stamp reopens its question.
 
+Second to it: the free-text box answers before it asks. Whatever a visitor types is
+matched against the answer library and answered on the page, with the record still
+reading zero answered. Anything the library cannot settle without knowing more says
+what it still depends on, in the state's own violet, rather than pretending to apply.
+
 ## Structural consequence
 
-The service question moves to position one and is rendered as the two counters; the
-ceremony plate expands in place to offer small ceremony or full wedding. The remaining
-question order is unchanged.
+The question order is the original one: place, nationality, non-SA status where it
+applies, prior marriage, service, date. The service question briefly moved to position
+one to drive the two counters; that is reverted. `src/answers/ask.ts` is new and pure,
+so the free-text route lifts into the main app with the rest of `src/`.
 
 ## Constraints that bind this surface
 

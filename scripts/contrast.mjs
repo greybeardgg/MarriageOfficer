@@ -33,6 +33,7 @@ const CHECKS = [
   ['oxblood text on paper', token('oxblood'), paper, 4.5],
   ['teal text on paper', token('teal'), paper, 4.5],
   ['violet on its own band', token('violet'), token('violet-pale'), 4.5],
+  ['violet qualifier on paper', token('violet'), paper, 4.5],
   ['body text on the violet band', token('carbon'), token('violet-pale'), 4.5],
   ['knocked-out text on oxblood', paper, token('oxblood'), 4.5],
   ['knocked-out text on teal', paper, token('teal'), 4.5],

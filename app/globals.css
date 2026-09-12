@@ -44,7 +44,7 @@
   --fs-2xl: 1.875rem;
 
   --fs-question: clamp(2rem, 5.2vw, 3.5rem);
-  --fs-counter:  clamp(1.75rem, 3.4vw, 2.875rem);
+  --fs-side:     clamp(1.75rem, 3.4vw, 2.875rem);
   --fs-headline: clamp(2.125rem, 5.6vw, 3.75rem);
 
   --lh-tight: 1.08;
@@ -217,7 +217,6 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
 
 /* An affixed print takes its caption colour from the ground it is fixed to. */
 .print-caption { margin-top: 10px; color: var(--carbon-soft); }
-.counter .print-caption { color: var(--field-pale); }
 
 /* ---------------------------------------------------------- actions */
 
@@ -321,111 +320,70 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 .shell { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: var(--gutter); }
 .shell-narrow { width: 100%; max-width: 940px; margin-inline: auto; padding-inline: var(--gutter); }
 
-/* ------------------------------------------------------ the counters
-   Two doors of equal weight. Each owns a whole flat ink field. */
+/* ------------------------------------------------- both sides of the work
+   Shown, never offered. Nothing here is a control: the path falls out of the
+   answers instead of being forked at the door. */
 
-.counters {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--s-5);
-  align-items: stretch;
-}
+.sides { display: grid; gap: var(--s-5); }
+.sides-head { font-size: var(--fs-2xl); padding-bottom: var(--s-4); border-bottom: 2px solid var(--carbon); }
 
-.counter {
+.sides-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); align-items: stretch; }
+
+.side {
   --art-h: 230px;
   display: flex;
   flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-6) var(--s-6) var(--s-6);
   background: var(--field);
   color: var(--paper);
-  transition: background-color var(--settle) var(--out), transform var(--settle) var(--out), box-shadow var(--settle) var(--out);
 }
-.counter:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgba(24, 22, 20, .75); }
-.counter:has(.counter-face:hover) { background: var(--field-deep); }
+.side-ceremony { --art-h: 366px; }
 
-.counter-face {
-  display: grid;
-  gap: var(--s-3);
-  width: 100%;
-  text-align: left;
-  padding: var(--s-6) var(--s-6) var(--s-5);
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-.counter-title {
-  font-size: var(--fs-counter);
-  color: var(--paper);
-}
-
-.counter-line {
-  font-family: var(--prose);
-  font-size: var(--fs-md);
-  line-height: 1.5;
-  color: var(--field-pale);
-  max-width: 36ch;
-}
-
-.counter-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-4);
-  margin-top: var(--s-3);
+.side-title { font-size: var(--fs-side); color: var(--paper); }
+.side-line { font-family: var(--prose); font-size: var(--fs-md); line-height: 1.5; color: var(--field-pale); max-width: 36ch; }
+.side-foot {
+  margin-top: var(--s-2);
   padding-top: var(--s-4);
   border-top: 1px solid color-mix(in srgb, var(--field-pale) 42%, transparent);
   color: var(--field-pale);
 }
+.side-mark { display: flex; justify-content: center; padding: var(--s-3) 0 var(--s-2); }
+.side-art { margin-top: auto; padding-top: var(--s-4); }
+.side .print-caption { color: var(--field-pale); }
 
-/* Counter One spends this band on its stamp; Counter Two spends it on the print. */
-.counter-ceremony { --art-h: 392px; }
-.counter.is-open { --art-h: 128px; }
+/* -------------------------------------------------------------- the ask box
+   The other way in: answered on the spot, before any question. */
 
-.counter-mark { padding: var(--s-3) var(--s-6) var(--s-5); display: flex; justify-content: center; }
-.counter.is-open .counter-mark { display: none; }
+.ask-door { display: grid; gap: var(--s-5); }
+.ask-form { display: grid; gap: var(--s-3); max-width: 46rem; }
+.ask-door-head { font-size: var(--fs-xl); letter-spacing: -.014em; }
+.ask-door-note { font-size: var(--fs-sm); color: var(--carbon-soft); max-width: 52ch; margin-bottom: var(--s-1); }
 
-.counter-art { margin-top: auto; padding: 0 var(--s-6) var(--s-6); }
+.ask-results { display: grid; gap: var(--s-8); padding-top: var(--s-3); }
+.ask-results > section { display: grid; gap: var(--s-6); }
+.ask-conditional .clause-no { color: var(--violet); }
+.ask-empty { display: grid; gap: var(--s-4); justify-items: start; padding-top: var(--s-3); }
+.ask-close { display: grid; gap: var(--s-4); justify-items: start; padding-top: var(--s-5); border-top: 1px solid var(--rule); }
 
-/* The expansion happens inside the ink field, ruled like the rest of the
-   document, so the two doors keep the same weight at the moment of choosing. */
-.counter-panel { padding: 0 var(--s-6) var(--s-5); }
-
-.subopt {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: var(--s-4) 0;
-  background: transparent;
-  color: var(--paper);
-  border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--field-pale) 40%, transparent);
-  font: inherit;
-  cursor: pointer;
-  transition: background-color var(--settle) var(--out);
+.clause-note {
+  font-family: var(--prose);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--violet);
+  padding-left: var(--s-4);
+  border-left: 1px solid var(--violet);
+  max-width: 58ch;
 }
-.counter-panel li:first-child .subopt { border-top: 1px solid color-mix(in srgb, var(--field-pale) 40%, transparent); }
-.subopt:hover { background: color-mix(in srgb, var(--field-pale) 14%, transparent); }
-.subopt-label, .subopt-hint { transition: transform var(--settle) var(--out); }
-.subopt:hover .subopt-label, .subopt:hover .subopt-hint,
-.subopt:focus-visible .subopt-label, .subopt:focus-visible .subopt-hint { transform: translateX(10px); }
-.subopt-label { display: block; font-size: var(--fs-lg); font-weight: 500; letter-spacing: -.01em; }
-.subopt-hint { display: block; margin-top: 2px; font-size: var(--fs-sm); line-height: 1.5; color: var(--field-pale); }
 
 @media (max-width: 560px) {
   .chrome-note { display: none; }
 }
 
 @media (max-width: 860px) {
-  .counters { grid-template-columns: 1fr; gap: var(--s-4); }
-  .counter-face { padding: var(--s-5) var(--s-5) var(--s-4); }
-  .counter-art, .counter-panel { padding: 0 var(--s-5) var(--s-5); }
-  .counter-mark { padding: var(--s-2) var(--s-5) var(--s-4); }
-  .counter { --art-h: 240px; }
-  .counter-ceremony { --art-h: 268px; }
-  .counter.is-open { --art-h: 136px; }
-  .counter:hover { transform: none; box-shadow: none; }
+  .sides-pair { grid-template-columns: 1fr; gap: var(--s-4); }
+  .side { padding: var(--s-5); }
+  .side, .side-ceremony { --art-h: 240px; }
 }
 
 /* -------------------------------------------------- one question, one screen
@@ -453,7 +411,7 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 196px;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
   column-gap: var(--s-7);
   row-gap: var(--s-6);
   align-items: start;
@@ -463,9 +421,11 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 }
 .door-head { grid-column: 1; grid-row: 1; display: grid; gap: var(--s-5); }
 .door-tear { grid-column: 1; grid-row: 2; }
-.door-counters { grid-column: 1; grid-row: 3; }
-/* The channel runs the whole leaf, not just as far as its slots. */
-.door-shell > .spine { grid-column: 2; grid-row: 1 / -1; align-self: stretch; }
+.door-question { grid-column: 1; grid-row: 3; }
+/* The channel runs beside the hero and the question, which is what it records. */
+.door-shell > .spine { grid-column: 2; grid-row: 1 / 4; align-self: stretch; }
+.door-ask { grid-column: 1 / -1; grid-row: 4; padding-top: var(--s-7); }
+.door-sides { grid-column: 1 / -1; grid-row: 5; padding-top: var(--s-8); }
 
 .step-bar {
   display: flex;
@@ -522,11 +482,14 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
     min-height: 0;
     padding-bottom: var(--s-9);
   }
-  .door-head, .door-tear, .door-counters, .door-shell > .spine { grid-column: 1; grid-row: auto; }
+  .door-head, .door-tear, .door-question, .door-ask, .door-sides,
+  .door-shell > .spine { grid-column: 1; grid-row: auto; }
   .door-head { order: 1; }
   .door-tear { order: 2; }
   .door-shell > .spine { order: 3; }
-  .door-counters { order: 4; }
+  .door-question { order: 4; }
+  .door-ask { order: 5; padding-top: var(--s-6); }
+  .door-sides { order: 6; padding-top: var(--s-7); }
   /* Compact on a phone: the record must not push the doors past the fold. */
   .spine-compact {
     padding-left: 0;
@@ -659,9 +622,9 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 .officer-name { font-family: var(--prose); font-weight: 600; font-size: var(--fs-2xl); line-height: 1.15; letter-spacing: -.018em; }
 .officer-where { font-size: var(--fs-sm); color: var(--carbon-soft); letter-spacing: 0; }
 
-.ask { display: grid; gap: var(--s-3); align-content: start; padding-top: var(--s-6); }
-.ask-head { letter-spacing: -.014em; }
-.ask-note { font-size: var(--fs-sm); color: var(--carbon-soft); max-width: 44ch; margin-bottom: var(--s-1); }
+.enquiry { display: grid; gap: var(--s-3); align-content: start; padding-top: var(--s-6); }
+.enquiry-head { letter-spacing: -.014em; }
+.enquiry-note { font-size: var(--fs-sm); color: var(--carbon-soft); max-width: 44ch; margin-bottom: var(--s-1); }
 
 /* ---- the close ---- */
 

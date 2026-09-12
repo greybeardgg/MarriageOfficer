@@ -5,7 +5,6 @@ export interface Choice {
   value: string;
   label: string;
   hint?: string;
-  door?: DoorId;
   /** What this answer prints on its stamp. A stamp has to state something on its own. */
   stampValue?: string;
 }
@@ -20,47 +19,9 @@ export interface Question {
   skipWhen?: (partial: Partial<Situation>) => boolean;
 }
 
-export type DoorId = 'legal' | 'ceremony';
-
-/** The two counters that open the front door. Equal weight, by decision of 11 September 2026. */
-export interface Door {
-  id: DoorId;
-  title: string;
-  line: string;
-  foot: string;
-  /** The word struck across the legal door's round stamp. The ceremony door carries none. */
-  stampWord?: string;
-}
-
-export const DOORS: Door[] = [
-  {
-    id: 'legal',
-    title: 'Register A Marriage',
-    stampWord: 'Registered',
-    line: 'The legal part. An officer, your witnesses, the register signed and lodged with Home Affairs.',
-    foot: 'At our offices, at your home, or wherever suits you.',
-  },
-  {
-    id: 'ceremony',
-    title: 'Have A Wedding',
-    line: 'The day itself. Words that sound like you, your people watching, and the registration done properly inside it.',
-    foot: 'Small and quiet, or the whole thing.',
-  },
-];
-
 const provinceOrder = ['gauteng', 'western_cape', ...PROVINCES.filter(p => p !== 'gauteng' && p !== 'western_cape')] as const;
 
 export const QUESTIONS: Question[] = [
-  {
-    id: 'service',
-    stampLabel: 'Service',
-    prompt: 'Which of the two do you need?',
-    choices: [
-      { value: 'registration', door: 'legal', label: 'Register a marriage', stampValue: 'Registration', hint: 'You, your witnesses, the paperwork done properly' },
-      { value: 'small_ceremony', door: 'ceremony', label: 'A small ceremony', stampValue: 'Small ceremony', hint: 'A few words that sound like you, then the signing' },
-      { value: 'wedding_ceremony', door: 'ceremony', label: 'A full wedding ceremony', stampValue: 'Wedding ceremony', hint: 'Your day, your guests, an officiant who makes it yours' },
-    ],
-  },
   {
     id: 'province',
     stampLabel: 'Place',
@@ -99,6 +60,17 @@ export const QUESTIONS: Question[] = [
       { value: 'none', label: 'No', stampValue: 'First marriage' },
       { value: 'divorced', label: 'Yes, divorced', stampValue: 'Divorced' },
       { value: 'widowed', label: 'Yes, widowed', stampValue: 'Widowed' },
+    ],
+  },
+  {
+    id: 'service',
+    stampLabel: 'Service',
+    prompt: 'What do you need?',
+    note: 'Most of what we do is the first one. All three end with a marriage Home Affairs recognises.',
+    choices: [
+      { value: 'registration', label: 'Just the legal registration', stampValue: 'Registration', hint: 'You, your witnesses, the paperwork done properly' },
+      { value: 'small_ceremony', label: 'A small ceremony too', stampValue: 'Small ceremony', hint: 'A few words that sound like you, then the signing' },
+      { value: 'wedding_ceremony', label: 'A full wedding ceremony', stampValue: 'Wedding ceremony', hint: 'Your day, your guests, an officiant who makes it yours' },
     ],
   },
   {
