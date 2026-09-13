@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { AffixedPrint } from '@/components/brand/AffixedPrint';
+import { Lockup } from '@/components/brand/Lockup';
 
 /**
  * The banner: Ryan's two photographs, combined the way this document
  * combines everything else. The hands run edge to edge as the ground; the
  * certificate, rings and pen are an affixed print pinned over the right of
- * it. One is the day, the other is the paperwork: both sides of the work in
- * one strip. The name sits on the paper-toned foot of the photograph, in
- * carbon, because the photograph is pale and white type would vanish on it.
+ * it. The lockup itself sits on the left (Ryan, 13 September 2026), on the
+ * paper-toned foot of the photograph, because the photograph is pale.
  */
 export function Banner() {
   return (
@@ -23,9 +23,8 @@ export function Banner() {
         />
       </div>
       <div className="shell banner-body">
-        <h1 id="banner-name" className="banner-name">
-          <span className="banner-name-main">Ryan Hogarth</span>
-          <span className="label banner-name-sub">Professional Marriage Officers</span>
+        <h1 id="banner-name" className="banner-mark">
+          <Lockup width="clamp(220px, 30vw, 440px)" />
         </h1>
         <div className="banner-print">
           <AffixedPrint

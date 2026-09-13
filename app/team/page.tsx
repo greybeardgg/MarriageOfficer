@@ -86,7 +86,7 @@ export default function Team() {
             Ask for someone by name or let us match you to the nearest.
           </p>
           <div>
-            <Action href="/?start">Start The Quiz</Action>
+            <Action href="/?start">Answer The Questions</Action>
           </div>
         </div>
       </main>

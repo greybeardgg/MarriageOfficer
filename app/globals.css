@@ -381,7 +381,27 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 
 .chrome { position: relative; z-index: 2; border-bottom: 1px solid var(--rule); background: var(--paper); }
 .chrome-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); min-height: 76px; padding-top: var(--s-3); padding-bottom: var(--s-3); }
-.chrome-mark { display: flex; line-height: 0; flex: none; }
+.chrome-mark { display: flex; line-height: 0; flex: none; text-decoration: none; }
+
+/* The lockup: the rings wordmark, then "Marriage Officers" between two rules. */
+.lockup { display: grid; gap: .28em; font-size: 10px; }
+.lockup-mark { display: block; width: 100%; height: auto; }
+.lockup-line {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .9em;
+  font-family: var(--prose);
+  font-weight: 400;
+  font-size: 2.05em;
+  line-height: 1;
+  letter-spacing: .01em;
+  color: #465b69;
+  white-space: nowrap;
+}
+.lockup-line::before, .lockup-line::after { content: ""; height: 1px; background: currentColor; opacity: .85; }
+.lockup-light .lockup-line { color: var(--paper); }
+.chrome-mark .lockup { font-size: 5.4px; }
 .chrome-side { display: grid; justify-items: end; gap: var(--s-2); min-width: 0; }
 .chrome-note { color: var(--carbon-soft); text-align: right; }
 
@@ -429,22 +449,15 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
   position: absolute; inset: 0;
   background: linear-gradient(to top, color-mix(in srgb, var(--paper) 88%, transparent) 0%, color-mix(in srgb, var(--paper) 40%, transparent) 34%, transparent 62%);
 }
-.banner-body { position: relative; height: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-6); padding-bottom: var(--s-6); }
-.banner-name { display: grid; gap: var(--s-2); }
-.banner-name-main {
-  font-family: var(--prose);
-  font-weight: 600;
-  font-size: clamp(2rem, 4.6vw, 3.375rem);
-  line-height: 1;
-  letter-spacing: -.024em;
-}
-.banner-name-sub { font-size: var(--fs-xs); letter-spacing: .2em; color: var(--carbon-soft); }
-.banner-print { flex: none; width: clamp(200px, 21vw, 290px); height: 72%; align-self: center; margin-bottom: calc(var(--s-6) * -1); }
+.banner-body { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); }
+.banner-mark { display: flex; line-height: 0; }
+.banner-mark .lockup { font-size: clamp(7px, .95vw, 14px); }
+.banner-print { flex: none; width: clamp(200px, 21vw, 290px); height: 72%; }
 .banner-print figure, .banner-print figure > div { height: 100%; }
 
 @media (max-width: 860px) {
   .banner { height: clamp(200px, 48vw, 260px); }
-  .banner-body { padding-bottom: var(--s-5); }
+  .banner-mark .lockup { font-size: 7px; }
   .banner-print { width: 128px; height: 66%; }
 }
 @media (max-width: 560px) {
@@ -485,16 +498,26 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
   padding-top: var(--s-8);
   padding-bottom: var(--s-10);
 }
-.door-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-7); align-items: start; }
-.door-headline { font-size: clamp(1.875rem, 3.6vw, 2.75rem); max-width: 14ch; }
-.door-copy { display: grid; gap: var(--s-4); font-size: var(--fs-lg); line-height: 1.55; }
-.door-copy .prose { max-width: 58ch; }
+/* The introduction is centred, as Ryan asked (13 September 2026). */
+.door-intro { display: grid; gap: var(--s-4); justify-items: center; text-align: center; font-size: var(--fs-lg); line-height: 1.55; }
+.door-intro .prose { max-width: 62ch; }
 
-.door-ways { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-8); align-items: start; }
-.door-start { display: grid; gap: var(--s-4); align-content: start; padding-right: var(--s-6); border-right: 1px solid var(--rule); }
-.door-way-head { font-size: var(--fs-xl); letter-spacing: -.014em; max-width: 26ch; }
-.door-way-note { font-size: var(--fs-sm); color: var(--carbon-soft); max-width: 44ch; margin-bottom: var(--s-1); }
+/* Question one beside the box that answers. */
+.door-ways { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-8); align-items: start; padding-top: var(--s-4); border-top: 1px solid var(--rule); }
+.door-question { display: grid; gap: var(--s-4); align-content: start; padding-right: var(--s-6); border-right: 1px solid var(--rule); }
+.door-way-lead { font-size: var(--fs-md); color: var(--carbon-soft); max-width: 52ch; }
+.door-q { font-size: var(--fs-2xl); letter-spacing: -.016em; }
+.door-question .step-note { margin-top: var(--s-2); }
 .door-sides { padding-top: var(--s-4); }
+
+/* The compact grid: nine provinces in three rows, ruled, no hints. */
+.answers-grid { max-width: none; margin-top: var(--s-3); }
+.opts-compact .opt { grid-template-columns: 22px minmax(0, 1fr); gap: var(--s-3); padding: 11px var(--s-2) 11px var(--s-1); }
+.opts-compact .opt .box { width: 22px; height: 22px; margin-top: 2px; }
+.opts-compact .opt .opt-label { font-size: var(--fs-md); white-space: nowrap; }
+.opts-compact .opt .tick { display: none; }
+.opts-compact .opt:hover .box, .opts-compact .opt:hover .opt-text,
+.opts-compact .opt:focus-visible .box, .opts-compact .opt:focus-visible .opt-text { transform: translateX(6px); }
 
 .sides-every { padding-top: var(--s-4); font-size: var(--fs-md); color: var(--carbon-soft); max-width: 68ch; }
 .sides-every .label { color: var(--carbon); margin-right: var(--s-2); }
@@ -543,9 +566,11 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 
 @media (max-width: 1040px) {
   .door { gap: var(--s-6); padding-top: var(--s-7); padding-bottom: var(--s-9); }
-  .door-intro { grid-template-columns: 1fr; gap: var(--s-5); }
+  .door-intro { font-size: var(--fs-md); }
   .door-ways { grid-template-columns: 1fr; gap: var(--s-7); }
-  .door-start { padding-right: 0; padding-bottom: var(--s-7); border-right: 0; border-bottom: 1px solid var(--rule); }
+  .door-question { padding-right: 0; padding-bottom: var(--s-7); border-right: 0; border-bottom: 1px solid var(--rule); }
+  .opts-compact { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; column-gap: var(--s-4) !important; }
+  .opts-compact .opt .opt-label { font-size: var(--fs-sm); }
 
   .step-shell { grid-template-columns: 1fr; gap: var(--s-6); min-height: 0; }
   .spine {

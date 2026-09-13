@@ -15,7 +15,7 @@ Design: `../marriage officer/docs/superpowers/specs/2026-09-04-answer-library-an
 
 Sandbox: https://s375kl2brd0yjsk6xo5texqr.fra.prisma.build
 
-Pages: `/` the front door (banner, introduction, Start The Quiz, the box that
+Pages: `/` the front door (banner, introduction, question one, the box that
 answers), `/team` the twelve officers, `/plan?…` the assembled situation. `/?start`
 opens straight onto question one.
 

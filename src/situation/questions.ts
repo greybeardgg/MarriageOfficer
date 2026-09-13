@@ -48,7 +48,6 @@ export const QUESTIONS: Question[] = [
     id: 'province',
     stampLabel: 'Place',
     prompt: 'Where will this happen?',
-    note: 'This decides which of our twelve officers you will meet.',
     choices: provinceOrder.map(p => ({ value: p, label: PROVINCE_LABEL[p] })),
   },
   {

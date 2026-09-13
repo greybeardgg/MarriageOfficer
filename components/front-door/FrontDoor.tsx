@@ -14,13 +14,12 @@ import { OptionList } from './OptionList';
 import { Spine } from './Spine';
 
 /**
- * The front door: the banner, Ryan's introduction, then two ways in. The
- * Quiz starts on Start The Quiz and takes over the page one question at a
- * time; the box answers on the spot without starting anything.
+ * The front door: the banner, Ryan's introduction, then question one beside
+ * the box that answers. The first answer takes the page over, one question
+ * per screen; Back off question two lands on the door again.
  */
 export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
   const router = useRouter();
-  const [started, setStarted] = useState(autostart);
   const [partial, setPartial] = useState<Partial<Situation>>({});
   const [pickingDate, setPickingDate] = useState(false);
   const [chosen, setChosen] = useState<number | null>(null);
@@ -28,7 +27,6 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
   const pending = useRef<number | null>(null);
   const pressTimer = useRef<number | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const startRef = useRef<HTMLButtonElement>(null);
   const armed = useRef(false);
 
   const visible = useMemo(() => visibleQuestions(partial), [partial]);
@@ -47,6 +45,7 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
       if (pressTimer.current !== null) window.clearTimeout(pressTimer.current);
       pressTimer.current = window.setTimeout(() => setPressing(null), 420);
       if (isComplete(next)) router.push('/plan?' + encodeSituation(next).toString());
+      else window.scrollTo({ top: 0 });
     },
     [partial, router],
   );
@@ -72,9 +71,9 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
     setChosen(null);
   }
 
-  function start() {
-    setStarted(true);
-    window.scrollTo({ top: 0 });
+  function goToQuestion() {
+    headingRef.current?.scrollIntoView({ block: 'center' });
+    headingRef.current?.focus({ preventScroll: true });
   }
 
   function back() {
@@ -82,12 +81,7 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
     if (pickingDate) { setPickingDate(false); return; }
     if (!current) return;
     const idx = visible.findIndex(q => q.id === current.id);
-    if (idx <= 0) {
-      // Back off the first question returns to the door, answers intact.
-      setStarted(false);
-      window.setTimeout(() => startRef.current?.focus({ preventScroll: true }), 0);
-      return;
-    }
+    if (idx <= 0) return;
     rewindTo(visible[idx - 1].id);
   }
 
@@ -96,67 +90,73 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
     if (pressTimer.current !== null) window.clearTimeout(pressTimer.current);
   }, []);
 
+  // Question one is on the door, so the page does not steal focus on arrival;
+  // from the second question on, each new question takes it.
   useEffect(() => {
-    if (!started) { armed.current = false; return; }
-    if (!armed.current && !autostart) { armed.current = true; }
+    if (!armed.current) {
+      armed.current = true;
+      if (autostart) goToQuestion();
+      return;
+    }
     headingRef.current?.focus({ preventScroll: true });
-  }, [started, current?.id, pickingDate, autostart]);
+  }, [current?.id, pickingDate, autostart]);
+
+  if (!current) return null;
+
+  const step = visible.findIndex(q => q.id === current.id) + 1;
+  const onDoor = step === 1 && !pickingDate;
+  const choices = choicesOf(current, partial);
 
   /* ------------------------------------------------------------ the door */
-  if (!started) {
+  if (onDoor) {
     return (
       <>
         <Banner />
         <div className="shell door">
-          <section className="door-intro" aria-labelledby="door-head">
-            <h2 id="door-head" className="question door-headline">
-              Getting Married Is Two Different Jobs
-            </h2>
-            <div className="door-copy">
-              <p className="prose">
-                Whether you simply need to be legally married, have a simple wedding at home or want a
-                dynamic officiant for your grand wedding as we look ahead, we have the experience and
-                professionalism to make it happen.
-              </p>
-              <p className="prose">
-                We are a small team of people who share an ethos of creating unforgettable personal
-                ceremonies delivered professionally, coupled with the legal registration of your marriage
-                at Home Affairs. With 25 years of experience we can help, whatever your need.
-              </p>
-            </div>
+          <section className="door-intro" aria-label="Who we are">
+            <p className="prose">
+              Whether you simply need to be legally married, have a simple wedding at home or want a
+              dynamic officiant for your grand wedding as we look ahead, we have the experience and
+              professionalism to make it happen.
+            </p>
+            <p className="prose">
+              We are a small team of people who share an ethos of creating unforgettable personal
+              ceremonies delivered professionally, coupled with the legal registration of your marriage
+              at Home Affairs. With 25 years of experience we can help, whatever your need.
+            </p>
           </section>
 
-          <Perforation label="Two Ways In" />
-
           <div className="door-ways">
-            <section className="door-start" aria-labelledby="start-head">
-              <h3 id="start-head" className="question door-way-head">
+            <section className="door-question" aria-labelledby="door-q">
+              <p className="prose door-way-lead">
                 To ensure you get the information tailored to you, let us know a few things about your plans.
-              </h3>
-              <p className="prose door-way-note">
-                A few questions, about a minute. Your process, your price and your paperwork come back
-                before we ask who you are. Nothing is booked.
               </p>
-              <div>
-                <button ref={startRef} type="button" className="act act-ink" onClick={start}>Start The Quiz</button>
+              <div key={current.id} className="leaf">
+                <h2 id="door-q" ref={headingRef} tabIndex={-1} className="question door-q" style={{ outline: 'none' }}>
+                  {current.prompt}
+                </h2>
+                {current.note ? <p className="prose step-note">{current.note}</p> : null}
+                <div className="answers answers-grid">
+                  <OptionList choices={choices} chosen={chosen} columns={3} compact onChoose={answer} />
+                </div>
               </div>
             </section>
-            <AskBox onStart={start} />
+            <AskBox onStart={goToQuestion} />
           </div>
 
           <div className="door-sides">
             <BothSides />
           </div>
+
+          <p aria-live="polite" className="sr-only">
+            Question {step} of {visible.length}. {current.prompt}
+          </p>
         </div>
       </>
     );
   }
 
   /* ------------------------------------------------ one question, one screen */
-  if (!current) return null;
-
-  const step = visible.findIndex(q => q.id === current.id) + 1;
-  const choices = choicesOf(current, partial);
   const columns = choices.length > 5 ? 2 : 1;
 
   return (

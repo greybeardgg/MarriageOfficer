@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Lockup } from './Lockup';
 import { NavLinks } from './NavLinks';
 
 /**
@@ -21,8 +22,7 @@ export function Chrome({ note }: { note?: string }) {
     <header className="chrome">
       <div className="shell chrome-row">
         <Link href="/" aria-label="Ryan Hogarth Marriage Officers, back to the start" className="chrome-mark">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-charcoal.svg" alt="Ryan Hogarth Marriage Officers" width={146} height={102} style={{ width: 146, height: 'auto' }} />
+          <Lockup width={170} />
         </Link>
         <div className="chrome-side">
           <NavLinks items={NAV} />

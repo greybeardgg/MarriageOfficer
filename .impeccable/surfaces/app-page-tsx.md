@@ -69,11 +69,17 @@ the contact details.
    twelve officers at `/team`; Contact lands on the box that answers.
    Testimonials, Gallery, Blog and FAQ are not carried: nothing may be invented
    for them (PRODUCT.md, Evidence on Hand).
-10. **Ryan's introduction, verbatim**, above two ways in: "let us know a few
-    things about your plans" with **Start The Quiz**, and "Or explain what you
-    need in the box below and we'll answer it right here" with the box. The
-    first question is no longer on the door; the Quiz takes the page over on
-    Start The Quiz, and Back off question one returns to the door.
+10. **Ryan's introduction, verbatim and centred**, with no headline above it
+    (the "Two Different Jobs" line is gone, Ryan, later the same day). Beneath
+    it, question one itself, the nine provinces in a compact three-by-three
+    grid, beside the box: "Or explain what you need in the box below and we'll
+    answer it right here". There is no Start button and no "Two Ways In" rule.
+    The first answer takes the page over; Back off question two lands on the
+    door again. The banner carries the lockup Ryan supplied (the rings
+    wordmark from the current site with "Marriage Officers" set beneath it
+    between two rules), and the chrome carries the same lockup small; the
+    older PROFESSIONAL MARRIAGE OFFICERS lockup is no longer shown. The
+    province question lost its note line at Ryan's request.
 11. **A ceremony only.** A fourth service: the couple are already married or
     are registering elsewhere, so nothing is signed or lodged and none of the
     legal questions are asked. The service question therefore moves to second,
@@ -113,12 +119,10 @@ those answers; it is never a fork at the door. Then they book.
 
 **FIRST VIEWPORT (13 September 2026):** The chrome: the mark left, the menu
 right. Then the banner: the hands photograph edge to edge under a paper-toned foot,
-"Ryan Hogarth" in Faustina and PROFESSIONAL MARRIAGE OFFICERS in plate lettering at
-the bottom left, the certificate print corner-mounted over the right and hanging a
-little below the banner's edge onto the paper. Beneath it "Getting Married Is Two
-Different Jobs" beside Ryan's two paragraphs, a perforation labelled Two Ways In, and
-the two ways side by side: Start The Quiz on the left, the box that answers on the
-right. The record spine appears only once the Quiz has started.
+the mark at the left, the certificate print corner-mounted over the right. Beneath
+it Ryan's two paragraphs, centred. Then, ruled off, question one on the left (the
+nine provinces in three rows of three, compact) and the box that answers on the
+right. The record spine appears from the second question on.
 
 **FORM:** The Quiz. Candidate 6 of seven grounded directions, assigned by
 the roll; seed key `3d463e02`; assigned card, code-led build (no image generation on

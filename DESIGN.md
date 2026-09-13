@@ -208,12 +208,11 @@ stepper. The result screen is that document, completed, read as numbered clauses
 Density is high and deliberately unpadded: text sits close to its rules, measures are
 short (34-68ch), and the only generous space is between parts. Colour does not
 decorate; it commits. Nothing on the front door asks the visitor to choose a branch:
-one button starts the Quiz, a free-text box answers from the library before any
-question at all, and the two sides of the business are shown at the foot of the page
+question one is already on the page, a free-text box answers from the library before
+any question at all, and the two sides of the business are shown at the foot of the page
 in a band headed "We Do Both" that carries no controls. Since 13 September 2026 the
 door opens on a banner: the owner's own photographs (the hands as the ground, the
-certificate as an affixed print over it) with the name set in the document's own
-type on a paper-toned foot, and the current site's menu in the chrome above it. Both sides still
+certificate as an affixed print over it) with the mark itself on a paper-toned foot, and the current site's menu in the chrome above it. Both sides still
 take a whole flat ink field at poster scale, because the business is genuinely two
 jobs and neither may read as the secondary one; what changed on 12 September 2026 is
 that the fields state the work instead of offering it. The confirmed rejections are
@@ -383,10 +382,11 @@ else.
 
 Three page grammars ship. The **door** is a banner (clamp 220-360px high, edge to
 edge, the name bottom-left and the affixed certificate print right) and then a
-single-column stack: the introduction as a 5:7 split (headline beside the two
-paragraphs), a perforation, the two ways in as a 1:1 split ruled down the middle
-(Start The Quiz left, the box right), and the "We Do Both" band with the every-couple
-line beneath it. The record spine is not on the door; it appears when the Quiz starts.
+single-column stack: the introduction centred, then a 7:5 split ruled down the
+middle (question one with its nine provinces in a compact three-by-three grid on the
+left, the box that answers on the right), and the "We Do Both" band with the
+every-couple line beneath it. The record spine is not on the door; it appears from
+the second question on.
 The **team** page is the result document's part grammar reused: a province per part,
 officers as ruled rows, a corner-mounted print beside the two we hold photographs of. The **step** is a
 two-column grid (content plus a 268px spine), one question per screen, vertically
