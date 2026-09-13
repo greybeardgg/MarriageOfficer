@@ -1,6 +1,8 @@
 import type { Answer } from './types';
+import { LEGAL_SERVICES } from '../situation/types';
 
 const D = '2026-09-10';
+const D2 = '2026-09-13';
 
 export const ANSWERS: Answer[] = [
   // ---------- process ----------
@@ -41,6 +43,16 @@ export const ANSWERS: Answer[] = [
     status: 'draft', lastReviewed: D,
   },
 
+  {
+    id: 'process-ceremony-only',
+    question: 'We are already married. Can you do the ceremony on its own?',
+    body: 'Yes. If you are already legally married, or are registering the marriage elsewhere, your officiant does the ceremony without the legal part: the planning meeting beforehand, and a ceremony written for you on the day. There is no register to sign and nothing is lodged with Home Affairs, so none of the paperwork questions apply to you.',
+    section: 'process', order: 10,
+    appliesTo: { services: ['ceremony_only'] },
+    triggers: ['already married', 'ceremony only', 'just a ceremony', 'renewal', 'renew', 'blessing'],
+    status: 'draft', lastReviewed: D2,
+  },
+
   // ---------- price ----------
   {
     id: 'price-registration-office',
@@ -79,13 +91,23 @@ export const ANSWERS: Answer[] = [
     status: 'draft', lastReviewed: D,
   },
 
+  {
+    id: 'price-ceremony-only',
+    question: 'What does a ceremony on its own cost?',
+    body: 'A ceremony on its own is priced as the ceremony you want: a small ceremony is {{price:small_ceremony}} and a full wedding ceremony is {{price:wedding_ceremony}}, in both cases without the register and the lodging with Home Affairs. Tell us what you have in mind and we will confirm the price before anything is booked.',
+    section: 'price', order: 11,
+    appliesTo: { services: ['ceremony_only'] },
+    triggers: ['cost', 'price', 'how much', 'fee', 'quote'],
+    status: 'draft', lastReviewed: D2,
+  },
+
   // ---------- bring ----------
   {
     id: 'bring-ids',
     question: 'What do we bring on the day?',
     body: 'Each of you brings your original ID (or passport if you are not South African), two copies of it, and two ID photos. Your two witnesses each bring their ID and a copy. That is all.',
     section: 'bring', order: 10,
-    appliesTo: {},
+    appliesTo: { services: LEGAL_SERVICES },
     triggers: ['documents', 'bring', 'copies', 'photos', 'id'],
     status: 'draft', lastReviewed: D,
   },
@@ -121,7 +143,7 @@ export const ANSWERS: Answer[] = [
     question: 'Do we need to bring witnesses?',
     body: 'Yes, two adults with their IDs. Friends or family are ideal. If you cannot bring two, tell us when you book and we will arrange witnesses for you.',
     section: 'bring', order: 40,
-    appliesTo: {},
+    appliesTo: { services: LEGAL_SERVICES },
     triggers: ['witness', 'witnesses'],
     status: 'draft', lastReviewed: D,
   },
@@ -132,7 +154,7 @@ export const ANSWERS: Answer[] = [
     question: 'What is the difference between you and Home Affairs?',
     body: 'Every marriage in South Africa is registered by Home Affairs, and every marriage officer is appointed by them. What we do is handle the process for you: the appointment on a day that suits you, the checking of your documents so nothing is sent back, the signing, and the lodging with Home Affairs. The certificate itself is issued by Home Affairs either way. You are paying for the process to be done properly, at your convenience, by people who do it every week.',
     section: 'home_affairs', order: 10,
-    appliesTo: {},
+    appliesTo: { services: LEGAL_SERVICES },
     triggers: ['home affairs', 'dha', 'free', 'government'],
     status: 'draft', lastReviewed: D,
   },
@@ -141,7 +163,7 @@ export const ANSWERS: Answer[] = [
     question: 'How do we get our marriage certificate?',
     body: 'On the day you receive the handwritten certificate from the register. Once Home Affairs has recorded the marriage you can get a printed abridged certificate from any Home Affairs office. If you need an unabridged certificate, which shows both partners’ full details and is what most countries ask for when you apply for a visa, we can obtain it for you for {{price:unabridged_certificate}}.',
     section: 'home_affairs', order: 20,
-    appliesTo: {},
+    appliesTo: { services: LEGAL_SERVICES },
     triggers: ['certificate', 'unabridged', 'abridged', 'apostille', 'overseas', 'abroad', 'emigrat~'],
     status: 'draft', lastReviewed: D,
   },

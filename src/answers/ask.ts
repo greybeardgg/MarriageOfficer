@@ -22,7 +22,7 @@ const CONDITIONS: { key: keyof AppliesTo; says: string }[] = [
   { key: 'nationalities', says: 'whether you are both South African' },
   { key: 'nonSaStatuses', says: 'the non-South African partner’s status' },
   { key: 'priorMarriages', says: 'whether either of you has been married before' },
-  { key: 'services', says: 'whether you want a registration or a ceremony' },
+  { key: 'services', says: 'what you need from us' },
 ];
 
 export function dependenciesOf(a: Answer): string[] {

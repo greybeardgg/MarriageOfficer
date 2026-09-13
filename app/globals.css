@@ -376,8 +376,79 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
   max-width: 58ch;
 }
 
-@media (max-width: 560px) {
+/* ------------------------------------------------------------- the chrome
+   The mark, the menu, one honest line. */
+
+.chrome { position: relative; z-index: 2; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.chrome-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); min-height: 76px; padding-top: var(--s-3); padding-bottom: var(--s-3); }
+.chrome-mark { display: flex; line-height: 0; flex: none; }
+.chrome-side { display: grid; justify-items: end; gap: var(--s-2); min-width: 0; }
+.chrome-note { color: var(--carbon-soft); text-align: right; }
+
+.nav-list { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--s-2) var(--s-5); }
+.nav-link {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--carbon-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+  transition: color var(--settle) var(--out), border-color var(--settle) var(--out);
+}
+.nav-link:hover { color: var(--carbon); border-bottom-color: var(--rule-strong); }
+.nav-link[aria-current="page"] { color: var(--carbon); border-bottom-color: var(--oxblood); }
+
+@media (max-width: 860px) {
+  .chrome-row { flex-wrap: wrap; align-items: flex-start; gap: var(--s-3); }
+  .chrome-side { width: 100%; justify-items: start; }
   .chrome-note { display: none; }
+  .nav {
+    width: 100%; overflow-x: auto; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, currentColor calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to right, currentColor calc(100% - 40px), transparent);
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-list { flex-wrap: nowrap; justify-content: flex-start; gap: var(--s-5); padding-top: var(--s-2); border-top: 1px solid var(--rule); }
+}
+
+/* ------------------------------------------------------------- the banner
+   Ryan's photographs, one as the ground and one affixed over it. The name
+   sits on a paper-toned foot because the photograph is pale. */
+
+.banner {
+  position: relative;
+  z-index: 1;
+  height: clamp(220px, 27vw, 360px);
+  border-bottom: 1px solid var(--rule-strong);
+  background: var(--paper-deep);
+  overflow: hidden;
+}
+.banner-ground { position: absolute; inset: 0; }
+.banner-ground::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, color-mix(in srgb, var(--paper) 88%, transparent) 0%, color-mix(in srgb, var(--paper) 40%, transparent) 34%, transparent 62%);
+}
+.banner-body { position: relative; height: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-6); padding-bottom: var(--s-6); }
+.banner-name { display: grid; gap: var(--s-2); }
+.banner-name-main {
+  font-family: var(--prose);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.6vw, 3.375rem);
+  line-height: 1;
+  letter-spacing: -.024em;
+}
+.banner-name-sub { font-size: var(--fs-xs); letter-spacing: .2em; color: var(--carbon-soft); }
+.banner-print { flex: none; width: clamp(200px, 21vw, 290px); height: 72%; align-self: center; margin-bottom: calc(var(--s-6) * -1); }
+.banner-print figure, .banner-print figure > div { height: 100%; }
+
+@media (max-width: 860px) {
+  .banner { height: clamp(200px, 48vw, 260px); }
+  .banner-body { padding-bottom: var(--s-5); }
+  .banner-print { width: 128px; height: 66%; }
+}
+@media (max-width: 560px) {
+  .banner-print { display: none; }
 }
 
 @media (max-width: 860px) {
@@ -406,26 +477,27 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 
 /* ---- the front door ---- */
 
-.door-shell {
+.door {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 196px;
-  grid-template-rows: auto auto auto auto auto;
-  column-gap: var(--s-7);
-  row-gap: var(--s-6);
-  align-items: start;
+  gap: var(--s-7);
   padding-top: var(--s-8);
   padding-bottom: var(--s-10);
-  min-height: calc(100vh - 77px);
 }
-.door-head { grid-column: 1; grid-row: 1; display: grid; gap: var(--s-5); }
-.door-tear { grid-column: 1; grid-row: 2; }
-.door-question { grid-column: 1; grid-row: 3; }
-/* The channel runs beside the hero and the question, which is what it records. */
-.door-shell > .spine { grid-column: 2; grid-row: 1 / 4; align-self: stretch; }
-.door-ask { grid-column: 1 / -1; grid-row: 4; padding-top: var(--s-7); }
-.door-sides { grid-column: 1 / -1; grid-row: 5; padding-top: var(--s-8); }
+.door-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-7); align-items: start; }
+.door-headline { font-size: clamp(1.875rem, 3.6vw, 2.75rem); max-width: 14ch; }
+.door-copy { display: grid; gap: var(--s-4); font-size: var(--fs-lg); line-height: 1.55; }
+.door-copy .prose { max-width: 58ch; }
+
+.door-ways { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-8); align-items: start; }
+.door-start { display: grid; gap: var(--s-4); align-content: start; padding-right: var(--s-6); border-right: 1px solid var(--rule); }
+.door-way-head { font-size: var(--fs-xl); letter-spacing: -.014em; max-width: 26ch; }
+.door-way-note { font-size: var(--fs-sm); color: var(--carbon-soft); max-width: 44ch; margin-bottom: var(--s-1); }
+.door-sides { padding-top: var(--s-4); }
+
+.sides-every { padding-top: var(--s-4); font-size: var(--fs-md); color: var(--carbon-soft); max-width: 68ch; }
+.sides-every .label { color: var(--carbon); margin-right: var(--s-2); }
 
 .step-bar {
   display: flex;
@@ -466,42 +538,14 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
   border-top: 1px solid var(--rule);
 }
 
-/* On the front door the channel is a margin, so its tally sits at the foot of it. */
-.spine-compact { grid-template-rows: auto 1fr auto; padding-left: var(--s-5); }
-.spine-compact .spine-list { gap: var(--s-3); align-content: start; }
-.spine-compact .spine-foot { align-self: end; }
-
 /* The finished document's row of stamps. */
 .record { display: flex; flex-wrap: wrap; gap: var(--s-6) var(--s-7); align-items: flex-start; }
 
 @media (max-width: 1040px) {
-  .door-shell {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    row-gap: var(--s-5);
-    min-height: 0;
-    padding-bottom: var(--s-9);
-  }
-  .door-head, .door-tear, .door-question, .door-ask, .door-sides,
-  .door-shell > .spine { grid-column: 1; grid-row: auto; }
-  .door-head { order: 1; }
-  .door-tear { order: 2; }
-  .door-shell > .spine { order: 3; }
-  .door-question { order: 4; }
-  .door-ask { order: 5; padding-top: var(--s-6); }
-  .door-sides { order: 6; padding-top: var(--s-7); }
-  /* Compact on a phone: the record must not push the doors past the fold. */
-  .spine-compact {
-    padding-left: 0;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    column-gap: var(--s-4);
-    row-gap: var(--s-3);
-    align-items: baseline;
-  }
-  .spine-compact .spine-head { grid-column: 1; grid-row: 1; }
-  .spine-compact .spine-foot { grid-column: 2; grid-row: 1; justify-self: end; }
-  .spine-compact .spine-list { grid-column: 1 / -1; grid-row: 2; }
+  .door { gap: var(--s-6); padding-top: var(--s-7); padding-bottom: var(--s-9); }
+  .door-intro { grid-template-columns: 1fr; gap: var(--s-5); }
+  .door-ways { grid-template-columns: 1fr; gap: var(--s-7); }
+  .door-start { padding-right: 0; padding-bottom: var(--s-7); border-right: 0; border-bottom: 1px solid var(--rule); }
 
   .step-shell { grid-template-columns: 1fr; gap: var(--s-6); min-height: 0; }
   .spine {
@@ -621,6 +665,7 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 .officer-head { padding-bottom: var(--s-4); border-bottom: 2px solid var(--carbon); margin-bottom: var(--s-4); }
 .officer-name { font-family: var(--prose); font-weight: 600; font-size: var(--fs-2xl); line-height: 1.15; letter-spacing: -.018em; }
 .officer-where { font-size: var(--fs-sm); color: var(--carbon-soft); letter-spacing: 0; }
+.officer-how { margin-top: var(--s-2); color: var(--carbon-soft); }
 
 .enquiry { display: grid; gap: var(--s-3); align-content: start; padding-top: var(--s-6); }
 .enquiry-head { letter-spacing: -.014em; }
@@ -648,4 +693,29 @@ textarea.field { font-family: var(--prose); line-height: 1.55; resize: vertical;
 @media (max-width: 640px) {
   .clause { grid-template-columns: 40px minmax(0, 1fr); gap: var(--s-4); }
   .part-head { flex-wrap: wrap; gap: var(--s-2); }
+}
+
+/* ============================================================== the team
+   Ruled rows, not cards. A name and a place is the honest minimum. */
+
+.team { display: grid; gap: var(--s-9); padding-top: var(--s-8); padding-bottom: var(--s-10); }
+.team-head { display: grid; gap: var(--s-5); }
+.team-list { display: grid; }
+.team-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-6);
+  align-items: center;
+  padding: var(--s-5) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.team-row-art { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); }
+.team-list > .team-row:last-child { border-bottom: 0; }
+.team-who { display: grid; gap: var(--s-1); }
+.team-close { display: grid; gap: var(--s-5); justify-items: start; padding-top: var(--s-4); }
+.team-close .perforation { justify-self: stretch; }
+
+@media (max-width: 860px) {
+  .team { gap: var(--s-8); padding-top: var(--s-7); }
+  .team-row-art { grid-template-columns: 1fr; }
 }

@@ -3,7 +3,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { askAnswers } from '@/src/answers/ask';
 import { Clause } from '@/components/plan/Clause';
-import { Perforation } from '@/components/brand/Action';
 
 const SHOW_DRAFTS = process.env.NEXT_PUBLIC_SHOW_DRAFTS === 'true';
 
@@ -34,19 +33,16 @@ export function AskBox({ onStart }: { onStart?: () => void }) {
   }
 
   return (
-    <section className="ask-door" aria-label="Ask us directly">
-      <Perforation label="Or Tell Us" />
-
+    <section id="ask" className="ask-door" aria-label="Ask us directly">
       <form className="ask-form" onSubmit={submit}>
-        <label className="question ask-door-head" htmlFor="ask">
-          Or tell us your needs in the chat box below
+        <label className="question ask-door-head" htmlFor="ask-text">
+          Or explain what you need in the box below and we’ll answer it right here.
         </label>
         <p className="prose ask-door-note">
-          Write it however you like. We will answer what we can straight away, before you have
-          answered anything and without knowing who you are.
+          Write it however you like. We answer what we can straight away, without knowing who you are.
         </p>
         <textarea
-          id="ask"
+          id="ask-text"
           className="field"
           rows={3}
           value={text}

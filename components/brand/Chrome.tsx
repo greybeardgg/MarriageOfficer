@@ -1,37 +1,33 @@
 import Link from 'next/link';
+import { NavLinks } from './NavLinks';
 
 /**
- * The document head: the mark, and one honest line. Nothing else lives here.
- * The mark is held at the top of every screen so this page is never mistaken
- * for a state document.
+ * The document head: the mark, the menu, and one honest line. The mark is
+ * held at the top of every screen so this page is never mistaken for a state
+ * document. The menu is the one the current site carries, minus the pages
+ * this rebuild does not have yet (Ryan, 13 September 2026).
  */
-export function Chrome({ note = 'Twelve officers · Twelve locations' }: { note?: string }) {
+export const NAV = [
+  { href: '/', label: 'Home' },
+  { href: '/#register', label: 'Marriage Registration' },
+  { href: '/#wedding', label: 'Wedding Ceremonies' },
+  { href: '/#every-couple', label: 'Same-Sex Weddings' },
+  { href: '/team', label: 'Our Team' },
+  { href: '/#ask', label: 'Contact' },
+] as const;
+
+export function Chrome({ note }: { note?: string }) {
   return (
-    <header
-      style={{
-        position: 'relative',
-        zIndex: 2,
-        borderBottom: '1px solid var(--rule)',
-        background: 'var(--paper)',
-      }}
-    >
-      <div
-        className="shell"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 'var(--s-5)',
-          minHeight: 76,
-        }}
-      >
-        <Link href="/" aria-label="Ryan Hogarth Marriage Officers, back to the start" style={{ display: 'flex', lineHeight: 0 }}>
+    <header className="chrome">
+      <div className="shell chrome-row">
+        <Link href="/" aria-label="Ryan Hogarth Marriage Officers, back to the start" className="chrome-mark">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo-charcoal.svg" alt="Ryan Hogarth Marriage Officers" width={146} height={102} style={{ width: 146, height: 'auto' }} />
         </Link>
-        <p className="label chrome-note" style={{ color: 'var(--carbon-soft)', textAlign: 'right' }}>
-          {note}
-        </p>
+        <div className="chrome-side">
+          <NavLinks items={NAV} />
+          {note ? <p className="label chrome-note">{note}</p> : null}
+        </div>
       </div>
     </header>
   );

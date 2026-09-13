@@ -58,4 +58,26 @@ describe('selectAnswers', () => {
     const secs = selectAnswers(base, { extra });
     expect(secs.find(s => s.section === 'specific')?.answers.map(a => a.id)).toEqual(['e']);
   });
+  it('gives a ceremony on its own no paperwork and no state section', () => {
+    const solo: Situation = { province: 'gauteng', service: 'ceremony_only', date: { kind: 'soon' } };
+    const secs = selectAnswers(solo, { includeDrafts: true });
+    const sections = secs.map(s => s.section);
+    expect(sections).toContain('process');
+    expect(sections).toContain('price');
+    expect(sections).not.toContain('bring');
+    expect(sections).not.toContain('home_affairs');
+    const ids = secs.flatMap(x => x.answers).map(a => a.id);
+    expect(ids).toContain('process-ceremony-only');
+    expect(ids).toContain('price-ceremony-only');
+    expect(ids).not.toContain('process-one-non-sa');
+  });
+  it('shows the paperwork to every legal service and never the ceremony-only answers', () => {
+    const ids = (s: Situation) => selectAnswers(s, { includeDrafts: true }).flatMap(x => x.answers).map(a => a.id);
+    for (const service of ['registration', 'small_ceremony', 'wedding_ceremony'] as const) {
+      const got = ids({ ...base, service });
+      expect(got, service).toContain('bring-ids');
+      expect(got, service).toContain('ha-relationship');
+      expect(got, service).not.toContain('process-ceremony-only');
+    }
+  });
 });

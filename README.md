@@ -15,6 +15,10 @@ Design: `../marriage officer/docs/superpowers/specs/2026-09-04-answer-library-an
 
 Sandbox: https://s375kl2brd0yjsk6xo5texqr.fra.prisma.build
 
+Pages: `/` the front door (banner, introduction, Start The Quiz, the box that
+answers), `/team` the twelve officers, `/plan?…` the assembled situation. `/?start`
+opens straight onto question one.
+
 To publish, run `bun run publish`. Credentials live in `.deploy.env` in the
 repo root, two lines: `PRISMA_APP_ID=` and `PRISMA_SERVICE_TOKEN=`. That file
 is git-ignored: never commit it or share it. Running `bun run deploy` on its
@@ -26,6 +30,10 @@ as if you were the couple. What is wrong, what is missing, what does not
 sound like us? Say so; nothing here is final.
 
 Drafts are shown only when `NEXT_PUBLIC_SHOW_DRAFTS=true` is set at build time; the sandbox sets it, production will not.
+
+Two options Ryan asked for on 13 September 2026: **a ceremony only** (a fourth
+service; the legal questions are skipped and the price clause is a draft to confirm)
+and **choose your officer** (asked only where the province has more than one).
 
 Prices are in `src/answers/prices.ts`, in one place. Officers and their
 locations are in `src/officers/officers.ts` with no contact details on

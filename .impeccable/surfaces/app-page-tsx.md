@@ -49,6 +49,43 @@ the contact details.
    certificate, the register, the ID, the stamp, two pens on a table. Never invented
    couples.
 
+## Decisions taken with Ryan, 13 September 2026
+
+8. **A banner hero returns, with Ryan's own photographs.** The front door
+   opens on a banner, smaller than the old site's, carrying the name in type
+   ("Ryan Hogarth / Professional Marriage Officers") and a menu above it, as
+   the current site does. Two photographs were supplied: a pale close-up of
+   two hands with rings (the 2017 site background, its old lockup painted out
+   because the lockup has since changed) and the certificate with rings and a
+   pen. They are combined: the hands are the ground, the certificate is an
+   affixed print pinned over the right of it. This revises the 11 September
+   rejection of "the wedding-photo hero": the rejection was of a wedding
+   photograph as the whole first viewport; a short banner with the name on it
+   is a different thing and is the owner's call.
+9. **The menu is the current site's**, less the pages this rebuild does not
+   have: Home, Marriage Registration, Wedding Ceremonies, Same-Sex Weddings,
+   Our Team, Contact. The three middle entries land on the "We Do Both" band
+   and the every-couple line beneath it; Our Team is a new ruled list of the
+   twelve officers at `/team`; Contact lands on the box that answers.
+   Testimonials, Gallery, Blog and FAQ are not carried: nothing may be invented
+   for them (PRODUCT.md, Evidence on Hand).
+10. **Ryan's introduction, verbatim**, above two ways in: "let us know a few
+    things about your plans" with **Start The Quiz**, and "Or explain what you
+    need in the box below and we'll answer it right here" with the box. The
+    first question is no longer on the door; the Quiz takes the page over on
+    Start The Quiz, and Back off question one returns to the door.
+11. **A ceremony only.** A fourth service: the couple are already married or
+    are registering elsewhere, so nothing is signed or lodged and none of the
+    legal questions are asked. The service question therefore moves to second,
+    because it decides which questions follow. Its price clause is a draft
+    that assumes ceremony pricing without the legal part; Ryan and Christa
+    confirm it.
+12. **Choose your officer.** Where the province has more than one officer
+    (Gauteng, Western Cape), a question offers no preference first and then
+    each officer by name and place. A named officer is honoured, appears in the
+    summary line ("with Lara Thomas"), and the plate says "Your choice" rather
+    than "Nearest to you". Elsewhere the question is skipped.
+
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets
@@ -66,22 +103,22 @@ questions and prose; Azeret Mono for dates, reference numbers and stamps.
 Square corners, hairline rules, perforated edges, corner-mounted photographs, and
 stamp impressions that misregister, vary in pressure and bleed into the paper grain.
 
-**STORY:** The visitor is asked nothing before the page starts being useful. The
-first question is already there, and a box beside it answers whatever they type
-straight from the library, qualifying anything it cannot settle yet. They answer five
-or six questions, watch their own document assemble stamp by stamp, and read their
-entire process, price and document list before anyone asks their name. Which of the
-two kinds of work they need falls out of those answers; it is never a fork at the
-door. Then they book.
+**STORY:** The visitor is asked nothing before the page starts being useful. Ryan's
+introduction says who we are, and a box beside the Start The Quiz button answers
+whatever they type straight from the library, qualifying anything it cannot settle
+yet. They start the Quiz, answer three to seven questions, watch their own document
+assemble stamp by stamp, and read their entire process, price and document list
+before anyone asks their name. Which of the two kinds of work they need falls out of
+those answers; it is never a fork at the door. Then they book.
 
-**FIRST VIEWPORT:** A thin chrome strip, the mark left, one honest mono line right.
-Headline in Faustina, "Getting Married Is Two Different Jobs", with one sentence and
-one real figure beneath it. Then the two counter plates at equal width, each a full
-flat ink field with knocked-out condensed caps: COUNTER 1, REGISTER A MARRIAGE, in
-oxblood carrying a stamp impression; COUNTER 2, HAVE A WEDDING, in teal carrying one
-corner-mounted photograph. The counters are the primary action; there is no separate
-button. A perforation line runs beneath them, and the record spine is ruled and
-empty down the right on desktop, a stamp strip across the top on mobile.
+**FIRST VIEWPORT (13 September 2026):** The chrome: the mark left, the menu
+right. Then the banner: the hands photograph edge to edge under a paper-toned foot,
+"Ryan Hogarth" in Faustina and PROFESSIONAL MARRIAGE OFFICERS in plate lettering at
+the bottom left, the certificate print corner-mounted over the right and hanging a
+little below the banner's edge onto the paper. Beneath it "Getting Married Is Two
+Different Jobs" beside Ryan's two paragraphs, a perforation labelled Two Ways In, and
+the two ways side by side: Start The Quiz on the left, the box that answers on the
+right. The record spine appears only once the Quiz has started.
 
 **FORM:** The Quiz. Candidate 6 of seven grounded directions, assigned by
 the roll; seed key `3d463e02`; assigned card, code-led build (no image generation on
@@ -115,10 +152,13 @@ what it still depends on, in the state's own violet, rather than pretending to a
 
 ## Structural consequence
 
-The question order is the original one: place, nationality, non-SA status where it
-applies, prior marriage, service, date. The service question briefly moved to position
-one to drive the two counters; that is reverted. `src/answers/ask.ts` is new and pure,
-so the free-text route lifts into the main app with the rest of `src/`.
+The question order, since 13 September 2026: place, service, then nationality,
+non-SA status where it applies and prior marriage (all three skipped for a ceremony on
+its own), then officer where the province offers a choice, then date. Service sits
+second because it decides which questions follow; it is one question among the
+others, never a fork at the door. `src/answers/ask.ts` is pure, so the free-text route
+lifts into the main app with the rest of `src/`; so do `visibleQuestions`,
+`choicesOf` and the officer rule in `src/officers/assign.ts`.
 
 ## Constraints that bind this surface
 

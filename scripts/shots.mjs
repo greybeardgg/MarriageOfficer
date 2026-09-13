@@ -48,7 +48,7 @@ const shots = [
     name: 'asked',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByLabel(/Or tell us your needs/i).fill('my fiance is Zimbabwean and on a work visa, and I was divorced');
+      await page.getByLabel(/explain what you need/i).fill('my fiance is Zimbabwean and on a work visa, and I was divorced');
       await page.getByRole('button', { name: 'Answer Me' }).click();
       await settle(page);
     },
@@ -57,7 +57,9 @@ const shots = [
     name: 'question',
     async run(page) {
       await page.goto(BASE + '/');
+      await page.getByRole('button', { name: 'Start The Quiz' }).click();
       await page.getByRole('button', { name: 'Gauteng' }).click();
+      await page.getByRole('button', { name: /Just the legal registration/ }).click();
       await page.getByRole('button', { name: 'One of us is' }).click();
       await settle(page);
     },
@@ -66,7 +68,18 @@ const shots = [
     name: 'question-service',
     async run(page) {
       await page.goto(BASE + '/');
+      await page.getByRole('button', { name: 'Start The Quiz' }).click();
       await page.getByRole('button', { name: 'Gauteng' }).click();
+      await settle(page);
+    },
+  },
+  {
+    name: 'question-officer',
+    async run(page) {
+      await page.goto(BASE + '/');
+      await page.getByRole('button', { name: 'Start The Quiz' }).click();
+      await page.getByRole('button', { name: 'Gauteng' }).click();
+      await page.getByRole('button', { name: /Just the legal registration/ }).click();
       await page.getByRole('button', { name: 'Yes, both of us' }).click();
       await page.getByRole('button', { name: 'No', exact: true }).click();
       await settle(page);
@@ -76,6 +89,20 @@ const shots = [
     name: 'plan',
     async run(page) {
       await page.goto(BASE + PLAN);
+      await settle(page);
+    },
+  },
+  {
+    name: 'plan-ceremony-only',
+    async run(page) {
+      await page.goto(BASE + '/plan?p=gauteng&s=ceremony_only&o=christa&d=soon');
+      await settle(page);
+    },
+  },
+  {
+    name: 'team',
+    async run(page) {
+      await page.goto(BASE + '/team');
       await settle(page);
     },
   },

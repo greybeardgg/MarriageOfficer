@@ -2,15 +2,17 @@ import { test, expect } from '@playwright/test';
 
 test('western cape, one non-SA on a visa, divorced, registration', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Getting Married Is Two Different Jobs' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: /Ryan Hogarth/ })).toBeVisible();
   await expect(page.locator('select')).toHaveCount(0); // never a drop-down
-  // the first question is on the front door; the path is never forked before it
+  await page.getByRole('button', { name: 'Start The Quiz' }).click();
   await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
   await page.getByRole('button', { name: 'Western Cape' }).click();
+  await page.getByRole('button', { name: /Just the legal registration/ }).click();
   await page.getByRole('button', { name: 'One of us is' }).click();
   await page.getByRole('button', { name: 'Here on a visa or permit' }).click();
   await page.getByRole('button', { name: 'Yes, divorced' }).click();
-  await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  await expect(page.getByRole('heading', { name: 'Do you have an officer in mind?' })).toBeVisible();
+  await page.getByRole('button', { name: /No preference/ }).click();
   await page.getByRole('button', { name: 'Not yet' }).click();
 
   await expect(page).toHaveURL(/\/plan\?/);
@@ -35,29 +37,65 @@ test('gauteng first-marriage registration shows the express option and no decree
   await expect(page.getByText('Ryan Hogarth')).toBeVisible();
 });
 
-test('the front door offers no path choice, only the first question', async ({ page }) => {
+test('a ceremony on its own asks no legal question and can name an officer', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('button', { name: 'Start The Quiz' }).click();
+  await page.getByRole('button', { name: 'Gauteng' }).click();
+  await page.getByRole('button', { name: /A ceremony only/ }).click();
+  // straight to the officer: no nationality, no prior marriage
+  await expect(page.getByRole('heading', { name: 'Do you have an officer in mind?' })).toBeVisible();
+  await expect(page.getByText('03 / 04')).toBeVisible();
+  await page.getByRole('button', { name: /Christa Lizamore/ }).click();
+  await page.getByRole('button', { name: 'Soon, not fixed yet' }).click();
+
+  await expect(page).toHaveURL(/\/plan\?p=gauteng&s=ceremony_only&o=christa&d=soon/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('ceremony on its own, Gauteng, with Christa Lizamore');
+  await expect(page.getByText('What does a ceremony on its own cost?')).toBeVisible();
+  await expect(page.getByText('What do we bring on the day?')).toHaveCount(0);
+  await expect(page.getByText('Your choice')).toBeVisible();
+});
+
+test('the front door offers no path choice: a banner, the introduction, one way to start', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByText('Whether you simply need to be legally married')).toBeVisible();
   // both kinds of work are shown, but neither is a control
   await expect(page.getByRole('heading', { name: 'Register A Marriage' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Have A Wedding' })).toBeVisible();
   await expect(page.getByRole('button', { name: /Register A Marriage/ })).toHaveCount(0);
   await expect(page.getByRole('button', { name: /Have A Wedding/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Start The Quiz' })).toHaveCount(1);
+  // the menu the current site carries
+  await expect(page.getByRole('navigation', { name: 'Site' }).getByRole('link', { name: 'Our Team' })).toBeVisible();
 });
 
-test('the chat box answers from free text before any question is answered', async ({ page }) => {
+test('the chat box answers from free text before the quiz has started', async ({ page }) => {
   await page.goto('/');
-  await page.getByLabel(/tell us your needs/i).fill('my fiance is on a work visa and I am divorced');
+  await page.getByLabel(/explain what you need/i).fill('my fiance is on a work visa and I am divorced');
   await page.getByRole('button', { name: 'Answer Me' }).click();
   await expect(page.getByRole('heading', { name: /we can tell you now|depends on you/ }).first()).toBeVisible();
-  // the record is still empty: nothing was asked of them to get this
-  await expect(page.getByText('0 of 5 answered')).toBeVisible();
+  // nothing was asked of them to get this: the quiz has not started
+  await expect(page.getByRole('button', { name: 'Start The Quiz' })).toBeVisible();
+  await expect(page.getByText('The Record')).toHaveCount(0);
 });
 
-test('answering stamps the record and a stamp reopens its question', async ({ page }) => {
+test('answering stamps the record, a stamp reopens its question, and back off question one returns to the door', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('button', { name: 'Start The Quiz' }).click();
   await page.getByRole('button', { name: 'Gauteng' }).click();
   await expect(page.getByRole('button', { name: /Change your answer for Place/ })).toBeVisible();
   await page.getByRole('button', { name: /Change your answer for Place/ }).click();
+  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await page.getByRole('button', { name: 'Back' }).click();
+  await expect(page.getByRole('button', { name: 'Start The Quiz' })).toBeVisible();
+});
+
+test('the team page names every officer and no phone number', async ({ page }) => {
+  await page.goto('/team');
+  await expect(page.getByRole('heading', { level: 1, name: 'Our Team' })).toBeVisible();
+  await expect(page.getByText('Lara Thomas')).toBeVisible();
+  await expect(page.getByText('Cindy Reed')).toBeVisible();
+  await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
+  await page.getByRole('link', { name: 'Start The Quiz' }).click();
   await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
 });
 

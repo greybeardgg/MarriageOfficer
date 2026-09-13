@@ -208,14 +208,18 @@ stepper. The result screen is that document, completed, read as numbered clauses
 Density is high and deliberately unpadded: text sits close to its rules, measures are
 short (34-68ch), and the only generous space is between parts. Colour does not
 decorate; it commits. Nothing on the front door asks the visitor to choose a branch:
-the first question is already on the page, a free-text box answers from the library
-before any question at all, and the two sides of the business are shown at the foot
-of the page in a band headed "We Do Both" that carries no controls. Both sides still
+one button starts the Quiz, a free-text box answers from the library before any
+question at all, and the two sides of the business are shown at the foot of the page
+in a band headed "We Do Both" that carries no controls. Since 13 September 2026 the
+door opens on a banner: the owner's own photographs (the hands as the ground, the
+certificate as an affixed print over it) with the name set in the document's own
+type on a paper-toned foot, and the current site's menu in the chrome above it. Both sides still
 take a whole flat ink field at poster scale, because the business is genuinely two
 jobs and neither may read as the secondary one; what changed on 12 September 2026 is
 that the fields state the work instead of offering it. The confirmed rejections are
-the wedding-photo hero, the govtech stepper, cream and white grounds, and any
-borrowing of state insignia: no coat of arms, no state green, no official reference
+a wedding photograph as the whole first viewport (a short banner carrying the name is
+not that, and was restored by the owner on 13 September 2026), the govtech stepper,
+cream and white grounds, and any borrowing of state insignia: no coat of arms, no state green, no official reference
 numbers. The mark is held at the top of every screen so this page is never mistaken
 for a Home Affairs page.
 
@@ -377,12 +381,14 @@ A centred document shell (max 1320px, or 940px narrow) with a fluid gutter
 32, 48, 64, 88, 120px; the last two steps separate parts of the document and nothing
 else.
 
-Two page grammars ship. The **door** is a two-column grid (content plus a 196px
-channel) over five rows: head, tear, question, ask, sides. The headline, the
-perforation and question one stack in the first column; the record channel runs beside
-them, spanning rows one to three, because those are what it records. The ask box and
-the "We Do Both" band then span both columns at full width, so the page reads as hero,
-question, other way in, and finally what the business does. The **step** is a
+Three page grammars ship. The **door** is a banner (clamp 220-360px high, edge to
+edge, the name bottom-left and the affixed certificate print right) and then a
+single-column stack: the introduction as a 5:7 split (headline beside the two
+paragraphs), a perforation, the two ways in as a 1:1 split ruled down the middle
+(Start The Quiz left, the box right), and the "We Do Both" band with the every-couple
+line beneath it. The record spine is not on the door; it appears when the Quiz starts.
+The **team** page is the result document's part grammar reused: a province per part,
+officers as ruled rows, a corner-mounted print beside the two we hold photographs of. The **step** is a
 two-column grid (content plus a 268px spine), one question per screen, vertically
 centred between a top bar and a footer, at a minimum height of `100vh - 77px` so a
 question always owns its viewport. The **result document** is a tinted head band, then

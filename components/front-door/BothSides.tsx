@@ -6,11 +6,12 @@ import { RoundStamp } from '@/components/brand/RoundStamp';
  * buttons until 12 September 2026; making the visitor choose a path before a
  * single question had been asked was a fork at the door, so the panels now
  * state both kinds of work and the path falls out of the answers instead.
- * Nothing here is clickable, on purpose.
+ * Nothing here is clickable, on purpose. The menu's Marriage Registration
+ * and Wedding Ceremonies entries land here.
  */
 const SIDES = [
   {
-    id: 'legal',
+    id: 'register',
     title: 'Register A Marriage',
     line: 'The legal part. An officer, your witnesses, the register signed and lodged with Home Affairs.',
     foot: 'At our offices, at your home, or wherever suits you.',
@@ -24,9 +25,9 @@ const SIDES = [
     },
   },
   {
-    id: 'ceremony',
+    id: 'wedding',
     title: 'Have A Wedding',
-    line: 'The day itself. Words that sound like you, your people watching, and the registration done properly inside it.',
+    line: 'The day itself. Words that sound like you, your people watching, and the registration done properly inside it. Or the ceremony on its own, if you are already married.',
     foot: 'Small and quiet, or the whole thing.',
     stamp: null,
     ink: { field: 'var(--teal)', pale: 'var(--teal-pale)' },
@@ -47,6 +48,7 @@ export function BothSides() {
         {SIDES.map(side => (
           <article
             key={side.id}
+            id={side.id}
             className={`side side-${side.id}`}
             style={{ ['--field' as string]: side.ink.field, ['--field-pale' as string]: side.ink.pale }}
           >
@@ -72,6 +74,13 @@ export function BothSides() {
           </article>
         ))}
       </div>
+
+      {/* Same-sex marriage is a statement, never a separate flow: every officer is a Civil Union officer. */}
+      <p id="every-couple" className="sides-every">
+        <span className="label">Every couple.</span>{' '}
+        Every one of our officers is a Civil Union marriage officer, which means we marry every
+        couple, same-sex or not. Many officers will not; we always have.
+      </p>
     </section>
   );
 }

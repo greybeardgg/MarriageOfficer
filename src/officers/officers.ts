@@ -23,3 +23,18 @@ export const OFFICERS: Officer[] = [
   { id: 'graeme',  name: 'Graeme Reid',       province: 'eastern_cape',  locationLabel: 'Port Elizabeth',      area: 'Gqeberha' },
   { id: 'cindy',   name: 'Cindy Reed',        province: 'kwazulu_natal', locationLabel: 'KwaZulu-Natal',       area: 'KwaZulu-Natal' },
 ];
+
+/** The officers who work in a province, primary first. */
+export function officersIn(province: Province | undefined): Officer[] {
+  if (!province) return [];
+  return OFFICERS.filter(o => o.province === province).sort((a, b) => Number(!!b.primary) - Number(!!a.primary));
+}
+
+/** Where an officer works, as one line: "Centurion · Pretoria", or just "KwaZulu-Natal". */
+export function whereIs(o: Officer): string {
+  return o.locationLabel === o.area ? o.locationLabel : `${o.locationLabel} · ${o.area}`;
+}
+
+export function officerById(id: string | undefined): Officer | null {
+  return OFFICERS.find(o => o.id === id) ?? null;
+}

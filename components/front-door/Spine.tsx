@@ -1,6 +1,6 @@
 'use client';
 
-import { QUESTIONS, stampValue } from '@/src/situation/questions';
+import { stampValue, visibleQuestions } from '@/src/situation/questions';
 import type { Question } from '@/src/situation/questions';
 import type { Situation } from '@/src/situation/types';
 import { Stamp, StampSlot } from '@/components/brand/Stamp';
@@ -18,17 +18,14 @@ export function Spine({
   visible,
   pressing,
   onReopen,
-  compact = false,
 }: {
   partial: Partial<Situation>;
   visible: Question[];
   pressing: string | null;
   onReopen?: (id: Question['id']) => void;
-  /** The front door's channel: narrower slots, so the counters keep their scale. */
-  compact?: boolean;
 }) {
   return (
-    <aside className={`spine${compact ? ' spine-compact' : ''}`} aria-label="Your answers so far">
+    <aside className="spine" aria-label="Your answers so far">
       <p className="label spine-head">The Record</p>
       <ol className="spine-list">
         {visible.map((q, i) => {
@@ -60,7 +57,7 @@ export function Spine({
 
 /** Every answer, stamped, as the head of the finished document. */
 export function StampRecord({ situation }: { situation: Situation }) {
-  const visible = QUESTIONS.filter(q => !q.skipWhen?.(situation));
+  const visible = visibleQuestions(situation);
   return (
     <ol className="record">
       {visible.map((q, i) => {

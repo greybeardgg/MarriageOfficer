@@ -2,18 +2,25 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { QUESTIONS, applyAnswer, isComplete } from '@/src/situation/questions';
+import { QUESTIONS, applyAnswer, choicesOf, isComplete, visibleQuestions } from '@/src/situation/questions';
 import type { Question } from '@/src/situation/questions';
 import { encodeSituation } from '@/src/situation/encode';
 import type { Situation } from '@/src/situation/types';
 import { Perforation } from '@/components/brand/Action';
 import { AskBox } from './AskBox';
+import { Banner } from './Banner';
 import { BothSides } from './BothSides';
 import { OptionList } from './OptionList';
 import { Spine } from './Spine';
 
-export function FrontDoor() {
+/**
+ * The front door: the banner, Ryan's introduction, then two ways in. The
+ * Quiz starts on Start The Quiz and takes over the page one question at a
+ * time; the box answers on the spot without starting anything.
+ */
+export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
   const router = useRouter();
+  const [started, setStarted] = useState(autostart);
   const [partial, setPartial] = useState<Partial<Situation>>({});
   const [pickingDate, setPickingDate] = useState(false);
   const [chosen, setChosen] = useState<number | null>(null);
@@ -21,9 +28,10 @@ export function FrontDoor() {
   const pending = useRef<number | null>(null);
   const pressTimer = useRef<number | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const started = useRef(false);
+  const startRef = useRef<HTMLButtonElement>(null);
+  const armed = useRef(false);
 
-  const visible = useMemo(() => QUESTIONS.filter(q => !q.skipWhen?.(partial)), [partial]);
+  const visible = useMemo(() => visibleQuestions(partial), [partial]);
   const current = useMemo(
     () => visible.find(q => (partial as Record<string, unknown>)[q.id] === undefined),
     [visible, partial],
@@ -64,12 +72,22 @@ export function FrontDoor() {
     setChosen(null);
   }
 
+  function start() {
+    setStarted(true);
+    window.scrollTo({ top: 0 });
+  }
+
   function back() {
     if (pending.current !== null) { window.clearTimeout(pending.current); pending.current = null; setChosen(null); }
     if (pickingDate) { setPickingDate(false); return; }
     if (!current) return;
     const idx = visible.findIndex(q => q.id === current.id);
-    if (idx <= 0) return;
+    if (idx <= 0) {
+      // Back off the first question returns to the door, answers intact.
+      setStarted(false);
+      window.setTimeout(() => startRef.current?.focus({ preventScroll: true }), 0);
+      return;
+    }
     rewindTo(visible[idx - 1].id);
   }
 
@@ -79,86 +97,68 @@ export function FrontDoor() {
   }, []);
 
   useEffect(() => {
-    if (!started.current) { started.current = current?.id !== 'service'; return; }
+    if (!started) { armed.current = false; return; }
+    if (!armed.current && !autostart) { armed.current = true; }
     headingRef.current?.focus({ preventScroll: true });
-  }, [current?.id, pickingDate]);
+  }, [started, current?.id, pickingDate, autostart]);
 
-  if (!current) return null;
-
-  const step = visible.findIndex(q => q.id === current.id) + 1;
-
-  const columns = current.choices.length > 5 ? 2 : 1;
-
-  // On the front door the page's h1 is the headline, so the question sits under it.
-  const QuestionHeading = step === 1 ? 'h2' : 'h1';
-
-  const questionBlock = (
-    <div key={current.id + (pickingDate ? '-date' : '')} className="leaf step-body">
-      <QuestionHeading ref={headingRef} tabIndex={-1} className="question" style={{ outline: 'none', maxWidth: '18ch' }}>
-        {current.prompt}
-      </QuestionHeading>
-      {current.note ? <p className="prose step-note">{current.note}</p> : null}
-
-      {pickingDate ? (
-        <form
-          className="step-date"
-          onSubmit={e => {
-            e.preventDefault();
-            const v = (e.currentTarget.elements.namedItem('d') as HTMLInputElement).value;
-            if (v) commit('date', v);
-          }}
-        >
-          <label className="label" htmlFor="chosen-date" style={{ color: 'var(--carbon-soft)' }}>The date you have in mind</label>
-          <div style={{ display: 'flex', gap: 'var(--s-3)', flexWrap: 'wrap' }}>
-            <input id="chosen-date" name="d" type="date" required className="field" style={{ maxWidth: 260 }} />
-            <button type="submit" className="act act-ink">Next</button>
-          </div>
-        </form>
-      ) : (
-        <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
-          <OptionList choices={current.choices} chosen={chosen} columns={columns} onChoose={answer} />
-        </div>
-      )}
-    </div>
-  );
-
-  /* ---------------------------------------- the front door: hero, then the quiz */
-  if (step === 1) {
+  /* ------------------------------------------------------------ the door */
+  if (!started) {
     return (
-      <div className="shell door-shell">
-        <div className="door-head">
-          <h1 className="headline" style={{ maxWidth: '15ch' }}>
-            Getting Married Is Two Different Jobs
-          </h1>
-          <p className="prose" style={{ fontSize: 'var(--fs-lg)', lineHeight: 1.55, maxWidth: '54ch' }}>
-            By answering a few questions we will speak directly to your needs.
-          </p>
+      <>
+        <Banner />
+        <div className="shell door">
+          <section className="door-intro" aria-labelledby="door-head">
+            <h2 id="door-head" className="question door-headline">
+              Getting Married Is Two Different Jobs
+            </h2>
+            <div className="door-copy">
+              <p className="prose">
+                Whether you simply need to be legally married, have a simple wedding at home or want a
+                dynamic officiant for your grand wedding as we look ahead, we have the experience and
+                professionalism to make it happen.
+              </p>
+              <p className="prose">
+                We are a small team of people who share an ethos of creating unforgettable personal
+                ceremonies delivered professionally, coupled with the legal registration of your marriage
+                at Home Affairs. With 25 years of experience we can help, whatever your need.
+              </p>
+            </div>
+          </section>
+
+          <Perforation label="Two Ways In" />
+
+          <div className="door-ways">
+            <section className="door-start" aria-labelledby="start-head">
+              <h3 id="start-head" className="question door-way-head">
+                To ensure you get the information tailored to you, let us know a few things about your plans.
+              </h3>
+              <p className="prose door-way-note">
+                A few questions, about a minute. Your process, your price and your paperwork come back
+                before we ask who you are. Nothing is booked.
+              </p>
+              <div>
+                <button ref={startRef} type="button" className="act act-ink" onClick={start}>Start The Quiz</button>
+              </div>
+            </section>
+            <AskBox onStart={start} />
+          </div>
+
+          <div className="door-sides">
+            <BothSides />
+          </div>
         </div>
-
-        <div className="door-tear">
-          <Perforation label="Start Here" />
-        </div>
-
-        <div className="door-question">{questionBlock}</div>
-
-        <Spine partial={partial} visible={visible} pressing={pressing} compact />
-
-        <div className="door-ask">
-          <AskBox onStart={() => headingRef.current?.scrollIntoView({ block: 'center' })} />
-        </div>
-
-        <div className="door-sides">
-          <BothSides />
-        </div>
-
-        <p aria-live="polite" className="sr-only">
-          Question {step} of {visible.length}. {current.prompt}
-        </p>
-      </div>
+      </>
     );
   }
 
   /* ------------------------------------------------ one question, one screen */
+  if (!current) return null;
+
+  const step = visible.findIndex(q => q.id === current.id) + 1;
+  const choices = choicesOf(current, partial);
+  const columns = choices.length > 5 ? 2 : 1;
+
   return (
     <div className="shell step-shell">
       <div className="step-main">
@@ -174,7 +174,33 @@ export function FrontDoor() {
           </span>
         </div>
 
-        {questionBlock}
+        <div key={current.id + (pickingDate ? '-date' : '')} className="leaf step-body">
+          <h1 ref={headingRef} tabIndex={-1} className="question" style={{ outline: 'none', maxWidth: '18ch' }}>
+            {current.prompt}
+          </h1>
+          {current.note ? <p className="prose step-note">{current.note}</p> : null}
+
+          {pickingDate ? (
+            <form
+              className="step-date"
+              onSubmit={e => {
+                e.preventDefault();
+                const v = (e.currentTarget.elements.namedItem('d') as HTMLInputElement).value;
+                if (v) commit('date', v);
+              }}
+            >
+              <label className="label" htmlFor="chosen-date" style={{ color: 'var(--carbon-soft)' }}>The date you have in mind</label>
+              <div style={{ display: 'flex', gap: 'var(--s-3)', flexWrap: 'wrap' }}>
+                <input id="chosen-date" name="d" type="date" required className="field" style={{ maxWidth: 260 }} />
+                <button type="submit" className="act act-ink">Next</button>
+              </div>
+            </form>
+          ) : (
+            <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
+              <OptionList choices={choices} chosen={chosen} columns={columns} onChoose={answer} />
+            </div>
+          )}
+        </div>
 
         <div className="step-foot">
           <Perforation label={current.stampLabel} />

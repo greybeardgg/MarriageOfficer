@@ -20,8 +20,32 @@ describe('situation url encoding', () => {
     const s = { ...base, nonSaStatus: 'temporary_visa' } as Situation;
     expect(decodeSituation(encodeSituation(s))).toEqual(base);
   });
+  it('round-trips a ceremony on its own without the legal answers', () => {
+    const s: Situation = { province: 'western_cape', service: 'ceremony_only', date: { kind: 'soon' } };
+    const p = encodeSituation(s);
+    expect(p.has('n')).toBe(false);
+    expect(p.has('m')).toBe(false);
+    expect(decodeSituation(p)).toEqual(s);
+  });
+  it('leaves the legal answers out of a ceremony-only link even if present', () => {
+    const s = { province: 'gauteng', service: 'ceremony_only', nationality: 'both_sa', priorMarriage: 'none', date: { kind: 'soon' } } as Situation;
+    expect(decodeSituation(encodeSituation(s))).toEqual({ province: 'gauteng', service: 'ceremony_only', date: { kind: 'soon' } });
+  });
+  it('round-trips a named officer and omits no preference', () => {
+    const named: Situation = { ...base, province: 'western_cape', officer: 'lara' };
+    expect(encodeSituation(named).get('o')).toBe('lara');
+    expect(decodeSituation(encodeSituation(named))).toEqual(named);
+    const any = { ...base, officer: 'any' } as Situation;
+    expect(encodeSituation(any).has('o')).toBe(false);
+    expect(decodeSituation(encodeSituation(any))).toEqual(base);
+  });
+  it('drops an officer from another province', () => {
+    const p = encodeSituation(base); p.set('o', 'lara');
+    expect(decodeSituation(p)).toEqual(base);
+  });
   it('returns null for a missing required field', () => {
     expect(decodeSituation(new URLSearchParams('p=gauteng'))).toBeNull();
+    expect(decodeSituation(new URLSearchParams('p=gauteng&s=registration&d=soon'))).toBeNull();
   });
   it('returns null for an unknown value', () => {
     const p = encodeSituation(base); p.set('p', 'mars');

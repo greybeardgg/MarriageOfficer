@@ -1,3 +1,4 @@
+import { whereIs } from '@/src/officers/officers';
 import type { Officer } from '@/src/officers/officers';
 import { AffixedPrint } from '@/components/brand/AffixedPrint';
 
@@ -17,7 +18,7 @@ const PORTRAIT: Record<string, { src: string; alt: string; position: string; cap
   },
 };
 
-export function OfficerPlate({ officer }: { officer: Officer | null }) {
+export function OfficerPlate({ officer, chosen = false }: { officer: Officer | null; chosen?: boolean }) {
   const art = officer ? PORTRAIT[officer.id] : undefined;
 
   return (
@@ -26,9 +27,8 @@ export function OfficerPlate({ officer }: { officer: Officer | null }) {
       {officer ? (
         <>
           <p className="officer-name">{officer.name}</p>
-          <p className="data officer-where">
-            {officer.locationLabel} · {officer.area}
-          </p>
+          <p className="data officer-where">{whereIs(officer)}</p>
+          <p className="label officer-how">{chosen ? 'Your choice' : 'Nearest to you'}</p>
           {art ? (
             <div style={{ marginTop: 'var(--s-5)' }}>
               <AffixedPrint src={art.src} alt={art.alt} caption={art.caption} height={320} position={art.position} tilt={-0.6} />

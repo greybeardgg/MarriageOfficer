@@ -16,4 +16,13 @@ describe('summarise', () => {
       nonSaStatus: 'temporary_visa', priorMarriage: 'divorced', province: 'western_cape' }))
       .toBe('wedding ceremony, one of you not South African (on a visa), one of you married before, Western Cape');
   });
+  it('says nothing legal about a ceremony on its own', () => {
+    expect(summarise({ province: 'gauteng', service: 'ceremony_only', date: { kind: 'soon' } }))
+      .toBe('ceremony on its own, Gauteng');
+  });
+  it('names the officer only when they were asked for', () => {
+    expect(summarise({ ...base, officer: 'christa' }))
+      .toBe('legal registration, both South African, first marriage, Gauteng, with Christa Lizamore');
+    expect(summarise({ ...base, officer: 'any' })).toBe(summarise(base));
+  });
 });

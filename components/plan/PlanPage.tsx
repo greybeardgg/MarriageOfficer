@@ -1,8 +1,9 @@
 import { selectAnswers } from '@/src/answers/select';
 import { triggeredAnswers } from '@/src/answers/triggers';
-import { assignOfficer } from '@/src/officers/assign';
+import { assignOfficer, wasChosen } from '@/src/officers/assign';
 import { summarise } from '@/src/plan/summary';
 import { encodeSituation } from '@/src/situation/encode';
+import { visibleQuestions } from '@/src/situation/questions';
 import type { Situation } from '@/src/situation/types';
 import { Chrome } from '@/components/brand/Chrome';
 import { Guilloche } from '@/components/brand/Guilloche';
@@ -40,6 +41,8 @@ export function PlanPage({ situation, freeText, includeDrafts }: { situation: Si
   const qs = encodeSituation(situation).toString();
   const selfUrl = '/plan?' + qs + (freeText ? '&q=' + encodeURIComponent(freeText) : '');
   const closing = CLOSING[situation.service === 'registration' ? 'registration' : 'ceremony'];
+  const answered = visibleQuestions(situation).length;
+  const WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
 
   const seen = new Set<string>();
   const unique = (list: (typeof sections)[number]['answers']) =>
@@ -52,7 +55,7 @@ export function PlanPage({ situation, freeText, includeDrafts }: { situation: Si
   return (
     <>
       <Guilloche />
-      <Chrome note="Assembled from your six answers" />
+      <Chrome note={`Assembled from your ${WORDS[answered] ?? answered} answers`} />
 
       <main style={{ position: 'relative', zIndex: 1 }}>
         {/* ---- the head of the document: what was answered, and what happens next ---- */}
@@ -100,7 +103,7 @@ export function PlanPage({ situation, freeText, includeDrafts }: { situation: Si
           })}
 
           <div className="doc-aside">
-            <OfficerPlate officer={officer} />
+            <OfficerPlate officer={officer} chosen={wasChosen(situation, officer)} />
             <FreeTextBox />
           </div>
 

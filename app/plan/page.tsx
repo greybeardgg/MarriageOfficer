@@ -19,7 +19,7 @@ export default async function Plan({ searchParams }: { searchParams: Promise<Rec
         <main className="shell" style={{ position: 'relative', zIndex: 1, paddingTop: 'var(--s-9)', paddingBottom: 'var(--s-10)', display: 'grid', gap: 'var(--s-5)', justifyItems: 'start' }}>
           <h1 className="question" style={{ maxWidth: '16ch' }}>This link is missing some of your answers</h1>
           <p className="prose" style={{ fontSize: 'var(--fs-md)', color: 'var(--carbon-soft)', maxWidth: '48ch' }}>
-            Nothing is lost. Six questions takes about a minute, and the page rebuilds itself at the end of them.
+            Nothing is lost. A few questions take about a minute, and the page rebuilds itself at the end of them.
           </p>
           <div style={{ marginTop: 'var(--s-3)' }}>
             <Action href="/">Back to the questions</Action>
