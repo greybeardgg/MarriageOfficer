@@ -31,6 +31,10 @@ sound like us? Say so; nothing here is final.
 
 Drafts are shown only when `NEXT_PUBLIC_SHOW_DRAFTS=true` is set at build time; the sandbox sets it, production will not.
 
+Colours come from Ryan's brand palette (charcoal, grey, slate, aqua and the
+neutral ramp, 13 September 2026), headings are Montserrat and everything else
+Nunito Sans; `node scripts/contrast.mjs` checks every pair after a palette edit.
+
 Two options Ryan asked for on 13 September 2026: **a ceremony only** (a fourth
 service; the legal questions are skipped and the price clause is a draft to confirm)
 and **choose your officer** (asked only where the province has more than one).

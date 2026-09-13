@@ -1,9 +1,9 @@
 import type { Ink } from './Stamp';
 
 const INK: Record<Ink, { solid: string; pale: string }> = {
-  oxblood: { solid: 'var(--oxblood)', pale: 'var(--oxblood-pale)' },
-  teal: { solid: 'var(--teal)', pale: 'var(--teal-pale)' },
-  violet: { solid: 'var(--violet)', pale: 'var(--violet-pale)' },
+  legal: { solid: 'var(--ink-legal)', pale: 'var(--ink-legal-pale)' },
+  ceremony: { solid: 'var(--ink-ceremony)', pale: 'var(--ink-ceremony-pale)' },
+  state: { solid: 'var(--ink-state)', pale: 'var(--ink-state-pale)' },
 };
 
 /**
@@ -16,7 +16,7 @@ export function RoundStamp({
   word,
   top = 'Ryan Hogarth',
   bottom = 'Marriage Officers',
-  ink = 'oxblood',
+  ink = 'legal',
   tone = 'pale',
   size = 186,
   tilt = -7,

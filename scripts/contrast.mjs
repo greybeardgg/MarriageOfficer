@@ -27,21 +27,24 @@ const lift = token('paper-lift');
 const deep = token('paper-deep');
 
 const CHECKS = [
-  ['body text on paper', token('carbon'), paper, 4.5],
-  ['secondary text on paper', token('carbon-soft'), paper, 4.5],
-  ['secondary text on the tinted band', token('carbon-soft'), deep, 4.5],
-  ['oxblood text on paper', token('oxblood'), paper, 4.5],
-  ['teal text on paper', token('teal'), paper, 4.5],
-  ['violet on its own band', token('violet'), token('violet-pale'), 4.5],
-  ['violet qualifier on paper', token('violet'), paper, 4.5],
-  ['body text on the violet band', token('carbon'), token('violet-pale'), 4.5],
-  ['knocked-out text on oxblood', paper, token('oxblood'), 4.5],
-  ['knocked-out text on teal', paper, token('teal'), 4.5],
-  ['pale text on oxblood', token('oxblood-pale'), token('oxblood'), 4.5],
-  ['pale text on teal', token('teal-pale'), token('teal'), 4.5],
+  ['heading text on paper', token('carbon'), paper, 4.5],
+  ['body text on paper', token('carbon-soft'), paper, 4.5],
+  ['body text on the tinted band', token('carbon-soft'), deep, 4.5],
+  ['body text on the raised leaf', token('carbon-soft'), lift, 4.5],
+  ['slate ink text on paper', token('ink-legal'), paper, 4.5],
+  ['aqua ink at stamp-label size on paper (large-text bar)', token('ink-ceremony'), paper, 3],
+  ['state ink on its own band', token('ink-state'), token('ink-state-pale'), 4.5],
+  ['state qualifier on paper', token('ink-state'), paper, 4.5],
+  ['heading text on the state band', token('carbon'), token('ink-state-pale'), 4.5],
+  ['knocked-out text on the slate field', paper, token('ink-legal'), 4.5],
+  ['soft text on the slate field', token('ink-legal-pale'), token('ink-legal'), 4.5],
+  ['text on the aqua field', token('field-ceremony-ink'), token('ink-ceremony-pale'), 4.5],
+  ['soft text on the aqua field', token('field-ceremony-soft'), token('ink-ceremony-pale'), 4.5],
+  ['draft tag', paper, token('carbon-soft'), 4.5],
   ['UI boundary: tick box and field on paper', token('rule-strong'), paper, 3],
   ['UI boundary: tick box on the raised leaf', token('rule-strong'), lift, 3],
-  ['focus ring on paper', token('oxblood'), paper, 3],
+  ['focus ring on paper', token('ink-legal'), paper, 3],
+  ['primary action on paper', token('ink-legal'), paper, 3],
 ];
 
 let failed = 0;

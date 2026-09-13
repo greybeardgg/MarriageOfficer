@@ -1,254 +1,99 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-12T00:00:00Z",
+  "generatedAt": "2026-09-13T00:00:00Z",
   "title": "Design System: Ryan Hogarth Marriage Officers",
   "extensions": {
     "colorMeta": {
-      "paper": {
+      "white": {
         "role": "neutral",
-        "displayName": "Security Paper",
-        "canonical": "#E6E4D9",
-        "tonalRamp": [
-          "#2E2C1E",
-          "#504C35",
-          "#726C4B",
-          "#948C61",
-          "#ACA581",
-          "#C2BDA3",
-          "#DDDACB",
-          "#F5F4F0"
-        ]
+        "displayName": "White",
+        "canonical": "#FFFFFF"
       },
-      "paper-lift": {
+      "neutral-100": {
         "role": "neutral",
-        "displayName": "Raised Leaf",
-        "canonical": "#EFEDE4",
-        "tonalRamp": [
-          "#302C1C",
-          "#534D31",
-          "#766E46",
-          "#9A8E5B",
-          "#B1A77C",
-          "#C6BF9F",
-          "#DFDBC9",
-          "#F6F4EF"
-        ]
+        "displayName": "Neutral 100",
+        "canonical": "#F4F5F6"
       },
-      "paper-deep": {
+      "slate-100": {
         "role": "neutral",
-        "displayName": "Tinted Band",
-        "canonical": "#D8D5C7",
-        "tonalRamp": [
-          "#2D2B1F",
-          "#4E4A36",
-          "#6F694D",
-          "#908964",
-          "#A9A384",
-          "#C0BBA5",
-          "#DBD9CC",
-          "#F5F4F0"
-        ]
+        "displayName": "Slate 100",
+        "canonical": "#EEF3F5"
       },
-      "paper-sink": {
+      "slate-200": {
         "role": "neutral",
-        "displayName": "Pressed",
-        "canonical": "#CBC7B6",
-        "tonalRamp": [
-          "#2D2A20",
-          "#4D4937",
-          "#6E684E",
-          "#8F8766",
-          "#A8A185",
-          "#BFBAA6",
-          "#DBD8CC",
-          "#F4F4F0"
-        ]
+        "displayName": "Slate 200",
+        "canonical": "#D7E0E5"
       },
-      "rule": {
+      "hairline": {
         "role": "neutral",
         "displayName": "Hairline",
-        "canonical": "#B9B4A0",
-        "tonalRamp": [
-          "#2C2A20",
-          "#4C4838",
-          "#6D6750",
-          "#8D8668",
-          "#A6A087",
-          "#BEB9A7",
-          "#DAD8CD",
-          "#F4F3F0"
-        ]
+        "canonical": "#D5D7D8"
       },
-      "rule-strong": {
+      "charcoal": {
         "role": "neutral",
-        "displayName": "Strong Rule",
-        "canonical": "#827B6C",
-        "tonalRamp": [
-          "#2A2823",
-          "#48453C",
-          "#676256",
-          "#867F6F",
-          "#A09A8D",
-          "#BAB5AB",
-          "#D8D5D0",
-          "#F3F3F1"
-        ]
+        "displayName": "Charcoal",
+        "canonical": "#57585B"
       },
-      "carbon": {
+      "grey": {
         "role": "neutral",
-        "displayName": "Carbon",
-        "canonical": "#181614",
-        "tonalRamp": [
-          "#2A2623",
-          "#48423C",
-          "#675E56",
-          "#867A6F",
-          "#A0968D",
-          "#B9B2AC",
-          "#D8D4D0",
-          "#F3F2F1"
-        ]
+        "displayName": "Grey",
+        "canonical": "#6C6D70"
       },
-      "carbon-soft": {
+      "grey-light": {
         "role": "neutral",
-        "displayName": "Softened Carbon",
-        "canonical": "#4A463F",
-        "tonalRamp": [
-          "#292723",
-          "#48443D",
-          "#666057",
-          "#847D71",
-          "#9F998E",
-          "#B9B4AC",
-          "#D7D5D0",
-          "#F3F3F1"
-        ]
+        "displayName": "Grey Light",
+        "canonical": "#929497"
       },
-      "oxblood": {
-        "role": "primary",
-        "displayName": "Oxblood Registration Ink",
-        "canonical": "#8A2B34",
-        "tonalRamp": [
-          "#3A1216",
-          "#652026",
-          "#902D36",
-          "#BB3A46",
-          "#CD606A",
-          "#DB8A92",
-          "#EABDC1",
-          "#F9ECED"
-        ]
+      "slate": {
+        "role": "accent",
+        "displayName": "Slate",
+        "canonical": "#465B69"
       },
-      "oxblood-deep": {
-        "role": "primary",
-        "displayName": "Oxblood Deep",
-        "canonical": "#6E202A",
-        "tonalRamp": [
-          "#3B1117",
-          "#671E27",
-          "#922B38",
-          "#BE3748",
-          "#D05D6C",
-          "#DD8893",
-          "#EBBCC2",
-          "#F9EBED"
-        ]
+      "slate-deep": {
+        "role": "accent",
+        "displayName": "Slate Deep",
+        "canonical": "#2E3F4A"
       },
-      "oxblood-pale": {
-        "role": "primary",
-        "displayName": "Oxblood Knockout",
-        "canonical": "#E8C9CC",
-        "tonalRamp": [
-          "#36171A",
-          "#5D282D",
-          "#843840",
-          "#AC4953",
-          "#C16C75",
-          "#D1949A",
-          "#E5C2C6",
-          "#F7EDEE"
-        ]
+      "slate-700": {
+        "role": "neutral",
+        "displayName": "Slate 700",
+        "canonical": "#3A4D5A"
       },
-      "teal": {
-        "role": "secondary",
-        "displayName": "Ceremony Teal",
-        "canonical": "#12514E",
-        "tonalRamp": [
-          "#0E3F3C",
-          "#186C68",
-          "#229A95",
-          "#2DC8C1",
-          "#54D9D3",
-          "#82E3DF",
-          "#B8EFED",
-          "#EAFAFA"
-        ]
+      "slate-900": {
+        "role": "neutral",
+        "displayName": "Slate 900",
+        "canonical": "#233039"
       },
-      "teal-deep": {
-        "role": "secondary",
-        "displayName": "Ceremony Teal Deep",
-        "canonical": "#0D403E",
-        "tonalRamp": [
-          "#0D403E",
-          "#166E6B",
-          "#209D98",
-          "#29CBC5",
-          "#51DCD6",
-          "#80E5E1",
-          "#B7F0EE",
-          "#EAFBFA"
-        ]
+      "aqua-deep": {
+        "role": "accent",
+        "displayName": "Aqua Deep",
+        "canonical": "#3F8E97"
       },
-      "teal-pale": {
-        "role": "secondary",
-        "displayName": "Ceremony Knockout",
-        "canonical": "#B9D6D2",
-        "tonalRamp": [
-          "#1C302D",
-          "#31544F",
-          "#467770",
-          "#5A9A92",
-          "#7BB2AA",
-          "#9FC6C1",
-          "#C8DFDC",
-          "#EFF6F5"
-        ]
+      "aqua-200": {
+        "role": "neutral",
+        "displayName": "Aqua 200",
+        "canonical": "#D3EBEE"
       },
-      "violet": {
-        "role": "tertiary",
-        "displayName": "State Violet",
-        "canonical": "#413268",
-        "tonalRamp": [
-          "#201934",
-          "#382B5A",
-          "#503D7F",
-          "#674FA5",
-          "#8672BB",
-          "#A798CD",
-          "#CDC4E3",
-          "#F0EEF7"
-        ]
+      "aqua": {
+        "role": "accent",
+        "displayName": "Aqua",
+        "canonical": "#91CCD2"
       },
-      "violet-pale": {
-        "role": "tertiary",
-        "displayName": "State Tint",
-        "canonical": "#DCD7E5",
-        "tonalRamp": [
-          "#241E2E",
-          "#3E3450",
-          "#594A72",
-          "#736094",
-          "#9080AD",
-          "#AEA2C3",
-          "#D1CADD",
-          "#F1F0F5"
-        ]
+      "state": {
+        "role": "accent",
+        "displayName": "State",
+        "canonical": "#3F4042"
+      },
+      "neutral-200": {
+        "role": "neutral",
+        "displayName": "Neutral 200",
+        "canonical": "#E7E9EA"
       }
     },
     "typographyMeta": {
       "headline": {
         "displayName": "Headline",
-        "purpose": "The front-door headline and the result document's title. Faustina 600, balanced wrapping, tight negative tracking. One per page."
+        "purpose": "The front-door headline and the result document's title. Nunito Sans 600, balanced wrapping, tight negative tracking. One per page."
       },
       "question": {
         "displayName": "Question",
@@ -256,11 +101,11 @@
       },
       "side-plate": {
         "displayName": "Side Plate",
-        "purpose": "The two sides of the We Do Both band, knocked out of a whole ink field in condensed Archivo caps. Carried in the stylesheet by --fs-counter, a name left over from the counter buttons deleted on 12 September 2026."
+        "purpose": "The two sides of the We Do Both band, knocked out of a whole ink field in condensed Montserrat caps. Carried in the stylesheet by --fs-counter, a name left over from the counter buttons deleted on 12 September 2026."
       },
       "plate": {
         "displayName": "Plate",
-        "purpose": "Part headings on the result document and in the ask box's results, the band heading, and the officer name plate. Archivo caps only."
+        "purpose": "Part headings on the result document and in the ask box's results, the band heading, and the officer name plate. Montserrat caps only."
       },
       "title": {
         "displayName": "Title",
@@ -280,11 +125,11 @@
       },
       "stamp-overline": {
         "displayName": "Stamp Overline",
-        "purpose": "The field label struck at the top of a stamp (Service, Place, Nationality). 0.625rem Archivo caps at +.18em; the second-smallest step in the ramp, and deliberate: a rubber stamp's secondary lettering is smaller than its value."
+        "purpose": "The field label struck at the top of a stamp (Service, Place, Nationality). 0.625rem Montserrat caps at +.18em; the second-smallest step in the ramp, and deliberate: a rubber stamp's secondary lettering is smaller than its value."
       },
       "stamp-footline": {
         "displayName": "Stamp Footline",
-        "purpose": "The 0.5625rem floor of the ramp: the stamp footer under its rule (Answered / Awaiting, No.NN) in Azeret Mono at +.08em, and the solid Draft tag on an unconfirmed clause in Archivo 600 at +.16em. Nothing else goes this small."
+        "purpose": "The 0.5625rem floor of the ramp: the stamp footer under its rule (Answered / Awaiting, No.NN) in Nunito Sans with tabular figures at +.08em, and the solid Draft tag on an unconfirmed clause in Montserrat 600 at +.16em. Nothing else goes this small."
       }
     },
     "shadows": [
@@ -354,7 +199,7 @@
       "name": "Primary Action",
       "kind": "button",
       "refersTo": "action-ink",
-      "description": "The booking action, and the ask box's Answer Me. Oxblood field, paper lettering, perfectly square.",
+      "description": "The booking action, and the ask box's Answer Me. Slate field, paper lettering, perfectly square.",
       "html": "<button class=\"ds-act ds-act-ink\">Answer Me</button>",
       "css": ".ds-act { display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; line-height: 1; padding: 17px 30px; border: 1px solid transparent; border-radius: 0; cursor: pointer; transition: background-color 180ms cubic-bezier(.16,1,.3,1), color 180ms cubic-bezier(.16,1,.3,1), border-color 180ms cubic-bezier(.16,1,.3,1), transform 90ms cubic-bezier(.16,1,.3,1); } .ds-act-ink { background: #8A2B34; color: #E6E4D9; } .ds-act-ink:hover { background: #6E202A; } .ds-act-ink:active { transform: translateY(1px); } .ds-act-ink:focus-visible { outline: 2px solid #8A2B34; outline-offset: 3px; border-radius: 0; }"
     },
@@ -394,7 +239,7 @@
       "name": "We Do Both Side",
       "kind": "custom",
       "refersTo": "side-legal",
-      "description": "One side of the front door's closing band: a whole flat ink field with knocked-out condensed caps, stating a kind of work rather than offering it. It is an article with a real heading, not a button: no hover lift, no cursor change, no focus ring. Swap the two field variables for the teal ceremony side, whose print height token rises from 230px to 366px so the two fields carry equal weight.",
+      "description": "One side of the front door's closing band: a whole flat ink field with knocked-out condensed caps, stating a kind of work rather than offering it. It is an article with a real heading, not a button: no hover lift, no cursor change, no focus ring. Swap the two field variables for the aqua ceremony side, whose print height token rises from 230px to 366px so the two fields carry equal weight.",
       "html": "<section class=\"ds-sides\"><h2 class=\"ds-sides-head\">We Do Both</h2><article class=\"ds-side\"><h3 class=\"ds-side-title\">Register A Marriage</h3><p class=\"ds-side-line\">The legal part. An officer, your witnesses, the register signed and lodged with Home Affairs.</p><p class=\"ds-side-foot\">At our offices, at your home, or wherever suits you.</p><div class=\"ds-side-mark\"><svg viewBox=\"0 0 180 180\" width=\"156\" height=\"156\" aria-hidden=\"true\"><defs><path id=\"ds-rs-top\" d=\"M 26 90 A 64 64 0 0 1 154 90\" fill=\"none\"/></defs><circle cx=\"90\" cy=\"90\" r=\"86\" fill=\"none\" stroke=\"#E8C9CC\" stroke-width=\"2.5\"/><circle cx=\"90\" cy=\"90\" r=\"76\" fill=\"none\" stroke=\"#E8C9CC\" stroke-width=\"1\"/><text fill=\"#E8C9CC\" font-family=\"var(--font-archivo), 'Helvetica Neue', Arial, sans-serif\" font-weight=\"700\" font-size=\"12.5\" letter-spacing=\"2.2\"><textPath href=\"#ds-rs-top\" startOffset=\"50%\" text-anchor=\"middle\">RYAN HOGARTH</textPath></text><text x=\"90\" y=\"97\" fill=\"#E8C9CC\" text-anchor=\"middle\" font-family=\"var(--font-archivo), 'Helvetica Neue', Arial, sans-serif\" font-weight=\"700\" font-size=\"20\" letter-spacing=\"1.5\">REGISTERED</text></svg></div></article></section>",
       "css": ".ds-sides { display: grid; gap: 24px; } .ds-sides-head { margin: 0; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; text-transform: uppercase; letter-spacing: .012em; font-size: 1.875rem; line-height: 1.08; color: #181614; padding-bottom: 16px; border-bottom: 2px solid #181614; } .ds-side { --ds-field: #8A2B34; --ds-field-pale: #E8C9CC; display: flex; flex-direction: column; gap: 12px; padding: 32px; background: var(--ds-field); color: #E6E4D9; } .ds-side-title { margin: 0; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-stretch: 88%; text-transform: uppercase; letter-spacing: .012em; line-height: 1.08; font-size: clamp(1.75rem, 3.4vw, 2.875rem); color: #E6E4D9; } .ds-side-line { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.5; color: var(--ds-field-pale); max-width: 36ch; } .ds-side-foot { margin: 8px 0 0; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ds-field-pale) 42%, transparent); color: var(--ds-field-pale); font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-stretch: 90%; font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; } .ds-side-mark { display: flex; justify-content: center; padding: 12px 0 8px; }"
     },
@@ -410,7 +255,7 @@
       "name": "Conditional Note",
       "kind": "custom",
       "refersTo": "clause-note",
-      "description": "The qualifier under an answer that is not settled yet, ruled on one edge in state violet. The one place violet appears outside the Home Affairs part of the result document, and consistent with it: violet means this depends on the state or on facts we do not have yet. Violet on the paper ground measures 8.75:1.",
+      "description": "The qualifier under an answer that is not settled yet, ruled on one edge in state state grey. The one place state grey appears outside the Home Affairs part of the result document, and consistent with it: state grey means this depends on the state or on facts we do not have yet. State grey on the paper ground measures 8.75:1.",
       "html": "<p class=\"ds-clause-note\">Whether this applies to you depends on whether you are both South African.</p>",
       "css": ".ds-clause-note { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: .9375rem; line-height: 1.5; color: #413268; padding-left: 16px; border-left: 1px solid #413268; max-width: 58ch; }"
     },
@@ -442,14 +287,14 @@
       "name": "Clause",
       "kind": "custom",
       "refersTo": "none",
-      "description": "The unit shared by the result document and the ask box: a numbered clause, ruled off, with amounts set in tabular figures beside the prose and an optional violet note where the answer is not settled yet.",
+      "description": "The unit shared by the result document and the ask box: a numbered clause, ruled off, with amounts set in tabular figures beside the prose and an optional state grey note where the answer is not settled yet.",
       "html": "<li class=\"ds-clause\"><span class=\"ds-clause-no\">01</span><div class=\"ds-clause-body\"><h3 class=\"ds-clause-head\">What does a registration at our offices cost?<span class=\"ds-draft\">Draft</span></h3><p class=\"ds-clause-text\">A registration at our offices is <span class=\"ds-amount\">R4 500</span>. That covers the appointment, the checking of your documents, the signing, and the handwritten certificate you take away on the day.</p><p class=\"ds-clause-note\">Whether this applies to you depends on whether you are both South African.</p></div></li>",
       "css": ".ds-clause { list-style: none; display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 24px; align-items: start; padding-bottom: 32px; border-bottom: 1px solid #B9B4A0; } .ds-clause-no { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-size: .9375rem; letter-spacing: .04em; color: #4A463F; padding-top: 5px; } .ds-clause-body { display: grid; gap: 12px; } .ds-clause-head { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-weight: 600; font-size: 1.25rem; line-height: 1.3; letter-spacing: -.012em; color: #181614; } .ds-clause-text { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: 1.0625rem; line-height: 1.62; color: #181614; max-width: 62ch; } .ds-clause-note { margin: 0; font-family: var(--font-faustina), Georgia, serif; font-size: .9375rem; line-height: 1.5; color: #413268; padding-left: 16px; border-left: 1px solid #413268; max-width: 58ch; } .ds-amount { font-family: var(--font-azeret), ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; font-weight: 500; font-size: .94em; letter-spacing: -.02em; } .ds-draft { display: inline-block; margin-left: 8px; vertical-align: 2px; font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: .5625rem; letter-spacing: .16em; text-transform: uppercase; color: #E6E4D9; background: #4A463F; padding: 3px 6px 2px; }"
     }
   ],
   "narrative": {
     "northStar": "The Quiz",
-    "overview": "This is a document that gets stamped, not a form that gets filled. The ground is security paper (#E6E4D9) under a drawn guilloche rosette, and everything set on it behaves like something a registry would recognise: hairline rules instead of cards, perforated tear lines instead of section breaks, tick boxes lettered A, B, C, corner mounts holding photographs down, and stamps that land with pressure and bleed. Every answer a visitor gives prints a stamp onto a spine running down the edge of the page, so the questions assemble a document rather than advancing a stepper. The result screen is that document, completed, read as numbered clauses.\n\nDensity is high and deliberately unpadded: text sits close to its rules, measures are short (34-68ch), and the only generous space is between parts. Colour does not decorate; it commits. Nothing on the front door asks the visitor to choose a branch: the first question is already on the page, a free-text box answers from the library before any question at all, and the two sides of the business are shown at the foot of the page in a band headed \"We Do Both\" that carries no controls. Both sides still take a whole flat ink field at poster scale, because the business is genuinely two jobs and neither may read as the secondary one; what changed on 12 September 2026 is that the fields state the work instead of offering it. The confirmed rejections are the wedding-photo hero, the govtech stepper, cream and white grounds, and any borrowing of state insignia: no coat of arms, no state green, no official reference numbers. The mark is held at the top of every screen so this page is never mistaken for a Home Affairs page.\n\nThis world replaced the previous charcoal/aqua system on 11 September 2026. That system still sits in design-system/ as imported reference and is not imported by app/globals.css; none of its tokens are current here. WCAG 2.2 AA is the one constraint the open slate did not lift, and it shaped real values in this build: the ink-bleed filter's alpha floor, the pale-on-ink blend switch, and the choice of a mid-dark paper rather than a light one.",
+    "overview": "This is a document that gets stamped, not a form that gets filled. The ground is white paper under a drawn guilloche rosette, and everything set on it behaves like something a registry would recognise: hairline rules instead of cards, perforated tear lines instead of section breaks, tick boxes lettered A, B, C, corner mounts holding photographs down, and stamps that land with pressure and bleed. Every answer a visitor gives prints a stamp onto a spine running down the edge of the page, so the questions assemble a document rather than advancing a stepper. The result screen is that document, completed, read as numbered clauses.\n\nDensity is high and deliberately unpadded: text sits close to its rules, measures are short (34-68ch), and the only generous space is between parts. Colour does not decorate; it commits. Nothing on the front door asks the visitor to choose a branch: the first question is already on the page, a free-text box answers from the library before any question at all, and the two sides of the business are shown at the foot of the page in a band headed \"We Do Both\" that carries no controls. Both sides still take a whole flat ink field at poster scale, because the business is genuinely two jobs and neither may read as the secondary one; what changed on 12 September 2026 is that the fields state the work instead of offering it. The confirmed rejections are the wedding-photo hero, the govtech stepper, cream and white grounds, and any borrowing of state insignia: no coat of arms, no state green, no official reference numbers. The mark is held at the top of every screen so this page is never mistaken for a Home Affairs page.\n\nThis world replaced the previous charcoal/aqua system on 11 September 2026. That system still sits in design-system/ as imported reference and is not imported by app/globals.css; none of its tokens are current here. WCAG 2.2 AA is the one constraint the open slate did not lift, and it shaped real values in this build: the ink-bleed filter's alpha floor, the pale-on-ink blend switch, and the choice of a mid-dark paper rather than a light one.",
     "keyCharacteristics": [
       "Security-paper ground under a faint drawn guilloche, never cream and never white",
       "Three inks, each owning a role that is enforced, not suggested",
@@ -463,7 +308,7 @@
     "rules": [
       {
         "name": "The Three Inks Rule",
-        "body": "Each ink owns one meaning. Oxblood is registration, teal is ceremony, violet is the state and the unsettled. An ink never appears on a surface whose meaning it does not own. Violet is the narrow one and its meaning is precise: this depends on the state, or on facts we do not have yet. That covers the Home Affairs part of the result document, and it covers a conditional answer that cannot be settled until the visitor has answered more, and it covers nothing else. Violet is never a decorative third accent.",
+        "body": "Each ink owns one meaning. Slate is registration, aqua is ceremony, state grey is the state and the unsettled. An ink never appears on a surface whose meaning it does not own. State grey is the narrow one and its meaning is precise: this depends on the state, or on facts we do not have yet. That covers the Home Affairs part of the result document, and it covers a conditional answer that cannot be settled until the visitor has answered more, and it covers nothing else. State grey is never a decorative third accent.",
         "section": "colors"
       },
       {
@@ -488,12 +333,12 @@
       },
       {
         "name": "The Measured Annotation Rule",
-        "body": "Every number the visitor is asked to trust sets in Azeret Mono with tabular figures: rand amounts, day counts, step counts, clause numbers, stamp sequence numbers. Prose never carries a bare number in the serif where the mono is available.",
+        "body": "Every number the visitor is asked to trust sets in Nunito Sans with tabular figures with tabular figures: rand amounts, day counts, step counts, clause numbers, stamp sequence numbers. Prose never carries a bare number in the serif where the mono is available.",
         "section": "typography"
       },
       {
         "name": "The Plate-Or-Prose Rule",
-        "body": "Archivo is only ever uppercase and only ever on a plate: a band side, a part heading, a stamp, a label, an action. It never sets a sentence. Faustina never sets uppercase.",
+        "body": "Montserrat is only ever uppercase and only ever on a plate: a band side, a part heading, a stamp, a label, an action. It never sets a sentence. Nunito Sans never sets uppercase.",
         "section": "typography"
       },
       {
@@ -543,10 +388,10 @@
       }
     ],
     "dos": [
-      "Do give each ink its meaning and keep it: oxblood #8A2B34 registration, teal #12514E ceremony, violet #413268 the state and the not-yet-settled.",
+      "Do give each ink its meaning and keep it: slate #8A2B34 registration, aqua #12514E ceremony, state grey #413268 the state and the not-yet-settled.",
       "Do commit colour as a whole field with knocked-out type when it is used at scale, rather than as an accent on paper.",
       "Do keep a poster-scale ink field non-interactive: if it is a whole field it is a statement, and any action inside it is a separate plate at ordinary scale.",
-      "Do set every number, date, amount and count in Azeret Mono with tabular figures.",
+      "Do set every number, date, amount and count in Nunito Sans with tabular figures with tabular figures.",
       "Do keep every corner square (0 radius), including on inputs, actions and focus rings.",
       "Do group content with a 1px hairline (#B9B4A0), a 2px carbon rule under a part or band heading, or a tinted band: the ways a document groups things.",
       "Do draw any line that bounds a control in the strong rule (#827B6C), not the hairline, and run node scripts/contrast.mjs after touching the palette.",
@@ -558,14 +403,14 @@
       "Do keep the mark at the top of every screen."
     ],
     "donts": [
-      "Don't use violet for anything other than the state or an explicitly unsettled answer, and don't mix an ink into a surface whose meaning it does not own.",
+      "Don't use state grey for anything other than the state or an explicitly unsettled answer, and don't mix an ink into a surface whose meaning it does not own.",
       "Don't make a whole ink field clickable, hoverable or liftable. That was the front door's counter buttons, and they were deleted on 12 September 2026 for asking a choice before the page had earned one.",
       "Don't fork the visitor at the door: no path-choice screen and no \"which are you\" gate before the first question.",
       "Don't introduce a border radius, anywhere, at any size.",
       "Don't use white or cream as a ground, a card, a field interior or a photo mount.",
       "Don't put a card, a panel or a raised container into this system; rule it instead.",
       "Don't add shadows. The one shadow here is physical (a print resting on paper) and no second one is needed; state is shown tonally.",
-      "Don't set Archivo in sentence case or use it for prose, and don't set Faustina in uppercase.",
+      "Don't set Montserrat in sentence case or use it for prose, and don't set Nunito Sans in uppercase.",
       "Don't add a kicker or eyebrow above a heading. This system has no kicker style and the previous Eyebrow component was deleted on purpose; a heading stands on its own or gains a label-set line that is genuinely a caption or a stamp label.",
       "Don't put photography on a question screen: contrast at small sizes over imagery is the documented failure of the previous system.",
       "Don't borrow state insignia: no coat of arms, no state green, no official-looking reference numbers.",

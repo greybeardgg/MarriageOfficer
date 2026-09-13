@@ -1,9 +1,10 @@
-export type Ink = 'oxblood' | 'teal' | 'violet';
+/** Which side of the work an answer belongs to. Each ink is a palette colour with a role. */
+export type Ink = 'legal' | 'ceremony' | 'state';
 
 const INK: Record<Ink, { solid: string; pale: string }> = {
-  oxblood: { solid: 'var(--oxblood)', pale: 'var(--oxblood-pale)' },
-  teal: { solid: 'var(--teal)', pale: 'var(--teal-pale)' },
-  violet: { solid: 'var(--violet)', pale: 'var(--violet-pale)' },
+  legal: { solid: 'var(--ink-legal)', pale: 'var(--ink-legal-pale)' },
+  ceremony: { solid: 'var(--ink-ceremony)', pale: 'var(--ink-ceremony-pale)' },
+  state: { solid: 'var(--ink-state)', pale: 'var(--ink-state-pale)' },
 };
 
 /** Deterministic, so a stamp does not jump between renders. */
@@ -25,7 +26,7 @@ export function Stamp({
   label,
   value,
   seq,
-  ink = 'oxblood',
+  ink = 'legal',
   pressing = false,
   onClick,
   size = 'md',
@@ -48,6 +49,9 @@ export function Stamp({
 }) {
   const c = INK[ink];
   const colour = tone === 'pale' ? c.pale : c.solid;
+  // The border, label and foot take the ink; the value itself stays in the
+  // heading ink on paper so the lighter ceremony aqua never carries reading text.
+  const valueColour = tone === 'pale' ? colour : 'var(--carbon)';
   const tilt = tiltProp ?? TILT[((seq ?? 1) - 1) % TILT.length];
   const foot = note === undefined ? `Answered · No.${String(seq ?? 1).padStart(2, '0')}` : note;
 
@@ -73,7 +77,7 @@ export function Stamp({
       </span>
       <span
         className="plate"
-        style={{ display: 'block', marginTop: 4, fontSize: VALUE_SIZE[size], lineHeight: 1.16, letterSpacing: '-.005em' }}
+        style={{ display: 'block', marginTop: 4, fontSize: VALUE_SIZE[size], fontWeight: 500, lineHeight: 1.16, letterSpacing: '.04em', color: valueColour }}
       >
         {value}
       </span>
@@ -108,7 +112,7 @@ export function StampSlot({ label, seq }: { label: string; seq: number }) {
     <span
       style={{
         display: 'block',
-        border: '1px dashed var(--rule)',
+        border: '1px dashed var(--rule-strong)',
         padding: '12px 15px 10px',
         color: 'var(--carbon-soft)',
         opacity: 0.9,

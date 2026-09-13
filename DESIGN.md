@@ -1,85 +1,82 @@
 ---
 name: Ryan Hogarth Marriage Officers
-description: A document that gets stamped, not a form that gets filled: security paper, three inks with roles, square corners, ink as material.
+description: A document that gets stamped, not a form that gets filled, set on the brand palette (charcoal, grey, slate, aqua) in Montserrat and Nunito Sans; square corners, ink as material.
 colors:
-  paper: "#E6E4D9"
-  paper-lift: "#EFEDE4"
-  paper-deep: "#D8D5C7"
-  paper-sink: "#CBC7B6"
-  rule: "#B9B4A0"
-  rule-strong: "#827B6C"
-  carbon: "#181614"
-  carbon-soft: "#4A463F"
-  oxblood: "#8A2B34"
-  oxblood-deep: "#6E202A"
-  oxblood-pale: "#E8C9CC"
-  teal: "#12514E"
-  teal-deep: "#0D403E"
-  teal-pale: "#B9D6D2"
-  violet: "#413268"
-  violet-pale: "#DCD7E5"
+  white: "#FFFFFF"
+  neutral-100: "#F4F5F6"
+  slate-100: "#EEF3F5"
+  slate-200: "#D7E0E5"
+  hairline: "#D5D7D8"
+  charcoal: "#57585B"
+  grey: "#6C6D70"
+  grey-light: "#929497"
+  slate: "#465B69"
+  slate-deep: "#2E3F4A"
+  slate-700: "#3A4D5A"
+  slate-900: "#233039"
+  aqua-deep: "#3F8E97"
+  aqua-200: "#D3EBEE"
+  aqua: "#91CCD2"
+  state: "#3F4042"
+  neutral-200: "#E7E9EA"
 typography:
   headline:
-    fontFamily: "Faustina, Georgia, 'Times New Roman', serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "clamp(2.125rem, 5.6vw, 3.75rem)"
-    fontWeight: 600
+    fontWeight: 200
     lineHeight: 1.02
     letterSpacing: "-.024em"
   question:
-    fontFamily: "Faustina, Georgia, 'Times New Roman', serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "clamp(2rem, 5.2vw, 3.5rem)"
-    fontWeight: 600
+    fontWeight: 300
     lineHeight: 1.08
     letterSpacing: "-.018em"
   side-plate:
-    fontFamily: "Archivo, 'Helvetica Neue', Arial, sans-serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "clamp(1.75rem, 3.4vw, 2.875rem)"
-    fontWeight: 700
+    fontWeight: 300
     lineHeight: 1.08
     letterSpacing: ".012em"
-    fontVariation: "wdth 88"
   plate:
-    fontFamily: "Archivo, 'Helvetica Neue', Arial, sans-serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "1.875rem"
-    fontWeight: 700
+    fontWeight: 300
     lineHeight: 1.08
     letterSpacing: ".012em"
-    fontVariation: "wdth 88"
   title:
-    fontFamily: "Faustina, Georgia, 'Times New Roman', serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "1.25rem"
-    fontWeight: 600
+    fontWeight: 500
     lineHeight: 1.3
     letterSpacing: "-.012em"
   body:
-    fontFamily: "Faustina, Georgia, 'Times New Roman', serif"
+    fontFamily: "Nunito Sans, \'Segoe UI\', Arial, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.62
     letterSpacing: "normal"
   label:
-    fontFamily: "Archivo, 'Helvetica Neue', Arial, sans-serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 600
     lineHeight: 1.2
     letterSpacing: ".14em"
-    fontVariation: "wdth 90"
   data:
-    fontFamily: "Azeret Mono, ui-monospace, 'SFMono-Regular', Menlo, monospace"
+    fontFamily: "Nunito Sans, \'Segoe UI\', Arial, sans-serif"
     fontSize: "0.9375rem"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "-.01em"
     fontFeature: "tnum 1"
   stamp-overline:
-    fontFamily: "Archivo, 'Helvetica Neue', Arial, sans-serif"
+    fontFamily: "Montserrat, 'Helvetica Neue', Arial, sans-serif"
     fontSize: "0.625rem"
     fontWeight: 600
     lineHeight: 1.2
     letterSpacing: ".18em"
-    fontVariation: "wdth 90"
   stamp-footline:
-    fontFamily: "Azeret Mono, ui-monospace, 'SFMono-Regular', Menlo, monospace"
+    fontFamily: "Nunito Sans, 'Segoe UI', Arial, sans-serif"
     fontSize: "0.5625rem"
     fontWeight: 400
     lineHeight: 1.2
@@ -100,87 +97,87 @@ spacing:
   gutter: "clamp(20px, 4vw, 56px)"
 components:
   action-ink:
-    backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.slate}"
+    textColor: "{colors.white}"
     rounded: "{rounded.none}"
     padding: "17px 30px"
     typography: "{typography.label}"
   action-ink-hover:
-    backgroundColor: "{colors.oxblood-deep}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.slate-deep}"
+    textColor: "{colors.white}"
   action-ruled:
     backgroundColor: "transparent"
-    textColor: "{colors.carbon}"
+    textColor: "{colors.charcoal}"
     rounded: "{rounded.none}"
     padding: "17px 30px"
     typography: "{typography.label}"
   action-ruled-hover:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.carbon}"
+    backgroundColor: "{colors.neutral-100}"
+    textColor: "{colors.charcoal}"
   action-quiet:
     backgroundColor: "transparent"
-    textColor: "{colors.carbon-soft}"
+    textColor: "{colors.grey}"
     padding: "6px 0"
     typography: "{typography.label}"
   option-row:
     backgroundColor: "transparent"
-    textColor: "{colors.carbon}"
+    textColor: "{colors.charcoal}"
     rounded: "{rounded.none}"
     padding: "16px 16px 16px 12px"
   option-row-hover:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.carbon}"
+    backgroundColor: "{colors.neutral-100}"
+    textColor: "{colors.charcoal}"
   option-row-chosen:
-    backgroundColor: "{colors.paper-sink}"
-    textColor: "{colors.carbon}"
+    backgroundColor: "{colors.slate-200}"
+    textColor: "{colors.charcoal}"
   field:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.carbon}"
+    backgroundColor: "{colors.neutral-100}"
+    textColor: "{colors.charcoal}"
     rounded: "{rounded.none}"
     padding: "15px 16px"
     typography: "{typography.data}"
     width: "100%"
   side-legal:
-    backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.slate}"
+    textColor: "{colors.white}"
     rounded: "{rounded.none}"
     padding: "32px"
     typography: "{typography.side-plate}"
   side-ceremony:
-    backgroundColor: "{colors.teal}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.aqua-deep}"
+    textColor: "{colors.white}"
     rounded: "{rounded.none}"
     padding: "32px"
     typography: "{typography.side-plate}"
   clause-note:
     backgroundColor: "transparent"
-    textColor: "{colors.violet}"
+    textColor: "{colors.state}"
     rounded: "{rounded.none}"
     padding: "0 0 0 16px"
     typography: "{typography.data}"
   stamp-registration:
     backgroundColor: "transparent"
-    textColor: "{colors.oxblood}"
+    textColor: "{colors.slate}"
     rounded: "{rounded.none}"
     padding: "12px 15px 10px"
   stamp-ceremony:
     backgroundColor: "transparent"
-    textColor: "{colors.teal}"
+    textColor: "{colors.aqua-deep}"
     rounded: "{rounded.none}"
     padding: "12px 15px 10px"
   stamp-state:
     backgroundColor: "transparent"
-    textColor: "{colors.violet}"
+    textColor: "{colors.state}"
     rounded: "{rounded.none}"
     padding: "12px 15px 10px"
   stamp-slot:
     backgroundColor: "transparent"
-    textColor: "{colors.carbon-soft}"
+    textColor: "{colors.grey}"
     rounded: "{rounded.none}"
     padding: "12px 15px 10px"
   draft-tag:
-    backgroundColor: "{colors.carbon-soft}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.grey}"
+    textColor: "{colors.white}"
     rounded: "{rounded.none}"
     padding: "3px 6px 2px"
 ---
@@ -197,7 +194,7 @@ mark says "Registered". The word "endorsed" appears nowhere a visitor can read
 it and must not be reintroduced.
 
 This is a document that gets stamped, not a form that gets filled. The ground is
-security paper (#E6E4D9) under a drawn guilloche rosette, and everything set on it
+white under a faint drawn guilloche rosette, and everything set on it
 behaves like something a registry would recognise: hairline rules instead of cards,
 perforated tear lines instead of section breaks, tick boxes lettered A, B, C, corner
 mounts holding photographs down, and stamps that land with pressure and bleed.
@@ -222,16 +219,18 @@ cream and white grounds, and any borrowing of state insignia: no coat of arms, n
 numbers. The mark is held at the top of every screen so this page is never mistaken
 for a Home Affairs page.
 
-This world replaced the previous charcoal/aqua system on 11 September 2026. That
-system still sits in `design-system/` as imported reference and is not imported by
-`app/globals.css`; none of its tokens are current here. WCAG 2.2 AA is the one
+This world replaced the previous charcoal/aqua system on 11 September 2026, and on
+13 September 2026 Ryan brought that system's palette and faces back into it: the
+page is white, the inks are slate, aqua and state grey from his palette, headings
+are Montserrat and body is Nunito Sans. The world's grammar (rules, perforations,
+tick boxes, corner mounts, stamps on a spine) is unchanged. WCAG 2.2 AA is the one
 constraint the open slate did not lift, and it shaped real values in this build:
 the ink-bleed filter's alpha floor, the pale-on-ink blend switch, and the choice of
 a mid-dark paper rather than a light one.
 
 **Key Characteristics:**
-- Security-paper ground under a faint drawn guilloche, never cream and never white
-- Three inks, each owning a role that is enforced, not suggested
+- A white ground under a faint drawn guilloche; every colour from the brand palette
+- Three inks from the palette (slate, aqua, state grey), each owning a role that is enforced
 - Ink as material: real displacement filters, pressure, and slight misregistration
 - Square corners everywhere; there is no radius scale
 - Rules and perforations instead of cards and containers
@@ -241,137 +240,98 @@ a mid-dark paper rather than a light one.
 
 ## Colors
 
-A registry palette: a warm mid-dark paper and three saturated printing inks, each
-committed as a whole field rather than sprinkled as an accent.
+The brand palette Ryan supplied on 13 September 2026 ("Marriage Officer colour
+palette", sampled from the lockup): charcoal, grey, slate and aqua, plus the
+neutral ramp. Nothing outside it appears on the page. The page is white; the
+old white ground and the slate, aqua and state grey inks are gone.
 
 ### Primary
-- **Oxblood Registration Ink** (#8A2B34): the registration side of the business. It
-  fills the legal side of the "We Do Both" band as a whole field, prints registration
-  stamps and the officer's round mark, and carries the primary action, the caret, the
-  selection highlight and the focus ring. Its deep variant is the hover state of an
-  oxblood action; its pale variant is the knocked-out prose colour when type sits on
-  that field.
+- **Slate** (#465B69, slate-600): the registration side of the business and the
+  primary accent. It fills the "Register A Marriage" field, prints registration
+  stamps and the officer's round mark, and carries the primary action, the caret,
+  the focus ring and the option-row highlight. Slate-800 (#2E3F4A) is its hover;
+  slate-200 (#D7E0E5) is the soft text on its field and the pressed state of a row.
 
 ### Secondary
-- **Ceremony Teal** (#12514E): the ceremony side. It fills the ceremony side of the
-  band as a whole field and prints every ceremony stamp. It never appears on a
-  registration surface, and registration never appears on a ceremony one.
+- **Aqua** (#91CCD2, the ring in the lockup) is a seasoning, never a surface: it
+  rules the current menu entry and tints text selection. Its deep step, **aqua-700**
+  (#3F8E97), prints every ceremony stamp's border and label. Its pale step,
+  **aqua-200** (#D3EBEE), is the "Have A Wedding" field, with slate-900 (#233039)
+  and slate-700 (#3A4D5A) as the text on it. Aqua never carries reading text on
+  white: a stamp's value is always charcoal.
 
 ### Tertiary
-- **State Violet** (#413268): the statutory and the unsettled. It tints the Home
-  Affairs part of the result document, rules its heading, numbers its clauses, and
-  prints the nationality and non-SA-status stamps. It also numbers and annotates a
-  conditional answer in the front-door ask box, where the qualifier says an answer is
-  not settled until we know more. It appears nowhere else.
+- **State grey** (#3F4042, neutral-800): the statutory and the unsettled. It tints
+  the Home Affairs part of the result document (on neutral-200, #E7E9EA), numbers
+  its clauses, prints the non-SA-status stamp, and sets the qualifier under a
+  conditional answer in the ask box. It appears nowhere else.
 
 ### Neutral
-- **Security Paper** (#E6E4D9): the page ground, and the knocked-out text colour on
-  any ink field.
-- **Raised Leaf** (#EFEDE4): option rows on hover, field and textarea interiors, the
-  margin inside an affixed print.
-- **Tinted Band** (#D8D5C7): the result document's head band, the spine channel and
-  the corner mounts that hold photographs.
-- **Pressed** (#CBC7B6): the pressed and chosen state of an option row.
-- **Hairline** (#B9B4A0) and **Strong Rule** (#827B6C): the ruling of the document.
-  Hairline draws what only separates: dividers, the spine channel, the guilloche
-  strokes, the empty stamp slot, the close of the ask box. Strong rule draws what
-  bounds a control: tick boxes, field strokes, the ruled action's border, print
-  borders, the perforation and the scrollbar thumb. The two are not interchangeable,
-  and the strong rule is the darker of the pair for a measured reason (see the Ruled
-  Boundary Rule).
-- **Carbon** (#181614): all primary text, and the heavy 2px rule under a part or band
-  heading.
-- **Softened Carbon** (#4A463F): secondary text, hints, captions, counts and notes.
-  Tinted toward the ground hue, never a grey.
+- **White** (#FFFFFF): the page. **Neutral-100** (#F4F5F6): option rows on hover,
+  field interiors, the margin inside an affixed print. **Slate-100** (#EEF3F5):
+  the result document's head band, the spine channel, corner mounts.
+- **Hairline** (#D5D7D8, neutral-300) draws what only separates. **Grey**
+  (#6C6D70, neutral-600) draws what bounds a control (tick boxes, field strokes,
+  the ruled action) and is also the body text colour; **charcoal** (#57585B) is
+  every heading and every stamp value. Grey-light (#929497) is never small text.
 
 ### Named Rules
-**The Three Inks Rule.** Each ink owns one meaning. Oxblood is registration, teal is
-ceremony, violet is the state and the unsettled. An ink never appears on a surface
-whose meaning it does not own. Violet is the narrow one and its meaning is precise:
-this depends on the state, or on facts we do not have yet. That covers the Home
-Affairs part of the result document, and it covers a conditional answer that cannot
-be settled until the visitor has answered more, and it covers nothing else. Violet is
-never a decorative third accent.
+**The Three Inks Rule** stands with new inks: slate is registration, aqua is
+ceremony, state grey is the state and the unsettled. An ink never appears on a
+surface whose meaning it does not own.
 
-**The Whole Field Rule.** When an ink is used at scale it takes the entire surface
-and the type knocks out of it. There is no paper-with-an-accent-stripe treatment;
-a thing is either on paper or it is an ink field.
+**The Whole Field Rule** stands: an ink at scale takes the whole surface. The
+registration field is dark (slate, white text); the ceremony field is light
+(aqua-200, slate text). One dark and one light, never two tints in a row.
 
-**The Statement, Not An Affordance Rule.** A whole flat ink field is a statement, not
-a control. The two sides of the "We Do Both" band are `<article>` elements with real
-headings: no hover lift, no cursor change, no focus ring, nothing to click. Affordance
-in this system is carried by rules, plates and tick boxes at ordinary text scale,
-never by scale or colour weight. If a new surface needs a poster-scale field and an
-action, the action is a separate ruled or ink plate inside it.
-
-**The Not Cream, Not White Rule.** The ground is #E6E4D9. Pure white and cream are
-not in this system at any size, including inside photographs' mounts and inside
-input fields and textareas, which use the raised leaf (#EFEDE4) instead.
-
-**The Ruled Boundary Rule.** Any line that bounds a control rather than merely
-separating content uses the strong rule (#827B6C), which measures 3.29:1 against the
-paper and 3.58:1 against the raised leaf: WCAG 2.2 SC 1.4.11. Separators may stay on
-the hairline (#B9B4A0), which SC 1.4.11 does not bind. `scripts/contrast.mjs` reads
-these tokens straight out of `app/globals.css` and asserts fourteen pairs (eleven
-text at 4.5:1, three UI-boundary and focus at 3:1); run it after any palette edit,
-it exits non-zero on failure.
+**The Palette Rule.** Every colour on the page is a token from the supplied
+palette. `scripts/contrast.mjs` reads the tokens out of `app/globals.css` and
+asserts eighteen pairs (fourteen text at 4.5:1, four boundary and focus at 3:1);
+run it after any palette edit, it exits non-zero on failure.
 
 ## Typography
 
-**Display Font:** Faustina (with Georgia, Times New Roman, serif)
-**Body Font:** Faustina (with Georgia, Times New Roman, serif)
-**Label/Plate Font:** Archivo, width axis 88-90 (with Helvetica Neue, Arial, sans-serif)
-**Data Font:** Azeret Mono, tabular figures (with ui-monospace, SFMono-Regular, Menlo)
-
-**Character:** A serif that speaks and a condensed sans that stamps. Faustina carries
-every sentence the business says in its own voice, at negative tracking and tight
-leading so headlines read as printed matter rather than marketing. Archivo appears
-only where a document would use plate lettering: band and part headings, stamps,
-labels and actions, always uppercase, always condensed. Azeret Mono is not a style,
-it is a measurement: it appears only where a number, date, reference or count does.
+**Headings and eyebrows:** Montserrat (with Helvetica Neue, Arial, sans-serif),
+thin and tracked, always uppercase: 200 for the headline, 300 for questions,
+plates, side titles, stamp values and the officer's name, 500 for eyebrows and
+clause headings (the one heading step set in sentence case). Never bold.
+**Body and UI:** Nunito Sans (with Segoe UI, Arial), 400 for prose, 600 for
+option labels, 700 for actions and the letter in a tick box. Counts, dates and
+amounts are Nunito Sans with lining tabular figures (`.data`); there is no
+monospace. **Lockup only:** Nunito Sans 400 sets "Marriage Officers" under the
+wordmark, because that line is part of the logo, not of the type system.
 `font-synthesis-weight` is off, so weights are real or absent.
 
 ### Hierarchy
-- **Headline** (Faustina 600, clamp 2.125-3.75rem, 1.02, -.024em, balanced): the
-  front-door headline and the result document's title. One per page.
-- **Question** (Faustina 600, clamp 2-3.5rem, 1.08, -.018em, balanced): one question
-  per screen, the ask box's own prompt, and the closing ask. The step is tied to the
-  role, not to the heading level: on the front door the headline is the `h1` and the
-  question sets as `h2` at the same size; on every later screen the question is the
-  `h1`. The ask box's prompt is a `<label>` at the same step.
-- **Side plate** (Archivo 700, wdth 88, clamp 1.75-2.875rem, uppercase, +.012em): the
-  two sides of the "We Do Both" band, knocked out of their ink field. Carried in the
-  stylesheet by `--fs-counter`, a name left over from the deleted counter buttons.
-- **Plate** (Archivo 700, wdth 88, 1.875rem, uppercase): part headings on the result
-  document and in the ask box's results, the band heading, and the officer name plate.
-- **Title** (Faustina 600, 1.25rem, 1.3, -.012em): clause headings, option labels.
-- **Body** (Faustina 400, 1.0625rem, 1.62): all prose, held to a 68ch measure, and
-  narrower where it sits beside or under something else (34-58ch).
-- **Label** (Archivo 600, wdth 90, 0.75rem, uppercase, +.14em): captions, stamp
-  labels, spine headings, the band's foot line, the chrome note.
-- **Data** (Azeret Mono 400-500, tabular): step counts, sequence numbers, dates,
-  amounts, stamp footers, officer locations.
-- **Stamp overline** (Archivo 600, wdth 90, 0.625rem, uppercase, +.18em): the field
-  label struck at the top of a stamp ("Service", "Place", "Nationality").
-- **Stamp footline** (0.5625rem, uppercase): the stamp footer under its rule
-  (`Answered · No.NN`, `Awaiting · No.NN`) in Azeret Mono at +.08em, and the solid
-  `Draft` tag on an unconfirmed clause in Archivo 600 at +.16em.
+- **Headline** (Montserrat 200, clamp 1.875-3rem, 1.12, +.06em, uppercase): the
+  result document's title (capped at 2.125rem, weight 300, because it is a
+  sentence) and the team page's title.
+- **Question** (Montserrat 300, clamp 1.625-2.625rem, 1.16, +.06em, uppercase):
+  one per step screen; on the door it is stepped down to 1.5rem.
+- **Side plate** (Montserrat 300, clamp 1.5-2.375rem, +.1em, uppercase): the two
+  sides of the "We Do Both" band.
+- **Plate** (Montserrat 300, 1.5rem, +.1em, uppercase): part headings, the band
+  heading; stamp values at 500.
+- **Clause heading** (Montserrat 500, 1.25rem, 1.35, sentence case): the one
+  heading that is a question in a sentence.
+- **Body** (Nunito Sans 400, 1.0625rem, 1.62, grey on white): all prose, held to
+  a 68ch measure.
+- **Label** (Montserrat 500, 0.75rem, +.14em, uppercase): the eyebrow, stamp
+  labels, spine headings, the band's foot line.
+- **Action** (Nunito Sans 700, 0.9375rem, Title Case as written): every button.
+- **Data** (Nunito Sans, tabular lining figures): step counts, sequence numbers,
+  dates, amounts, stamp footers.
 
 ### Named Rules
-**The Measured Annotation Rule.** Every number the visitor is asked to trust sets in
-Azeret Mono with tabular figures: rand amounts, day counts, step counts, clause
-numbers, stamp sequence numbers. Prose never carries a bare number in the serif
-where the mono is available.
+**The Two Faces Rule.** Montserrat sets headings and eyebrows and nothing else;
+Nunito Sans sets everything a visitor reads or operates. Neither ever does the
+other's job (Ryan, 13 September 2026).
 
-**The Plate-Or-Prose Rule.** Archivo is only ever uppercase and only ever on a plate:
-a band side, a part heading, a stamp, a label, an action. It never sets a sentence.
-Faustina never sets uppercase.
+**The Measured Annotation Rule** stands: every number the visitor is asked to
+trust sets in tabular figures beside the prose.
 
-**The Stamp Lettering Rule.** The two smallest steps in the ramp (0.625rem overline,
-0.5625rem footline) exist only inside a stamp and the `Draft` tag, because a rubber
-stamp's secondary lettering is smaller than its value. They are tracked wide (+.18em,
-+.16em and +.08em) to stay legible at that size, and nothing else in the system may
-go below the 0.75rem label. These are not off-ramp one-offs; going smaller still is.
+**The Stamp Lettering Rule** stands: the two smallest steps (0.625rem overline,
+0.5625rem footline) exist only inside a stamp and the Draft tag.
 
 ## Layout
 
@@ -471,7 +431,7 @@ table so the same stamp never jumps between renders; empty slots are the same sh
 in a dashed hairline. The officer's round mark is two concentric rings (2.5px and 1px)
 with the name curved inside them. Tick boxes are 26px squares carrying a letter
 (A, B, C) in the data face. A conditional note is bounded on one edge only, by a 1px
-violet rule down its left side. The one drawn glyph set is a hand-sized stroked arrow
+state grey rule down its left side. The one drawn glyph set is a hand-sized stroked arrow
 at 1.5-1.75px, used for the nib, the tick and the back control.
 
 ### Named Rules
@@ -488,14 +448,14 @@ with dotted borders, gradients or background images.
 
 ### Buttons
 - **Shape:** Perfectly square (0 radius), 1px border box, uppercase condensed
-  Archivo at 0.75rem, +.1em tracking.
-- **Primary ("ink"):** oxblood field, paper text, 17px 30px padding. Hover deepens
-  the field to oxblood-deep; active nudges 1px down over 90ms; disabled drops to 40%.
+  Montserrat at 0.75rem, +.1em tracking.
+- **Primary ("ink"):** slate field, paper text, 17px 30px padding. Hover deepens
+  the field to slate-deep; active nudges 1px down over 90ms; disabled drops to 40%.
 - **Secondary ("ruled"):** transparent with a strong-rule border and carbon text.
   Hover fills with the raised leaf and darkens the border to carbon.
 - **Tertiary ("quiet"):** borderless label-weight text in softened carbon with a
   drawn arrow, 6px vertical padding. Hover goes to carbon. Used for Back only.
-- **Focus:** a 2px oxblood outline at 3px offset, square. On an ink field the focus
+- **Focus:** a 2px slate outline at 3px offset, square. On an ink field the focus
   ring switches to paper via `.on-ink`.
 
 ### Inputs / Fields
@@ -503,8 +463,8 @@ with dotted borders, gradients or background images.
   Single-line fields set in the data face because their content is data; textareas
   switch to the serif at 1.55 leading and resize vertically only, because what a
   visitor writes in the ask box is a sentence, not a value.
-- **Focus:** border goes oxblood and a 2px oxblood outline sits at 2px offset.
-- **Placeholder:** softened carbon at 80% opacity. Caret is oxblood.
+- **Focus:** border goes slate and a 2px slate outline sits at 2px offset.
+- **Placeholder:** softened carbon at 80% opacity. Caret is slate.
 
 ### Cards / Containers
 There are no cards. Content is grouped by ruling: a top and bottom hairline, a heavy
@@ -530,8 +490,8 @@ is on transforms of the row's contents only, never on layout properties.
 The foot of the front door: a plate heading over a 2px carbon rule, then two ink
 fields of equal width and equal weight. Each is an `<article>` with its own heading,
 a serif line at a 36ch measure, a label-set foot line divided by a 42%-mixed pale
-rule, and a corner-mounted photograph at the bottom. The legal side is oxblood and
-carries the officer's round pale `Registered` mark; the ceremony side is teal and
+rule, and a corner-mounted photograph at the bottom. The legal side is slate and
+carries the officer's round pale `Registered` mark; the ceremony side is aqua and
 spends that band on a taller print instead, so the two fields carry equal content
 weight either way. Print height is a token, not a literal: `--art-h` is 230px on the
 legal side and 366px on the ceremony side, both dropping to 240px below 860px.
@@ -551,11 +511,11 @@ the result document uses, so the front door and the finished document share one 
 
 ### Conditional Note (signature)
 The qualifier on an answer that is not settled yet: serif at 0.9375rem in state
-violet, with a 1px violet rule down its left edge and 16px of padding, at a 58ch
-measure, sitting under the clause it qualifies. Its clause number takes violet too.
-This is the one place violet appears outside the Home Affairs part of the result
+state grey, with a 1px state grey rule down its left edge and 16px of padding, at a 58ch
+measure, sitting under the clause it qualifies. Its clause number takes state grey too.
+This is the one place state grey appears outside the Home Affairs part of the result
 document, and it is consistent rather than an exception: it says the same thing, that
-the answer depends on the state or on facts we do not have yet. Violet on the paper
+the answer depends on the state or on facts we do not have yet. State grey on the paper
 ground measures 8.75:1.
 
 ### Stamp (signature)
@@ -588,21 +548,21 @@ and 340ms for the press. Two authored moments exist and no others: **the stamp p
 animation and transition collapse to 1ms under `prefers-reduced-motion: reduce`.
 
 ### Browser Surfaces
-The parts nobody drew still carry the design: selection is oxblood-pale on carbon,
-caret and accent-color are oxblood, the focus ring is a square 2px oxblood outline,
+The parts nobody drew still carry the design: selection is slate-pale on carbon,
+caret and accent-color are slate, the focus ring is a square 2px slate outline,
 and both scrollbar syntaxes are themed (thin, strong-rule thumb on a tinted-band
 track, 11px, with a 3px track-coloured border and a carbon-soft hover).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** give each ink its meaning and keep it: oxblood #8A2B34 registration, teal
-  #12514E ceremony, violet #413268 the state and the not-yet-settled.
+- **Do** give each ink its meaning and keep it: slate #8A2B34 registration, aqua
+  #12514E ceremony, state grey #413268 the state and the not-yet-settled.
 - **Do** commit colour as a whole field with knocked-out type when it is used at
   scale, rather than as an accent on paper.
 - **Do** keep a poster-scale ink field non-interactive: if it is a whole field it is
   a statement, and any action inside it is a separate plate at ordinary scale.
-- **Do** set every number, date, amount and count in Azeret Mono with tabular figures.
+- **Do** set every number, date, amount and count in Nunito Sans with tabular figures with tabular figures.
 - **Do** keep every corner square (0 radius), including on inputs, actions and focus
   rings.
 - **Do** group content with a 1px hairline (#B9B4A0), a 2px carbon rule under a part
@@ -621,7 +581,7 @@ track, 11px, with a 3px track-coloured border and a carbon-soft hover).
 - **Do** keep the mark at the top of every screen.
 
 ### Don't:
-- **Don't** use violet for anything other than the state or an explicitly unsettled
+- **Don't** use state grey for anything other than the state or an explicitly unsettled
   answer, and don't mix an ink into a surface whose meaning it does not own.
 - **Don't** make a whole ink field clickable, hoverable or liftable. That was the
   front door's counter buttons, and they were deleted on 12 September 2026 for asking
@@ -634,7 +594,7 @@ track, 11px, with a 3px track-coloured border and a carbon-soft hover).
   instead.
 - **Don't** add shadows. The one shadow here is physical (a print resting on paper)
   and no second one is needed; state is shown tonally.
-- **Don't** set Archivo in sentence case or use it for prose, and don't set Faustina
+- **Don't** set Montserrat in sentence case or use it for prose, and don't set Nunito Sans
   in uppercase.
 - **Don't** add a kicker or eyebrow above a heading. This system has no kicker style
   and the previous `Eyebrow` component was deleted on purpose; a heading stands on

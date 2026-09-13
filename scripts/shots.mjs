@@ -31,7 +31,7 @@ async function settle(page) {
   // A stylesheet that failed to load renders a plausible-looking page that
   // proves nothing. Refuse the capture rather than review it.
   const styled = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  if (styled !== 'rgb(230, 228, 217)') throw new Error('stylesheet did not apply, body background is ' + styled);
+  if (styled !== 'rgb(255, 255, 255)') throw new Error('stylesheet did not apply, body background is ' + styled);
   await page.waitForTimeout(320);
   await page.evaluate(() => window.scrollTo(0, 0));
 }

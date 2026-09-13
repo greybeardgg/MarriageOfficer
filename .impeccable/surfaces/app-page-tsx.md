@@ -86,6 +86,11 @@ the contact details.
     because it decides which questions follow. Its price clause is a draft
     that assumes ceremony pricing without the legal part; Ryan and Christa
     confirm it.
+12a. **The brand palette and faces** (Ryan, 13 September 2026, evening): the
+    oxblood, teal and violet inks and the security-paper ground are replaced by
+    slate, aqua and state grey on white, from the supplied palette; Montserrat for
+    headings and eyebrows, Nunito Sans for all body and UI text. Faustina survives
+    only as the lockup's "Marriage Officers" line.
 12. **Choose your officer.** Where the province has more than one officer
     (Gauteng, Western Cape), a question offers no preference first and then
     each officer by name and place. A named officer is honoured, appears in the
@@ -100,14 +105,15 @@ nothing of the visitor before it starts being useful: the first question is on t
 page, and a free-text box answers from the library before any question at all. Every
 answer prints a stamp the visitor can see, re-read and change.
 
-**OWN-WORLD:** Security-paper ground `#E6E4D9` under a faint guilloche, never cream
-and never white. Three inks with roles, committed as whole fields rather than accents:
-oxblood `#8A2B34` owns registration, deep teal `#12514E` owns ceremony, state
-violet `#413268` is reserved for the state and appears nowhere else. Carbon `#181614`
-for text. Archivo in condensed caps for counters, plates and stamps; Faustina for
-questions and prose; Azeret Mono for dates, reference numbers and stamps.
-Square corners, hairline rules, perforated edges, corner-mounted photographs, and
-stamp impressions that misregister, vary in pressure and bleed into the paper grain.
+**OWN-WORLD (revised 13 September 2026):** White ground under a faint guilloche.
+Every colour is a token from Ryan's brand palette: slate `#465B69` owns registration
+and the primary action, aqua (`#3F8E97` for stamps, `#D3EBEE` as the ceremony field,
+`#91CCD2` as a seasoning) owns ceremony, state grey `#3F4042` is reserved for the
+state and the unsettled. Charcoal `#57585B` for headings, grey `#6C6D70` for body.
+Montserrat, thin and tracked, for every heading and eyebrow; Nunito Sans for
+everything read or operated. Square corners, hairline rules, perforated edges,
+corner-mounted photographs, and stamp impressions that misregister, vary in pressure
+and bleed into the paper grain.
 
 **STORY:** The visitor is asked nothing before the page starts being useful. Ryan's
 introduction says who we are, and a box beside the Start The Quiz button answers

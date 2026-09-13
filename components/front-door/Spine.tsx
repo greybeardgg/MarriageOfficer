@@ -6,11 +6,11 @@ import type { Situation } from '@/src/situation/types';
 import { Stamp, StampSlot } from '@/components/brand/Stamp';
 import type { Ink } from '@/components/brand/Stamp';
 
-/** Ceremony answers stamp in teal, everything legal in oxblood, the state in violet. */
+/** Ceremony answers stamp in aqua, everything legal in slate, the state in grey. */
 function inkFor(q: Question, partial: Partial<Situation>): Ink {
-  if (q.id === 'nonSaStatus') return 'violet';
-  if (q.id === 'service') return partial.service === 'registration' ? 'oxblood' : 'teal';
-  return partial.service && partial.service !== 'registration' ? 'teal' : 'oxblood';
+  if (q.id === 'nonSaStatus') return 'state';
+  if (q.id === 'service') return partial.service === 'registration' ? 'legal' : 'ceremony';
+  return partial.service && partial.service !== 'registration' ? 'ceremony' : 'legal';
 }
 
 export function Spine({
