@@ -1,5 +1,11 @@
 import { test, expect } from '@playwright/test';
 
+/** The page itself never scrolls on a desktop: one viewport, nothing below the fold (Cameron, 14 September 2026). */
+async function expectOneViewport(page: import('@playwright/test').Page) {
+  const fits = await page.evaluate(() => document.documentElement.scrollHeight <= window.innerHeight + 1);
+  expect(fits).toBe(true);
+}
+
 test('western cape, one non-SA on a visa, divorced, registration', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1, name: /Ryan Hogarth/ })).toBeVisible();
@@ -11,28 +17,42 @@ test('western cape, one non-SA on a visa, divorced, registration', async ({ page
   await page.getByRole('button', { name: 'Here on a visa or permit' }).click();
   await page.getByRole('button', { name: 'Yes, divorced' }).click();
   await expect(page.getByRole('heading', { name: 'Do you have an officer in mind?' })).toBeVisible();
+  await expectOneViewport(page);
   await page.getByRole('button', { name: /No preference/ }).click();
   await page.getByRole('button', { name: 'Not yet' }).click();
 
   await expect(page).toHaveURL(/\/plan\?/);
   await expect(page.getByRole('heading', { level: 1 }))
     .toHaveText('legal registration, one of you not South African (on a visa), one of you married before, Western Cape');
-  await expect(page.getByText('Lara Thomas')).toBeVisible();
+  await expectOneViewport(page);
+  // the first message is the process; the rest are behind buttons
+  await expect(page.getByText('How does a registration at your offices work?')).toBeVisible();
+  await expect(page.getByText('One of us is divorced. What extra do we need?')).toHaveCount(0);
+  await page.getByRole('button', { name: 'What do we bring?' }).click();
   await expect(page.getByText('One of us is divorced. What extra do we need?')).toBeVisible();
+  // a button pressed is not offered again
+  await expect(page.getByRole('button', { name: 'What do we bring?' })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Who will we meet?' }).click();
+  await expect(page.getByText('Lara Thomas')).toBeVisible();
+  await expect(page.getByRole('log').getByText('Nearest to you')).toBeVisible();
   // no phone number anywhere on a Western Cape page
   await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
 
-  await page.getByLabel('Do you have any questions?').fill('can we bring a photographer on a Saturday?');
-  await page.getByRole('button', { name: 'Show me' }).click();
+  await page.getByLabel('Ask anything else').fill('can we bring a photographer on a Saturday?');
+  await page.getByRole('button', { name: 'Ask', exact: true }).click();
   await expect(page.getByText('Can we bring a photographer or take photos?')).toBeVisible();
   await expect(page.getByText('Can we do it on a Saturday?')).toBeVisible();
-  await expect(page).toHaveURL(/q=/);
+  // the buttons still on offer survive a typed question
+  await expect(page.getByRole('button', { name: 'What does it cost?' })).toBeVisible();
 });
 
 test('gauteng first-marriage registration shows the express option and no decree', async ({ page }) => {
   await page.goto('/plan?p=gauteng&n=both_sa&m=none&s=registration&d=not_yet');
+  await page.getByRole('button', { name: 'What does it cost?' }).click();
   await expect(page.getByText('Is there a lower-cost option?')).toBeVisible();
+  await page.getByRole('button', { name: 'What do we bring?' }).click();
   await expect(page.getByText('One of us is divorced')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Who will we meet?' }).click();
   await expect(page.getByText('Ryan Hogarth', { exact: true })).toBeVisible();
 });
 
@@ -48,9 +68,37 @@ test('a ceremony on its own asks no legal question and can name an officer', asy
 
   await expect(page).toHaveURL(/\/plan\?p=gauteng&s=ceremony_only&o=christa&d=soon/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('ceremony on its own, Gauteng, with Christa Lizamore');
+  // nothing to bring and no Home Affairs: those buttons are never offered
+  await expect(page.getByRole('button', { name: 'What do we bring?' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Where does Home Affairs fit?' })).toHaveCount(0);
+  await page.getByRole('button', { name: 'What does it cost?' }).click();
   await expect(page.getByText('What does a ceremony on its own cost?')).toBeVisible();
-  await expect(page.getByText('What do we bring on the day?')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Who will we meet?' }).click();
   await expect(page.getByText('Your choice')).toBeVisible();
+  // the last topic closes the conversation; Book This stays beside the record
+  await page.getByRole('button', { name: 'Anything else to know?' }).click();
+  await expect(page.getByText('That is the whole of it')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Book This' })).toBeVisible();
+});
+
+test('the date opens over its question, and a picked date is stamped', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Gauteng' }).click();
+  await page.getByRole('button', { name: /A ceremony only/ }).click();
+  await page.getByRole('button', { name: /No preference/ }).click();
+  await expect(page.getByRole('heading', { name: 'Any date in mind?' })).toBeVisible();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Yes, a date' }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  // the question is still on the page behind it
+  await expect(page.getByRole('heading', { name: 'Any date in mind?' })).toBeVisible();
+  await dialog.getByRole('button', { name: 'Back' }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Yes, a date' }).click();
+  await page.getByLabel('Date', { exact: true }).fill('2027-03-06');
+  await page.getByRole('dialog').getByRole('button', { name: 'Next' }).click();
+  await expect(page).toHaveURL(/d=2027-03-06/);
 });
 
 test('the front door offers no path choice: a banner, the introduction, and question one', async ({ page }) => {
@@ -62,11 +110,11 @@ test('the front door offers no path choice: a banner, the introduction, and ques
   // the nine provinces are on the door, compact, no start button
   await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Northern Cape' })).toBeVisible();
-  // both kinds of work are shown, but neither is a control
-  await expect(page.getByRole('heading', { name: 'Register A Marriage' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Have A Wedding' })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Register A Marriage/ })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: /Have A Wedding/ })).toHaveCount(0);
+  // the two panels went on 14 September; the every-couple line stayed
+  await expect(page.getByRole('heading', { name: 'We Do Both' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Register A Marriage' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Have A Wedding' })).toHaveCount(0);
+  await expect(page.getByText('Every couple.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Start The Quiz' })).toHaveCount(0);
   // the menu the current site carries
   await expect(page.getByRole('navigation', { name: 'Site' }).getByRole('link', { name: 'Our Team' })).toBeVisible();
@@ -86,6 +134,7 @@ test('answering stamps the record, a stamp reopens its question, and back off qu
   await page.goto('/');
   await page.getByRole('button', { name: 'Gauteng' }).click();
   await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+  await expectOneViewport(page);
   await page.getByRole('button', { name: 'Back' }).click();
   await expect(page.getByText('Whether you simply need to be legally married')).toBeVisible();
   await page.getByRole('button', { name: 'Gauteng' }).click();

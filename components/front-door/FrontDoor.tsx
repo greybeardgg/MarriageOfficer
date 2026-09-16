@@ -9,7 +9,7 @@ import type { Situation } from '@/src/situation/types';
 import { Perforation } from '@/components/brand/Action';
 import { AskBox } from './AskBox';
 import { Banner } from './Banner';
-import { BothSides } from './BothSides';
+import { DateDialog } from './DateDialog';
 import { OptionList } from './OptionList';
 import { Spine } from './Spine';
 
@@ -99,12 +99,12 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
       return;
     }
     headingRef.current?.focus({ preventScroll: true });
-  }, [current?.id, pickingDate, autostart]);
+  }, [current?.id, autostart]);
 
   if (!current) return null;
 
   const step = visible.findIndex(q => q.id === current.id) + 1;
-  const onDoor = step === 1 && !pickingDate;
+  const onDoor = step === 1;
   const choices = choicesOf(current, partial);
 
   /* ------------------------------------------------------------ the door */
@@ -144,9 +144,12 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
             <AskBox onStart={goToQuestion} />
           </div>
 
-          <div className="door-sides">
-            <BothSides />
-          </div>
+          {/* Same-sex marriage is a statement, never a separate flow: every officer is a Civil Union officer. */}
+          <p id="every-couple" className="sides-every">
+            <span className="label">Every couple.</span>{' '}
+            Every one of our officers is a Civil Union marriage officer, which means we marry every
+            couple, same-sex or not. Many officers will not; we always have.
+          </p>
 
           <p aria-live="polite" className="sr-only">
             Question {step} of {visible.length}. {current.prompt}
@@ -174,32 +177,15 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
           </span>
         </div>
 
-        <div key={current.id + (pickingDate ? '-date' : '')} className="leaf step-body">
+        <div key={current.id} className="leaf step-body">
           <h1 ref={headingRef} tabIndex={-1} className="question" style={{ outline: 'none', maxWidth: '18ch' }}>
             {current.prompt}
           </h1>
           {current.note ? <p className="prose step-note">{current.note}</p> : null}
 
-          {pickingDate ? (
-            <form
-              className="step-date"
-              onSubmit={e => {
-                e.preventDefault();
-                const v = (e.currentTarget.elements.namedItem('d') as HTMLInputElement).value;
-                if (v) commit('date', v);
-              }}
-            >
-              <label className="label" htmlFor="chosen-date" style={{ color: 'var(--carbon-soft)' }}>The date you have in mind</label>
-              <div style={{ display: 'flex', gap: 'var(--s-3)', flexWrap: 'wrap' }}>
-                <input id="chosen-date" name="d" type="date" required className="field" style={{ maxWidth: 260 }} />
-                <button type="submit" className="act act-ink">Next</button>
-              </div>
-            </form>
-          ) : (
-            <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
-              <OptionList choices={choices} chosen={chosen} columns={columns} onChoose={answer} />
-            </div>
-          )}
+          <div className={columns === 2 ? 'answers answers-wide' : 'answers'}>
+            <OptionList choices={choices} chosen={chosen} columns={columns} onChoose={answer} />
+          </div>
         </div>
 
         <div className="step-foot">
@@ -208,6 +194,8 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
       </div>
 
       <Spine partial={partial} visible={visible} pressing={pressing} onReopen={rewindTo} />
+
+      <DateDialog open={pickingDate} onPick={iso => commit('date', iso)} onClose={() => setPickingDate(false)} />
 
       <p aria-live="polite" className="sr-only">
         Question {step} of {visible.length}. {current.prompt}

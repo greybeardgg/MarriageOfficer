@@ -97,6 +97,29 @@ the contact details.
     summary line ("with Lara Thomas"), and the plate says "Your choice" rather
     than "Nearest to you". Elsewhere the question is skipped.
 
+## Decisions taken with Cameron, 14 September 2026
+
+Cameron reviewed the sandbox with Ryan (recorded; transcribed 16 September).
+
+13. **"We Do Both" goes.** The two panels under question one were there
+    because the landing page looked thin; Cameron: "not really". The
+    every-couple line stays on the door. Registration and Ceremonies in the
+    menu open question one.
+14. **One viewport.** From the second question on, the question, its options
+    and the record all sit inside one desktop viewport; the page does not
+    scroll. The record uses the small stamp so seven answers fit at 900px, and
+    scrolls inside its column below that.
+15. **The date is a dialog** over its question, not a screen of its own.
+16. **The plan is a conversation beside the record.** Two-thirds chat,
+    one-third record, one viewport; Book This and Send Me This at the foot of
+    the record column. The clause list, the officer plate, the free-text form,
+    the closing photograph and the perforation were "way too long on this
+    page". The first message is *Your process*; the rest of the library sits
+    behind buttons under each message, pressed the way WhatsApp buttons are,
+    and a button once pressed is not offered again (`skip_if_sent`, as in the
+    exported flow). Typed words are matched by keyword against the library and
+    checked against the situation. No model anywhere.
+
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets

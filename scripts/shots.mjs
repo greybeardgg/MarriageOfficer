@@ -90,6 +90,28 @@ const shots = [
     },
   },
   {
+    name: 'plan-talked',
+    async run(page) {
+      await page.goto(BASE + PLAN);
+      await page.getByRole('button', { name: 'What does it cost?' }).click();
+      await page.getByRole('button', { name: 'Who will we meet?' }).click();
+      await page.getByLabel('Ask anything else').fill('can we bring a photographer on a Saturday?');
+      await page.getByRole('button', { name: 'Ask', exact: true }).click();
+      await settle(page);
+    },
+  },
+  {
+    name: 'date-dialog',
+    async run(page) {
+      await page.goto(BASE + '/');
+      await page.getByRole('button', { name: 'Gauteng' }).click();
+      await page.getByRole('button', { name: /A ceremony only/ }).click();
+      await page.getByRole('button', { name: /No preference/ }).click();
+      await page.getByRole('button', { name: 'Yes, a date' }).click();
+      await settle(page);
+    },
+  },
+  {
     name: 'plan-ceremony-only',
     async run(page) {
       await page.goto(BASE + '/plan?p=gauteng&s=ceremony_only&o=christa&d=soon');

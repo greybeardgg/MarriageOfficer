@@ -32,7 +32,7 @@ export function officersIn(province: Province | undefined): Officer[] {
 
 /** Where an officer works, as one line: "Centurion · Pretoria", or just "KwaZulu-Natal". */
 export function whereIs(o: Officer): string {
-  return o.locationLabel === o.area ? o.locationLabel : `${o.locationLabel} · ${o.area}`;
+  return o.locationLabel.includes(o.area) ? o.locationLabel : `${o.locationLabel} · ${o.area}`;
 }
 
 export function officerById(id: string | undefined): Officer | null {

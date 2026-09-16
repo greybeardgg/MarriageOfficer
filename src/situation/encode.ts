@@ -1,6 +1,6 @@
 import { PROVINCES, NATIONALITIES, NON_SA_STATUSES, PRIOR_MARRIAGES, SERVICES, ANY_OFFICER, isLegal } from './types';
 import type { Situation, DateIntent } from './types';
-import { officerById } from '../officers/officers';
+import { officerById, officersIn } from '../officers/officers';
 
 function oneOf<T extends readonly string[]>(list: T, v: string | null): T[number] | null {
   return v !== null && (list as readonly string[]).includes(v) ? (v as T[number]) : null;
@@ -47,7 +47,10 @@ export function decodeSituation(p: URLSearchParams): Situation | null {
       if (ns) s.nonSaStatus = ns;
     }
   }
+  // No `o`, or one from another province, reads as no preference wherever
+  // the question is asked, so the record shows the answer that was given.
   const o = p.get('o');
   if (o && officerById(o)?.province === province) s.officer = o;
+  else if (officersIn(province).length >= 2) s.officer = ANY_OFFICER;
   return s;
 }

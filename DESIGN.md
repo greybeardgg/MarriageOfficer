@@ -344,19 +344,23 @@ Three page grammars ship. The **door** is a banner (clamp 220-360px high, edge t
 edge, the name bottom-left and the affixed certificate print right) and then a
 single-column stack: the introduction centred, then a 7:5 split ruled down the
 middle (question one with its nine provinces in a compact three-by-three grid on the
-left, the box that answers on the right), and the "We Do Both" band with the
-every-couple line beneath it. The record spine is not on the door; it appears from
-the second question on.
+left, the box that answers on the right), and the every-couple line. The "We Do
+Both" band was dropped on 14 September 2026 (Cameron). The record spine is not on
+the door; it appears from the second question on.
 The **team** page is the result document's part grammar reused: a province per part,
 officers as ruled rows, a corner-mounted print beside the two we hold photographs of. The **step** is a
 two-column grid (content plus a 268px spine), one question per screen, vertically
-centred between a top bar and a footer, at a minimum height of `100vh - 77px` so a
-question always owns its viewport. The **result document** is a tinted head band, then
-a single-column body of parts separated by 120px, then a two-up aside (officer and
-open question) and a two-up close.
+centred between a top bar and a footer, at exactly `100dvh - 77px` with overflow
+hidden, so the question, its options and the record sit inside one viewport and the
+page never scrolls (Cameron, 14 September 2026); the option list and the record each
+scroll inside their own column if they must. The **plan** is the same two-column
+grammar at 2:1: the title and the conversation on the left, the record on the right
+with Book This and Send Me This at its foot, the whole at `100dvh - 77px` with the
+conversation log scrolling inside its column. The date question opens a native
+dialog over its screen.
 
-The spine is sticky at 24px from the top on desktop. Below 1040px it stops being a
-column: on a step it becomes a horizontal, scroll-snapping stamp strip pinned above
+The spine fills its column's height on desktop and its stamps use the small size so
+seven answers fit at 900px. Below 1040px it stops being a column: on a step it becomes a horizontal, scroll-snapping stamp strip pinned above
 the question, carrying a 40px right-edge mask fade
 (`mask-image: linear-gradient(to right, currentColor calc(100% - 40px), transparent)`)
 so a scrolled record reads as more-to-come rather than as cut-off text. At the same
@@ -532,6 +536,27 @@ hairline, four drawn corner mounts in the tinted band tone, optional label-set
 caption that takes its colour from the ground it is fixed to (softened carbon on
 paper, the field's pale ink on an ink field). Prints may be tilted a fraction of a
 degree. Photographs are the client's own, never stock and never invented couples.
+
+### Message (signature)
+The plan's unit, replacing the clause list on 14 September 2026. Ours: a raised-leaf
+block with a 2px slate rule down its left edge, a label-set title in slate (the
+library section's title), then each answer as a sentence-case clause heading and
+body at a 62ch measure, Rand amounts in tabular figures, a `Draft` tag where it
+applies. Each new message of ours takes focus and scrolls to the top of the log.
+Theirs: the words they pressed or typed, right-aligned, knocked out of a slate
+field. The officer message carries the name in Montserrat, the place in the data
+face and "Your choice" or "Nearest to you".
+
+### Quick Reply (signature)
+The buttons under our last message, pressed the way WhatsApp buttons are: Nunito
+Sans 700 at the small size in slate, a strong-rule hairline box, 11px by 16px, wrapping
+in a row at the 62ch measure. A reply once pressed is never offered again; when none
+remain the message says so and Book This, which never moves, is all that is left.
+
+### Date Dialog
+A native `<dialog>` over the date question: the double hairline of a stamp, 34rem
+at most, a question-scale heading, a note, one date field, Next in ink and Back
+ruled. The backdrop is charcoal at 42%. Escape and a click outside both close it.
 
 ### Clause (signature)
 The result document's unit, and the ask box's: a two-column row with a zero-padded

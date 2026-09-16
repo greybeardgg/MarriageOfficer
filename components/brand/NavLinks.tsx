@@ -13,7 +13,7 @@ export function NavLinks({ items }: { items: readonly { href: string; label: str
           const target = item.href.split('#')[0] || '/';
           const here = target === path && !item.href.includes('#');
           return (
-            <li key={item.href}>
+            <li key={item.label}>
               <Link href={item.href} className="label nav-link" aria-current={here ? 'page' : undefined}>
                 {item.label}
               </Link>
