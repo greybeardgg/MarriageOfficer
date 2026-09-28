@@ -1,0 +1,19 @@
+MO Website Rebuild Notes 
+
+Landing page: Keep a hero image with "Ryan Hogarth Professional Marriage Officers" and menu navigation options at the top (as with current page). Smaller, banner type hero. 
+
+Before the Quiz have this text: "Whether you simply need to be legally married, have a simple wedding at home or want a dynamic officiant for your grand wedding as we look ahead, we have the experience and professionalism to make it happen.
+
+We are a small team of people who share an ethos of creating unforgettable personal ceremonies delivered professionally couple with the legal registration of your marriage at Home Affairs. . With 25 years of experience we can help, whatever your need.
+
+To ensure you get the information tailored to you, let us know a few things about your plans.
+
+Or explain what you need in the box below and we'll answer it right here" 
+
+Start Quiz 
+
+Answer box
+
+Notes on the Quiz and process flow: 
+1. Option for ceremony only
+2. Option to select marriage officer. 
