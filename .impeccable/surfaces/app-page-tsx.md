@@ -120,6 +120,22 @@ Cameron reviewed the sandbox with Ryan (recorded; transcribed 16 September).
     exported flow). Typed words are matched by keyword against the library and
     checked against the situation. No model anywhere.
 
+## Decisions taken with Ryan, 30 September 2026
+
+17. **Every menu entry has a page.** Marriage Registration, Wedding
+    Ceremonies and Same-Sex Weddings each get a content page at the address
+    the live site already uses (`/marriage-registrations`,
+    `/wedding-ceremonies`, `/same-sex-weddings`), and Contact gets `/contact`.
+    The words are the live site's, tidied: the WhatsApp and form sections are
+    gone because the questions are the way in, and the facts agree with the
+    answer library. One testimonial per page, verbatim, the same three the
+    live pages carry. The copy lives in `src/site/pages.ts` as data.
+18. **A main number and a WhatsApp option are coming**, probably on every
+    page; the numbers and the placement are not decided. `src/site/contact.ts`
+    holds them, both unset. Until one is set the public sees nothing and a
+    draft build shows where they will go. This touches the Western Cape rule
+    (a booking, never a phone number): to be settled before a number is set.
+
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets

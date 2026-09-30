@@ -118,6 +118,13 @@ const shots = [
       await settle(page);
     },
   },
+  ...['marriage-registrations', 'wedding-ceremonies', 'same-sex-weddings', 'contact'].map(slug => ({
+    name: 'page-' + slug,
+    async run(page) {
+      await page.goto(BASE + '/' + slug);
+      await settle(page);
+    },
+  })),
   {
     name: 'team',
     async run(page) {

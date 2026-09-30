@@ -347,6 +347,12 @@ middle (question one with its nine provinces in a compact three-by-three grid on
 left, the box that answers on the right), and the every-couple line. The "We Do
 Both" band was dropped on 14 September 2026 (Cameron). The record spine is not on
 the door; it appears from the second question on.
+A **content page** (registration, ceremonies, same-sex weddings, contact) is a
+7:5 head (eyebrow in slate, a headline capped at 2.75rem, the lede, the way in; one
+corner-mounted print at 420px on the right), then ruled parts set 1:2 with the plate
+title on the left and the words on the right under a carbon rule, then one couple's
+words on the tinted band in italic body face at 1.25rem with the name in tracked
+Montserrat, then a perforation and the way in again. Below 1040px everything stacks.
 The **team** page is the result document's part grammar reused: a province per part,
 officers as ruled rows, a corner-mounted print beside the two we hold photographs of. The **step** is a
 two-column grid (content plus a 268px spine), one question per screen, vertically

@@ -786,6 +786,62 @@ textarea.field { line-height: 1.55; resize: vertical; }
   .chat-ask { grid-template-columns: 1fr; }
 }
 
+/* ====================================================== the content pages
+   What we say about one kind of work: a head with one photograph, ruled
+   parts (title left, words right), one couple's words, and the way in. */
+
+.page { --page-art-h: 420px; display: grid; gap: var(--s-9); padding-top: var(--s-8); padding-bottom: var(--s-10); }
+.page > * { min-width: 0; }
+
+.page-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-8); align-items: center; }
+.page-head-plain { grid-template-columns: minmax(0, 1fr); }
+.page-head-text { display: grid; gap: var(--s-5); align-content: start; justify-items: start; }
+.page-eyebrow { color: var(--ink-legal); }
+.page-title { font-size: clamp(1.75rem, 3.6vw, 2.75rem); max-width: 20ch; }
+.page-lede { font-size: var(--fs-lg); line-height: 1.5; color: var(--carbon); max-width: 46ch; }
+.page-lede-more { font-size: var(--fs-md); color: var(--carbon-soft); max-width: 52ch; }
+.page-head-act { padding-top: var(--s-2); }
+
+.page-parts { display: grid; }
+.page-part {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--s-5) var(--s-8);
+  align-items: start;
+  padding: var(--s-7) 0;
+  border-top: 1px solid var(--carbon);
+}
+.page-parts > .page-part:last-child { border-bottom: 1px solid var(--rule); }
+.page-part-title { font-size: var(--fs-xl); }
+.page-part-body { display: grid; gap: var(--s-4); font-size: var(--fs-md); color: var(--carbon-soft); }
+.page-part-body .prose { max-width: 62ch; }
+
+/* One couple's words. Set larger than the page's own, in the body face. */
+.testimony { margin: 0; display: grid; gap: var(--s-5); padding: var(--s-7) var(--s-7) var(--s-7); background: var(--paper-deep); }
+.testimony-head { color: var(--ink-legal); }
+.testimony-quote { margin: 0; display: grid; gap: var(--s-4); font-size: var(--fs-lg); line-height: 1.55; font-style: italic; color: var(--carbon); max-width: 68ch; }
+.testimony-by { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); align-items: baseline; padding-top: var(--s-4); border-top: 1px solid var(--rule-strong); max-width: 68ch; }
+.testimony-name { font-family: var(--display); font-weight: 500; font-size: var(--fs-sm); letter-spacing: .12em; text-transform: uppercase; color: var(--carbon); }
+.testimony-place { font-size: var(--fs-sm); color: var(--carbon-soft); }
+
+/* Contact: the two ways in, then the business's own number once it is set. */
+.contact-doors { align-items: start; }
+.contact-ways { display: grid; gap: var(--s-4); padding-top: var(--s-7); border-top: 1px solid var(--carbon); }
+.contact-pending { font-size: var(--fs-md); color: var(--carbon-soft); max-width: 56ch; }
+.contact-list { margin: 0; display: grid; gap: var(--s-4); }
+.contact-row { display: grid; gap: var(--s-1); }
+.contact-row dt { color: var(--carbon-soft); }
+.contact-row dd { margin: 0; }
+.contact-number { font-size: var(--fs-xl); color: var(--ink-legal); user-select: all; }
+
+@media (max-width: 1040px) {
+  .page { --page-art-h: 320px; gap: var(--s-8); padding-top: var(--s-7); }
+  .page-head { grid-template-columns: 1fr; gap: var(--s-6); }
+  .page-part { grid-template-columns: 1fr; padding: var(--s-6) 0; }
+  .testimony { padding: var(--s-6) var(--s-5); }
+  .testimony-quote { font-size: var(--fs-md); }
+}
+
 /* ============================================================== the team
    Ruled rows, not cards. A name and a place is the honest minimum. */
 

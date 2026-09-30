@@ -157,3 +157,40 @@ test('a broken link offers a way back', async ({ page }) => {
   await page.goto('/plan?p=gauteng');
   await expect(page.getByRole('link', { name: 'Back to the questions' })).toBeVisible();
 });
+
+const PAGES = [
+  { label: 'Marriage Registration', path: '/marriage-registrations', heading: 'Get legally married at home or at our offices', who: 'Nonkululeko Duma' },
+  { label: 'Wedding Ceremonies', path: '/wedding-ceremonies', heading: 'From 5 people to 500, personal ceremonies created and delivered', who: 'Liz and Anina' },
+  { label: 'Same-Sex Weddings', path: '/same-sex-weddings', heading: 'We are all registered Civil Union marriage officers', who: 'Zavion and John' },
+];
+
+for (const p of PAGES) {
+  test(`the menu opens ${p.label}: its words, one testimonial, no number, and the way in is the questions`, async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('navigation', { name: 'Site' }).getByRole('link', { name: p.label }).click();
+    await expect(page).toHaveURL(new RegExp(p.path + '$'));
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(p.heading);
+    await expect(page.getByText(p.who)).toBeVisible();
+    await expect(page.getByRole('navigation', { name: 'Site' }).getByRole('link', { name: p.label })).toHaveAttribute('aria-current', 'page');
+    // no phone number, no email, no enquiry form
+    await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
+    await expect(page.locator('body')).not.toContainText(/@[\w-]+\.\w+/);
+    await expect(page.locator('form')).toHaveCount(0);
+    await page.getByRole('link', { name: 'Answer The Questions' }).last().click();
+    await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  });
+}
+
+test('contact offers the questions and the box that answers, and no number until one is set', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('navigation', { name: 'Site' }).getByRole('link', { name: 'Contact' }).click();
+  await expect(page).toHaveURL(/\/contact$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Got a question, need more information, or want to book?');
+  await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
+  await expect(page.locator('body')).not.toContainText(/\+27/);
+  await page.getByLabel(/explain what you need/i).fill('can we do it on a Saturday?');
+  await page.getByRole('button', { name: 'Answer Me' }).click();
+  await expect(page.getByRole('heading', { name: 'Can we do it on a Saturday?' })).toBeVisible();
+  await page.getByRole('link', { name: 'Answer The Questions' }).click();
+  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+});
