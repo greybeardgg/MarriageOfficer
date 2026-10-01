@@ -341,8 +341,7 @@ A centred document shell (max 1320px, or 940px narrow) with a fluid gutter
 else.
 
 Three page grammars ship. The **door** is a banner (clamp 220-360px high, edge to
-edge: the name centred on a paper panel at the left, a strong-rule hairline, then six
-portrait frames of one height parted by 3px of paper, fewer as the screen narrows) and then a
+edge, the name bottom-left and the affixed certificate print right) and then a
 single-column stack: the introduction centred, then a 7:5 split ruled down the
 middle (question one with its nine provinces in a compact three-by-three grid on the
 left, the box that answers on the right), and the every-couple line. The "We Do

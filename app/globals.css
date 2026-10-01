@@ -448,40 +448,36 @@ textarea.field { line-height: 1.55; resize: vertical; }
 }
 
 /* ------------------------------------------------------------- the banner
-   The name on a paper panel, then a strip of photographs to the edge: a
-   collage of the work (Ryan, 1 October 2026). */
+   Ryan's photographs, one as the ground and one affixed over it. The name
+   sits on a paper-toned foot because the photograph is pale. */
 
 .banner {
   position: relative;
   z-index: 1;
   height: clamp(220px, 27vw, 360px);
   border-bottom: 1px solid var(--rule-strong);
-  background: var(--paper);
+  background: var(--paper-deep);
   overflow: hidden;
 }
-.banner-body { display: grid; grid-template-columns: clamp(250px, 28vw, 420px) minmax(0, 1fr); height: 100%; }
-.banner-mark { display: flex; align-items: center; justify-content: center; line-height: 0; padding: 0 var(--s-6); border-right: 1px solid var(--rule-strong); }
-.banner-mark .lockup { font-size: clamp(7px, .9vw, 13px); }
-
-/* Six frames of the same height, parted by the paper, like a contact sheet. */
-.collage { list-style: none; margin: 0; padding: 0 0 0 3px; height: 100%; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 3px; background: var(--paper); }
-.collage-frame { position: relative; min-width: 0; overflow: hidden; background: var(--paper-deep); }
-
-@media (max-width: 1100px) {
-  .collage-frame:nth-child(n + 6) { display: none; }
+.banner-ground { position: absolute; inset: 0; }
+.banner-ground::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, color-mix(in srgb, var(--paper) 88%, transparent) 0%, color-mix(in srgb, var(--paper) 40%, transparent) 34%, transparent 62%);
 }
+.banner-body { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); }
+.banner-mark { display: flex; line-height: 0; }
+.banner-mark .lockup { font-size: clamp(7px, .95vw, 14px); }
+.banner-print { flex: none; width: clamp(200px, 21vw, 290px); height: 72%; }
+.banner-print figure, .banner-print figure > div { height: 100%; }
+
 @media (max-width: 860px) {
-  .banner { height: clamp(180px, 40vw, 240px); }
-  .banner-body { grid-template-columns: clamp(170px, 34vw, 240px) minmax(0, 1fr); }
-  .banner-mark { padding: 0 var(--s-4); }
-  .banner-mark .lockup { font-size: 6px; }
-  .collage-frame:nth-child(n + 5) { display: none; }
+  .banner { height: clamp(200px, 48vw, 260px); }
+  .banner-mark .lockup { font-size: 7px; }
+  .banner-print { width: 128px; height: 66%; }
 }
 @media (max-width: 560px) {
-  .banner { height: clamp(150px, 42vw, 190px); }
-  .banner-body { grid-template-columns: 150px minmax(0, 1fr); }
-  .banner-mark .lockup { font-size: 5px; }
-  .collage-frame:nth-child(n + 4) { display: none; }
+  .banner-print { display: none; }
 }
 
 @media (max-width: 860px) {
