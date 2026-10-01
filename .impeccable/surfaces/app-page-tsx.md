@@ -136,6 +136,17 @@ Cameron reviewed the sandbox with Ryan (recorded; transcribed 16 September).
     draft build shows where they will go. This touches the Western Cape rule
     (a booking, never a phone number): to be settled before a number is set.
 
+19. **The banner is the fridge** (Ryan, 1 October 2026, after a one-strip
+    collage was tried and undone the same day): the hands ground and the
+    certificate print stay as they were; the other ten photographs are
+    pasted small between the name and the certificate, each an affixed print
+    at a quarter of the strip, tilted a few degrees, two loose rows. Less a
+    hero picture, more a picture of what we do. Eight show below 1100px, six
+    below 860px, none below 560px (the certificate goes there too).
+20. **The questions start on the page you are on** (Ryan, 1 October 2026):
+    on a content page the quiz takes the page over under the same chrome and
+    Back off question one hands the page back.
+
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets

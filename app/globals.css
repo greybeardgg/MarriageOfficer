@@ -471,13 +471,45 @@ textarea.field { line-height: 1.55; resize: vertical; }
 .banner-print { flex: none; width: clamp(200px, 21vw, 290px); height: 72%; }
 .banner-print figure, .banner-print figure > div { height: 100%; }
 
+/* The rest of the photographs, pasted small like prints on a fridge
+   (Ryan, 1 October 2026). Each pin is placed by --x/--y in the strip between
+   the name and the certificate and tilted by --r. */
+.banner-pins { list-style: none; margin: 0; padding: 0; position: relative; flex: 1 1 auto; min-width: 0; height: 100%; }
+.pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 25%;
+  min-width: 84px;
+  max-width: 164px;
+  aspect-ratio: 4 / 3;
+  transform: rotate(var(--r));
+  transform-origin: 50% 50%;
+}
+.pin figure, .pin figure > div { height: 100%; }
+.pin:hover { z-index: 2; }
+
+@media (max-width: 1100px) {
+  .pin { width: 27%; }
+  .pin:nth-child(n + 9) { display: none; }
+}
 @media (max-width: 860px) {
   .banner { height: clamp(200px, 48vw, 260px); }
   .banner-mark .lockup { font-size: 7px; }
   .banner-print { width: 128px; height: 66%; }
+  .pin { width: 34%; min-width: 72px; }
+  .pin:nth-child(n + 7) { display: none; }
+  .pin:nth-child(2) { --x: 30%; }
+  .pin:nth-child(3) { --x: 60%; }
+  .pin:nth-child(4) { display: none; }
+  .pin:nth-child(5) { display: none; }
+  .pin:nth-child(6) { --x: 12%; }
+  .pin:nth-child(7) { --x: 40%; display: block; }
+  .pin:nth-child(8) { --x: 68%; display: block; }
 }
 @media (max-width: 560px) {
   .banner-print { display: none; }
+  .banner-pins { display: none; }
 }
 
 @media (max-width: 860px) {
