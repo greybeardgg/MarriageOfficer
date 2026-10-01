@@ -1,41 +1,35 @@
 import Image from 'next/image';
-import { AffixedPrint } from '@/components/brand/AffixedPrint';
 import { Lockup } from '@/components/brand/Lockup';
 
 /**
- * The banner: Ryan's two photographs, combined the way this document
- * combines everything else. The hands run edge to edge as the ground; the
- * certificate, rings and pen are an affixed print pinned over the right of
- * it. The lockup itself sits on the left (Ryan, 13 September 2026), on the
- * paper-toned foot of the photograph, because the photograph is pale.
+ * The banner: the name on a paper panel, then a strip of Ryan's photographs
+ * running to the edge, a collage of the work (Ryan, 1 October 2026). Each is
+ * a portrait crop of the same height, parted by the paper, like frames on a
+ * contact sheet. Fewer frames show as the screen narrows; the name never goes.
  */
+const FRAMES = [
+  { src: '/photography/banner-01.jpg', alt: 'Ryan at a microphone between a couple during their ceremony.' },
+  { src: '/photography/banner-02.jpg', alt: 'Two grooms holding hands under a wooden arch, the officer between them.' },
+  { src: '/photography/banner-03.jpg', alt: 'Lara at a table on a deck above the sea, a couple seated with the register.' },
+  { src: '/photography/banner-04.jpg', alt: 'Two brides facing each other in the veld, the officer reading beside them.' },
+  { src: '/photography/banner-05.jpg', alt: 'Ryan beside a bride as she signs the marriage register.' },
+  { src: '/photography/banner-06.jpg', alt: 'An outdoor ceremony under white flowers, the officiant at a lectern, guests in front.' },
+];
+
 export function Banner() {
   return (
     <section className="banner" aria-labelledby="banner-name">
-      <div className="banner-ground" aria-hidden="true">
-        <Image
-          src="/photography/hands-01.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: '50% 52%' }}
-        />
-      </div>
-      <div className="shell banner-body">
+      <div className="banner-body">
         <h1 id="banner-name" className="banner-mark">
-          <Lockup width="clamp(220px, 30vw, 440px)" />
+          <Lockup width="clamp(200px, 22vw, 340px)" />
         </h1>
-        <div className="banner-print">
-          <AffixedPrint
-            src="/photography/certificate-01.jpg"
-            alt="Two wedding rings and a pen resting on a marriage certificate."
-            height="100%"
-            position="50% 40%"
-            priority
-            tilt={-1.4}
-          />
-        </div>
+        <ul className="collage" aria-label="Photographs of our ceremonies and registrations">
+          {FRAMES.map(f => (
+            <li key={f.src} className="collage-frame">
+              <Image src={f.src} alt={f.alt} fill priority sizes="(max-width: 860px) 34vw, 18vw" style={{ objectFit: 'cover' }} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

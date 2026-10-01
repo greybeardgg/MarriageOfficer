@@ -136,6 +136,16 @@ Cameron reviewed the sandbox with Ryan (recorded; transcribed 16 September).
     draft build shows where they will go. This touches the Western Cape rule
     (a booking, never a phone number): to be settled before a number is set.
 
+19. **The banner is a collage** (Ryan, 1 October 2026): the name on a paper
+    panel at the left, then six of Ryan's photographs as portrait frames of
+    one height running to the edge, parted by 3px of paper, like a contact
+    sheet. Five show below 1100px, four below 860px, three below 560px; the
+    name never goes. The hands photograph and the certificate print are
+    retired from the banner (files kept).
+20. **The questions start on the page you are on** (Ryan, 1 October 2026):
+    on a content page the quiz takes the page over under the same chrome and
+    Back off question one hands the page back.
+
 ## Direction contract
 
 **THESIS:** The front door is a document that gets stamped, not a form that gets
