@@ -176,8 +176,18 @@ for (const p of PAGES) {
     await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
     await expect(page.locator('body')).not.toContainText(/@[\w-]+\.\w+/);
     await expect(page.locator('form')).toHaveCount(0);
-    await page.getByRole('link', { name: 'Answer The Questions' }).last().click();
+    // the questions start on this page, not on the home page
+    await page.getByRole('button', { name: 'Answer The Questions' }).last().click();
     await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+    await expect(page).toHaveURL(new RegExp(p.path + '$'));
+    await expect(page.getByText('The Record')).toBeVisible();
+    await page.getByRole('button', { name: 'Gauteng' }).click();
+    await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+    await expect(page).toHaveURL(new RegExp(p.path + '$'));
+    // Back off question one hands the page back
+    await page.getByRole('button', { name: 'Back' }).click();
+    await page.getByRole('button', { name: 'Back' }).click();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(p.heading);
   });
 }
 
@@ -191,6 +201,7 @@ test('contact offers the questions and the box that answers, and no number until
   await page.getByLabel(/explain what you need/i).fill('can we do it on a Saturday?');
   await page.getByRole('button', { name: 'Answer Me' }).click();
   await expect(page.getByRole('heading', { name: 'Can we do it on a Saturday?' })).toBeVisible();
-  await page.getByRole('link', { name: 'Answer The Questions' }).click();
+  await page.getByRole('button', { name: 'Answer The Questions' }).first().click();
   await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await expect(page).toHaveURL(/\/contact$/);
 });

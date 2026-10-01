@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Chrome } from '@/components/brand/Chrome';
 import { Guilloche } from '@/components/brand/Guilloche';
-import { Action } from '@/components/brand/Action';
+import { InPageQuiz, StartQuiz } from '@/components/front-door/InPageQuiz';
 import { ContactAsk } from '@/components/pages/ContactAsk';
 import { ContactWays } from '@/components/pages/ContactWays';
 
@@ -20,6 +20,7 @@ export default function Contact() {
     <>
       <Guilloche />
       <Chrome />
+      <InPageQuiz>
       <main className="shell page" style={{ position: 'relative', zIndex: 1 }}>
         <header className="page-head page-head-plain">
           <div className="page-head-text">
@@ -41,7 +42,7 @@ export default function Contact() {
               by answering.
             </p>
             <div>
-              <Action href="/?start">Answer The Questions</Action>
+              <StartQuiz>Answer The Questions</StartQuiz>
             </div>
           </section>
           <ContactAsk />
@@ -49,6 +50,7 @@ export default function Contact() {
 
         <ContactWays />
       </main>
+      </InPageQuiz>
     </>
   );
 }

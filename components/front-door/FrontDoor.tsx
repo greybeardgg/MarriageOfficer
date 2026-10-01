@@ -16,9 +16,21 @@ import { Spine } from './Spine';
 /**
  * The front door: the banner, Ryan's introduction, then question one beside
  * the box that answers. The first answer takes the page over, one question
- * per screen; Back off question two lands on the door again.
+ * per screen; Back off question two lands on the door again. The date opens in
+ * a dialog over its question (Cameron, 14 September 2026). On a content page
+ * (`inPage`) the quiz starts where the visitor is, with no door, and Back off
+ * question one hands the page back (Ryan, 1 October 2026).
  */
-export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
+export function FrontDoor({
+  autostart = false,
+  inPage = false,
+  onLeave,
+}: {
+  autostart?: boolean;
+  /** Running on a content page: no door, question one is a screen of its own, and Back off it leaves the quiz. */
+  inPage?: boolean;
+  onLeave?: () => void;
+}) {
   const router = useRouter();
   const [partial, setPartial] = useState<Partial<Situation>>({});
   const [pickingDate, setPickingDate] = useState(false);
@@ -81,7 +93,7 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
     if (pickingDate) { setPickingDate(false); return; }
     if (!current) return;
     const idx = visible.findIndex(q => q.id === current.id);
-    if (idx <= 0) return;
+    if (idx <= 0) { onLeave?.(); return; }
     rewindTo(visible[idx - 1].id);
   }
 
@@ -104,7 +116,7 @@ export function FrontDoor({ autostart = false }: { autostart?: boolean }) {
   if (!current) return null;
 
   const step = visible.findIndex(q => q.id === current.id) + 1;
-  const onDoor = step === 1;
+  const onDoor = step === 1 && !inPage;
   const choices = choicesOf(current, partial);
 
   /* ------------------------------------------------------------ the door */

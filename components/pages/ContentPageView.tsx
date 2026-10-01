@@ -1,20 +1,23 @@
 import type { ContentPage } from '@/src/site/pages';
 import { Chrome } from '@/components/brand/Chrome';
 import { Guilloche } from '@/components/brand/Guilloche';
-import { Action, Perforation } from '@/components/brand/Action';
+import { Perforation } from '@/components/brand/Action';
+import { InPageQuiz, StartQuiz } from '@/components/front-door/InPageQuiz';
 import { AffixedPrint } from '@/components/brand/AffixedPrint';
 import { TestimonialBlock } from './TestimonialBlock';
 
 /**
  * A content page behind the menu: what we say about one kind of work, one
  * photograph of it, one couple's words, and the way in. The way in is always
- * the questions; nothing on these pages hands anyone to a form or a number.
+ * the questions, started on this page; nothing here hands anyone to a form
+ * or a number.
  */
 export function ContentPageView({ page }: { page: ContentPage }) {
   return (
     <>
       <Guilloche />
       <Chrome />
+      <InPageQuiz>
       <main className="shell page" style={{ position: 'relative', zIndex: 1 }}>
         <header className="page-head">
           <div className="page-head-text">
@@ -24,7 +27,7 @@ export function ContentPageView({ page }: { page: ContentPage }) {
               <p key={i} className={`prose ${i === 0 ? 'page-lede' : 'page-lede-more'}`}>{p}</p>
             ))}
             <div className="page-head-act">
-              <Action href="/?start">Answer The Questions</Action>
+              <StartQuiz>Answer The Questions</StartQuiz>
             </div>
           </div>
           <div className="page-art">
@@ -59,10 +62,11 @@ export function ContentPageView({ page }: { page: ContentPage }) {
           <Perforation label="Your Turn" />
           <p className="prose" style={{ fontSize: 'var(--fs-md)', maxWidth: '52ch' }}>{page.close}</p>
           <div>
-            <Action href="/?start">Answer The Questions</Action>
+            <StartQuiz>Answer The Questions</StartQuiz>
           </div>
         </div>
       </main>
+      </InPageQuiz>
     </>
   );
 }
