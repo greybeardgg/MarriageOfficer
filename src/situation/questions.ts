@@ -48,9 +48,9 @@ export const QUESTIONS: Question[] = [
     id: 'service',
     stampLabel: 'Service',
     prompt: 'What do you need?',
-    note: 'Most of what we do is the first one. The first three end with a marriage Home Affairs recognises.',
+    note: 'The first three end with a marriage Home Affairs recognises.',
     choices: [
-      { value: 'registration', label: 'Just the legal registration', stampValue: 'Registration', hint: 'You, your witnesses, the paperwork done properly' },
+      { value: 'registration', label: 'Legal marriage registration', stampValue: 'Registration', hint: 'You, your witnesses, the paperwork done properly' },
       { value: 'small_ceremony', label: 'A small ceremony too', stampValue: 'Small ceremony', hint: 'A few words that sound like you, then the signing' },
       { value: 'wedding_ceremony', label: 'A full wedding ceremony', stampValue: 'Wedding ceremony', hint: 'Your day, your guests, an officiant who makes it yours' },
       { value: 'ceremony_only', label: 'A ceremony only', stampValue: 'Ceremony only', hint: 'You are already married, or registering elsewhere. No paperwork from us' },
@@ -60,7 +60,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'province',
     stampLabel: 'Place',
-    prompt: 'Where will this happen?',
+    prompt: 'Which province will you be married?',
     choices: provinceOrder.map(p => ({ value: p, label: PROVINCE_LABEL[p] })),
   },
   {
@@ -89,8 +89,8 @@ export const QUESTIONS: Question[] = [
   {
     id: 'priorMarriage',
     stampLabel: 'Prior',
-    prompt: 'Has either of you been married before?',
-    note: 'A previous marriage is not a problem. It is a document.',
+    prompt: 'Have either of you been married before?',
+    note: 'You’ll need a divorce decree.',
     choices: [
       { value: 'none', label: 'No', stampValue: 'First marriage' },
       { value: 'divorced', label: 'Yes, divorced', stampValue: 'Divorced' },

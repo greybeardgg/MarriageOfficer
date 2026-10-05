@@ -11,7 +11,7 @@ test('western cape, one non-SA on a visa, divorced, registration', async ({ page
   await expect(page.getByRole('heading', { level: 1, name: /Ryan Hogarth/ })).toBeVisible();
   await expect(page.locator('select')).toHaveCount(0); // never a drop-down
   await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
-  await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  await page.getByRole('button', { name: /Legal marriage registration/ }).click();
   await page.getByRole('button', { name: 'Western Cape' }).click();
   await page.getByRole('button', { name: 'One of us is' }).click();
   await page.getByRole('button', { name: 'Here on a visa or permit' }).click();
@@ -133,8 +133,8 @@ test('the chat box answers from free text before the quiz has started', async ({
 
 test('answering stamps the record, a stamp reopens its question, and back off question two returns to the door', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: /Just the legal registration/ }).click();
-  const question = page.getByRole('heading', { name: 'Where will this happen?' });
+  await page.getByRole('button', { name: /Legal marriage registration/ }).click();
+  const question = page.getByRole('heading', { name: 'Which province will you be married?' });
   await expect(question).toBeVisible();
   await expectOneViewport(page);
   // the question sits at the top, level with the record, not centred below it (5 October 2026)
@@ -143,7 +143,7 @@ test('answering stamps the record, a stamp reopens its question, and back off qu
   expect(qTop - recordTop).toBeLessThan(140);
   await page.getByRole('button', { name: 'Back' }).click();
   await expect(page.getByText('Whether you simply need to be legally married')).toBeVisible();
-  await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  await page.getByRole('button', { name: /Legal marriage registration/ }).click();
   await expect(page.getByRole('button', { name: /Change your answer for Service/ })).toBeVisible();
   await page.getByRole('button', { name: /Change your answer for Service/ }).click();
   await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
@@ -207,8 +207,8 @@ for (const p of PAGES) {
     await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
     await expect(page).toHaveURL(new RegExp(p.path + '$'));
     await expect(page.getByText('The Record')).toBeVisible();
-    await page.getByRole('button', { name: /Just the legal registration/ }).click();
-    await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+    await page.getByRole('button', { name: /Legal marriage registration/ }).click();
+    await expect(page.getByRole('heading', { name: 'Which province will you be married?' })).toBeVisible();
     await expect(page).toHaveURL(new RegExp(p.path + '$'));
     // Back off question one hands the page back
     await page.getByRole('button', { name: 'Back' }).click();

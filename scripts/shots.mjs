@@ -57,7 +57,7 @@ const shots = [
     name: 'question',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Just the legal registration/ }).click();
+      await page.getByRole('button', { name: /Legal marriage registration/ }).click();
       await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: 'One of us is' }).click();
       await settle(page);
@@ -67,7 +67,7 @@ const shots = [
     name: 'question-place',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Just the legal registration/ }).click();
+      await page.getByRole('button', { name: /Legal marriage registration/ }).click();
       await settle(page);
     },
   },
@@ -75,7 +75,7 @@ const shots = [
     name: 'question-officer',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: /Just the legal registration/ }).click();
+      await page.getByRole('button', { name: /Legal marriage registration/ }).click();
       await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: 'Yes, both of us' }).click();
       await page.getByRole('button', { name: 'No', exact: true }).click();
