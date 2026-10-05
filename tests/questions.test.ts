@@ -5,14 +5,24 @@ import { officersIn } from '@/src/officers/officers';
 const q = (id: string) => QUESTIONS.find(x => x.id === id)!;
 
 describe('questions', () => {
-  it('asks where it happens first, and never forks the path at the door', () => {
-    expect(QUESTIONS[0].id).toBe('province');
-  });
-  it('asks what they need second, because it decides which questions follow', () => {
-    expect(QUESTIONS[1].id).toBe('service');
+  it('asks what they need first, then where (Ryan, 5 October 2026)', () => {
+    expect(QUESTIONS.map(x => x.id)).toEqual(['service', 'province', 'nationality', 'nonSaStatus', 'priorMarriage', 'officer', 'date']);
     const service = q('service');
     expect(service.choices[0].value).toBe('registration');
-    expect(service.choices.map(c => c.value)).toEqual(['registration', 'small_ceremony', 'wedding_ceremony', 'ceremony_only']);
+    expect(service.choices.map(c => c.value)).toEqual(['registration', 'small_ceremony', 'wedding_ceremony', 'ceremony_only', 'undecided']);
+    expect(service.choices.at(-1)!.label).toBe('I’m still deciding - show me all the options');
+  });
+  it('asks every remaining question of someone still deciding', () => {
+    expect(visibleQuestions({ service: 'undecided', province: 'gauteng' }).map(x => x.id))
+      .toEqual(['service', 'province', 'nationality', 'priorMarriage', 'officer', 'date']);
+    let s = {};
+    s = applyAnswer(s, 'service', 'undecided');
+    s = applyAnswer(s, 'province', 'limpopo');
+    s = applyAnswer(s, 'date', 'soon');
+    expect(isComplete(s)).toBe(false);
+    s = applyAnswer(s, 'nationality', 'both_sa');
+    s = applyAnswer(s, 'priorMarriage', 'none');
+    expect(isComplete(s)).toBe(true);
   });
   it('lists Gauteng and Western Cape first', () => {
     expect(q('province').choices.slice(0, 2).map(c => c.value)).toEqual(['gauteng', 'western_cape']);
@@ -23,9 +33,9 @@ describe('questions', () => {
   });
   it('asks no legal question for a ceremony on its own', () => {
     const ids = visibleQuestions({ province: 'limpopo', service: 'ceremony_only' }).map(x => x.id);
-    expect(ids).toEqual(['province', 'service', 'date']);
+    expect(ids).toEqual(['service', 'province', 'date']);
     const legal = visibleQuestions({ province: 'limpopo', service: 'registration' }).map(x => x.id);
-    expect(legal).toEqual(['province', 'service', 'nationality', 'priorMarriage', 'date']);
+    expect(legal).toEqual(['service', 'province', 'nationality', 'priorMarriage', 'date']);
   });
   it('asks which officer only where there is a choice', () => {
     expect(q('officer').skipWhen!({ province: 'gauteng' })).toBe(false);

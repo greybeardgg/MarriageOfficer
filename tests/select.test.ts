@@ -80,4 +80,13 @@ describe('selectAnswers', () => {
       expect(got, service).not.toContain('process-ceremony-only');
     }
   });
+  it('gives someone still deciding every option: each process and each price', () => {
+    const got = selectAnswers({ ...base, service: 'undecided' }, { includeDrafts: true }).flatMap(x => x.answers).map(a => a.id);
+    for (const id of ['process-registration-office', 'process-ceremony', 'process-ceremony-only',
+      'price-registration-office', 'price-ceremony', 'price-ceremony-only', 'bring-ids', 'ha-relationship']) {
+      expect(got, id).toContain(id);
+    }
+    // what they told us still narrows it: no divorce decree for a first marriage
+    expect(got).not.toContain('bring-decree');
+  });
 });

@@ -148,9 +148,16 @@ export function FrontDoor({
                   {current.prompt}
                 </h2>
                 {current.note ? <p className="prose step-note">{current.note}</p> : null}
-                <div className="answers answers-grid">
-                  <OptionList choices={choices} chosen={chosen} columns={3} compact onChoose={answer} />
-                </div>
+                {/* Nine provinces fit a compact three-by-three grid; any other question one keeps its hints. */}
+                {current.id === 'province' ? (
+                  <div className="answers answers-grid">
+                    <OptionList choices={choices} chosen={chosen} columns={3} compact onChoose={answer} />
+                  </div>
+                ) : (
+                  <div className="answers door-answers">
+                    <OptionList choices={choices} chosen={chosen} onChoose={answer} />
+                  </div>
+                )}
               </div>
             </section>
             <AskBox onStart={goToQuestion} />

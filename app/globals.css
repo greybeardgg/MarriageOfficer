@@ -561,6 +561,7 @@ textarea.field { line-height: 1.55; resize: vertical; }
 .door-way-lead { font-size: var(--fs-md); color: var(--carbon-soft); max-width: 52ch; }
 .door-q { font-size: var(--fs-xl); }
 .door-question .step-note { margin-top: var(--s-2); }
+.door-answers { max-width: none; }
 .door-sides { padding-top: var(--s-4); }
 
 /* The compact grid: nine provinces in three rows, ruled, no hints. */
@@ -585,7 +586,9 @@ textarea.field { line-height: 1.55; resize: vertical; }
 }
 .step-count { font-size: var(--fs-2xs); letter-spacing: .1em; color: var(--carbon-soft); }
 
-.step-body { display: grid; align-content: center; gap: var(--s-4); padding-bottom: var(--s-4); }
+/* The question sits at the top, level with the record it is stamping, not
+   centred in the space below it (Ryan, 5 October 2026). */
+.step-body { display: grid; align-content: start; gap: var(--s-4); padding-top: var(--s-2); padding-bottom: var(--s-4); }
 .step-note { font-size: var(--fs-md); color: var(--carbon-soft); max-width: 46ch; margin-top: calc(var(--s-2) * -1); }
 .answers { margin-top: var(--s-4); max-width: 34rem; }
 .answers-wide { max-width: 56rem; }

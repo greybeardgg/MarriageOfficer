@@ -6,11 +6,12 @@ import type { Situation } from '@/src/situation/types';
 import { Stamp, StampSlot } from '@/components/brand/Stamp';
 import type { Ink } from '@/components/brand/Stamp';
 
-/** Ceremony answers stamp in aqua, everything legal in slate, the state in grey. */
+const CEREMONY = ['small_ceremony', 'wedding_ceremony', 'ceremony_only'];
+
+/** Ceremony answers stamp in aqua, everything legal (and the undecided) in slate, the state in grey. */
 function inkFor(q: Question, partial: Partial<Situation>): Ink {
   if (q.id === 'nonSaStatus') return 'state';
-  if (q.id === 'service') return partial.service === 'registration' ? 'legal' : 'ceremony';
-  return partial.service && partial.service !== 'registration' ? 'ceremony' : 'legal';
+  return partial.service && CEREMONY.includes(partial.service) ? 'ceremony' : 'legal';
 }
 
 export function Spine({

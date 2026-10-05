@@ -24,7 +24,8 @@ export function matches(a: Answer, s: Situation): boolean {
   if (!inList(t.provinces, s.province)) return false;
   if (!inList(t.nationalities, s.nationality)) return false;
   if (!inList(t.priorMarriages, s.priorMarriage)) return false;
-  if (!inList(t.services, s.service)) return false;
+  // Someone still deciding is shown every service's answers; the rest still narrows.
+  if (s.service !== 'undecided' && !inList(t.services, s.service)) return false;
   if (t.nonSaStatuses) {
     if (s.nationality !== 'one_non_sa') return false;
     if (!inList(t.nonSaStatuses, s.nonSaStatus)) return false;

@@ -38,18 +38,12 @@ function officerChoices(partial: Partial<Situation>): Choice[] {
 }
 
 /**
- * Order: the place, then what they need, then the legal questions (skipped
- * for a ceremony without a registration), then who, then when. What they
- * need comes second because it decides which questions follow; it is one
- * question among the others, never a fork at the door.
+ * Order: what they need, then where (Ryan, 5 October 2026), then the legal
+ * questions (skipped for a ceremony without a registration, asked of someone
+ * still deciding), then who, then when. What they need decides which
+ * questions follow; it is one question among the others, never a fork.
  */
 export const QUESTIONS: Question[] = [
-  {
-    id: 'province',
-    stampLabel: 'Place',
-    prompt: 'Where will this happen?',
-    choices: provinceOrder.map(p => ({ value: p, label: PROVINCE_LABEL[p] })),
-  },
   {
     id: 'service',
     stampLabel: 'Service',
@@ -60,7 +54,14 @@ export const QUESTIONS: Question[] = [
       { value: 'small_ceremony', label: 'A small ceremony too', stampValue: 'Small ceremony', hint: 'A few words that sound like you, then the signing' },
       { value: 'wedding_ceremony', label: 'A full wedding ceremony', stampValue: 'Wedding ceremony', hint: 'Your day, your guests, an officiant who makes it yours' },
       { value: 'ceremony_only', label: 'A ceremony only', stampValue: 'Ceremony only', hint: 'You are already married, or registering elsewhere. No paperwork from us' },
+      { value: 'undecided', label: 'I’m still deciding - show me all the options', stampValue: 'Still deciding', hint: 'We show you every option, and you choose after' },
     ],
+  },
+  {
+    id: 'province',
+    stampLabel: 'Place',
+    prompt: 'Where will this happen?',
+    choices: provinceOrder.map(p => ({ value: p, label: PROVINCE_LABEL[p] })),
   },
   {
     id: 'nationality',

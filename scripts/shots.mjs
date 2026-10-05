@@ -57,17 +57,17 @@ const shots = [
     name: 'question',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: /Just the legal registration/ }).click();
+      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: 'One of us is' }).click();
       await settle(page);
     },
   },
   {
-    name: 'question-service',
+    name: 'question-place',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: 'Gauteng' }).click();
+      await page.getByRole('button', { name: /Just the legal registration/ }).click();
       await settle(page);
     },
   },
@@ -75,8 +75,8 @@ const shots = [
     name: 'question-officer',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: /Just the legal registration/ }).click();
+      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: 'Yes, both of us' }).click();
       await page.getByRole('button', { name: 'No', exact: true }).click();
       await settle(page);
@@ -104,8 +104,8 @@ const shots = [
     name: 'date-dialog',
     async run(page) {
       await page.goto(BASE + '/');
-      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: /A ceremony only/ }).click();
+      await page.getByRole('button', { name: 'Gauteng' }).click();
       await page.getByRole('button', { name: /No preference/ }).click();
       await page.getByRole('button', { name: 'Yes, a date' }).click();
       await settle(page);

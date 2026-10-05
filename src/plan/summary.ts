@@ -7,6 +7,7 @@ const SERVICE: Record<Situation['service'], string> = {
   small_ceremony: 'small ceremony',
   wedding_ceremony: 'wedding ceremony',
   ceremony_only: 'ceremony on its own',
+  undecided: 'every option',
 };
 
 export function summarise(s: Situation): string {

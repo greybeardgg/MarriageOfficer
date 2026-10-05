@@ -15,11 +15,13 @@ export type PriorMarriage = typeof PRIOR_MARRIAGES[number];
  * `ceremony_only` is a ceremony without the legal part: the couple are already
  * married, or are registering the marriage elsewhere. Nothing is signed and
  * nothing is lodged, so the legal questions are not asked (Ryan, 13 Sept 2026).
+ * `undecided` is someone still choosing: every later question is asked and the
+ * plan shows every option (Ryan, 5 October 2026).
  */
-export const SERVICES = ['registration','small_ceremony','wedding_ceremony','ceremony_only'] as const;
+export const SERVICES = ['registration','small_ceremony','wedding_ceremony','ceremony_only','undecided'] as const;
 export type Service = typeof SERVICES[number];
 
-/** The services in which we register the marriage. */
+/** The services in which we register the marriage. `undecided` is not one, but its legal questions are asked. */
 export const LEGAL_SERVICES: Service[] = ['registration','small_ceremony','wedding_ceremony'];
 export function isLegal(service: Service | undefined): boolean {
   return service !== undefined && service !== 'ceremony_only';

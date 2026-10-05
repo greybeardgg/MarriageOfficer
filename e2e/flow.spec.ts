@@ -10,9 +10,9 @@ test('western cape, one non-SA on a visa, divorced, registration', async ({ page
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1, name: /Ryan Hogarth/ })).toBeVisible();
   await expect(page.locator('select')).toHaveCount(0); // never a drop-down
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
-  await page.getByRole('button', { name: 'Western Cape' }).click();
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
   await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  await page.getByRole('button', { name: 'Western Cape' }).click();
   await page.getByRole('button', { name: 'One of us is' }).click();
   await page.getByRole('button', { name: 'Here on a visa or permit' }).click();
   await page.getByRole('button', { name: 'Yes, divorced' }).click();
@@ -58,8 +58,8 @@ test('gauteng first-marriage registration shows the express option and no decree
 
 test('a ceremony on its own asks no legal question and can name an officer', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Gauteng' }).click();
   await page.getByRole('button', { name: /A ceremony only/ }).click();
+  await page.getByRole('button', { name: 'Gauteng' }).click();
   // straight to the officer: no nationality, no prior marriage
   await expect(page.getByRole('heading', { name: 'Do you have an officer in mind?' })).toBeVisible();
   await expect(page.getByText('03 / 04')).toBeVisible();
@@ -83,8 +83,8 @@ test('a ceremony on its own asks no legal question and can name an officer', asy
 
 test('the date opens over its question, and a picked date is stamped', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Gauteng' }).click();
   await page.getByRole('button', { name: /A ceremony only/ }).click();
+  await page.getByRole('button', { name: 'Gauteng' }).click();
   await page.getByRole('button', { name: /No preference/ }).click();
   await expect(page.getByRole('heading', { name: 'Any date in mind?' })).toBeVisible();
   await expect(page.getByRole('dialog')).toHaveCount(0);
@@ -107,9 +107,10 @@ test('the front door offers no path choice: a banner, the introduction, and ques
   await expect(page.getByText('Whether you simply need to be legally married')).toBeVisible();
   await expect(page.getByText('Getting Married Is Two Different Jobs')).toHaveCount(0);
   await expect(page.getByText('Two Ways In')).toHaveCount(0);
-  // the nine provinces are on the door, compact, no start button
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Northern Cape' })).toBeVisible();
+  // what they need is question one on the door (5 October 2026), no start button
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /I’m still deciding - show me all the options/ })).toBeVisible();
+  await expect(page.getByText('You, your witnesses, the paperwork done properly')).toBeVisible();
   // the two panels went on 14 September; the every-couple line stayed
   await expect(page.getByRole('heading', { name: 'We Do Both' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Register A Marriage' })).toHaveCount(0);
@@ -126,21 +127,26 @@ test('the chat box answers from free text before the quiz has started', async ({
   await page.getByRole('button', { name: 'Answer Me' }).click();
   await expect(page.getByRole('heading', { name: /we can tell you now|depends on you/ }).first()).toBeVisible();
   // nothing was asked of them to get this: question one is still waiting on the door
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
   await expect(page.getByText('The Record')).toHaveCount(0);
 });
 
 test('answering stamps the record, a stamp reopens its question, and back off question two returns to the door', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Gauteng' }).click();
-  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+  await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  const question = page.getByRole('heading', { name: 'Where will this happen?' });
+  await expect(question).toBeVisible();
   await expectOneViewport(page);
+  // the question sits at the top, level with the record, not centred below it (5 October 2026)
+  const qTop = (await question.boundingBox())!.y;
+  const recordTop = (await page.getByText('The Record').boundingBox())!.y;
+  expect(qTop - recordTop).toBeLessThan(140);
   await page.getByRole('button', { name: 'Back' }).click();
   await expect(page.getByText('Whether you simply need to be legally married')).toBeVisible();
-  await page.getByRole('button', { name: 'Gauteng' }).click();
-  await expect(page.getByRole('button', { name: /Change your answer for Place/ })).toBeVisible();
-  await page.getByRole('button', { name: /Change your answer for Place/ }).click();
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await page.getByRole('button', { name: /Just the legal registration/ }).click();
+  await expect(page.getByRole('button', { name: /Change your answer for Service/ })).toBeVisible();
+  await page.getByRole('button', { name: /Change your answer for Service/ }).click();
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
 });
 
 test('the team page names every officer and no phone number', async ({ page }) => {
@@ -150,7 +156,27 @@ test('the team page names every officer and no phone number', async ({ page }) =
   await expect(page.getByText('Cindy Reed')).toBeVisible();
   await expect(page.locator('body')).not.toContainText(/0\d{2}[\s-]?\d{3}[\s-]?\d{4}/);
   await page.getByRole('link', { name: 'Answer The Questions' }).click();
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+});
+
+test('someone still deciding answers every question and gets every option', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: /I’m still deciding/ }).click();
+  await page.getByRole('button', { name: 'Gauteng' }).click();
+  // the legal questions are still asked
+  await expect(page.getByRole('heading', { name: 'Are you both South African?' })).toBeVisible();
+  await page.getByRole('button', { name: 'Yes, both of us' }).click();
+  await page.getByRole('button', { name: 'No', exact: true }).click();
+  await page.getByRole('button', { name: /No preference/ }).click();
+  await page.getByRole('button', { name: 'Not yet' }).click();
+  await expect(page).toHaveURL(/s=undecided/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('every option, both South African, first marriage, Gauteng');
+  // every process, and every price
+  await expect(page.getByText('How does a registration at your offices work?')).toBeVisible();
+  await expect(page.getByText('How does the legal part of a ceremony work?')).toBeVisible();
+  await expect(page.getByText('We are already married. Can you do the ceremony on its own?')).toBeVisible();
+  await page.getByRole('button', { name: 'What does it cost?' }).click();
+  await expect(page.getByText('What does a ceremony on its own cost?')).toBeVisible();
 });
 
 test('a broken link offers a way back', async ({ page }) => {
@@ -178,11 +204,11 @@ for (const p of PAGES) {
     await expect(page.locator('form')).toHaveCount(0);
     // the questions start on this page, not on the home page
     await page.getByRole('button', { name: 'Answer The Questions' }).last().click();
-    await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
     await expect(page).toHaveURL(new RegExp(p.path + '$'));
     await expect(page.getByText('The Record')).toBeVisible();
-    await page.getByRole('button', { name: 'Gauteng' }).click();
-    await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
+    await page.getByRole('button', { name: /Just the legal registration/ }).click();
+    await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
     await expect(page).toHaveURL(new RegExp(p.path + '$'));
     // Back off question one hands the page back
     await page.getByRole('button', { name: 'Back' }).click();
@@ -202,6 +228,6 @@ test('contact offers the questions and the box that answers, and no number until
   await page.getByRole('button', { name: 'Answer Me' }).click();
   await expect(page.getByRole('heading', { name: 'Can we do it on a Saturday?' })).toBeVisible();
   await page.getByRole('button', { name: 'Answer The Questions' }).first().click();
-  await expect(page.getByRole('heading', { name: 'Where will this happen?' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What do you need?' })).toBeVisible();
   await expect(page).toHaveURL(/\/contact$/);
 });
